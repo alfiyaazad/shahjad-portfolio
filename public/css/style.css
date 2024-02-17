@@ -1,0 +1,734 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#photo-stroke {
+    border-radius: 70px;
+    border: 3px solid black;
+    border-left: none;
+    border-right: none;
+    height: 100%;
+
+}
+
+#photo-row {
+    /* height: 75vh; */
+    height: auto;
+    margin-top: 75px;
+
+}
+
+#photo-bg {
+    border-radius: 60px;
+    height: 96%;
+    width: 96%;
+    position: relative;
+    background-color: gold;
+
+}
+
+#photo-col {
+    height: 400px;
+}
+
+#photo {
+    max-width: 100% !important;
+    /* max-height: 125%; */
+    height: auto;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    max-height: 120%;
+}
+
+#book {
+    max-width: 90% !important;
+    height: auto;
+    display: block;
+
+}
+
+/* #sign-row {
+    height: 80px;
+} */
+
+
+#quote-div {
+    text-align: center;
+}
+
+/* #quote {
+    font-size: large;
+} */
+
+.line-x-2 {
+    width: 15vw;
+    height: 3.5px;
+    background-color: gold;
+
+}
+
+
+
+
+#dynamic-row {
+
+    margin-top: 75px;
+
+}
+
+#goals-row {
+    margin-top: 75px;
+}
+
+.line-y {
+    width: 4px;
+    height: 110px;
+    border: 1px solid gold;
+}
+
+.nav-btn {
+    width: 20px;
+    height: 20px;
+    border: 1px solid gold;
+    background: none;
+    border-radius: 50%;
+}
+
+.nav-btn-default {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: gold;
+    border-radius: 50%;
+}
+
+
+
+.section {
+    height: 800px;
+}
+
+.progress-style {
+    background-color: gold;
+    transition: smooth(0.075, 0.82, 0.165, 1);
+    max-height: 100%;
+}
+
+#events-section {
+    height: auto;
+}
+
+.inside-section {
+    height: auto;
+}
+
+.section-underline {
+    width: 100px;
+    height: 3px;
+    background-color: gold;
+}
+
+.about-content {
+    text-align: center;
+    height: auto;
+
+}
+
+.link-x {
+    width: 20px;
+}
+
+.line-x {
+    width: 125px;
+    height: 3.5px;
+    border: 1px solid gold;
+
+
+}
+
+.sub-desc {
+    text-align: center;
+
+}
+
+.social-div {
+    height: 50px;
+}
+
+.icon-stroke {
+    width: 50px;
+    border: 2px solid gold;
+    border-radius: 5px;
+}
+
+.main-desc {
+    text-align: center;
+    height: auto;
+
+}
+
+#brands-carousel {
+    height: auto;
+
+}
+
+
+
+.fill-gold{
+    color: gold;
+}
+
+.scroll-btn {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+}
+
+.hidden-elements {
+    visibility: hidden;
+}
+
+.progress {
+
+    height: 100%;
+    background-color: gold;
+    animation: progressBar 0.5s ease-in-out;
+    animation-fill-mode: both;
+
+
+
+}
+
+.progress-back {
+
+    height: 100%;
+    background-color: gold;
+    animation: progressBack 0.5s ease-in-out;
+    animation-fill-mode: both;
+
+
+
+}
+
+.divider-y {
+    width: 1.5px;
+    height: 350px;
+    background-color: gold;
+}
+
+.download-btn {
+    height: 50px;
+    width: 175px;
+    background-color: gold;
+    border: none;
+    border-radius: 5px;
+}
+
+.email-input {
+    height: 50px;
+    width: 270px;
+    border: 2px solid gold;
+    border-radius: 5px;
+}
+
+.email-input::placeholder {
+    font-size: small;
+    color: gray;
+
+}
+
+.sub-btn {
+    width: 125px;
+    height: 40px;
+    background-color: gold;
+    border: none;
+    border-radius: 5px;
+}
+
+
+
+.span-fill {
+    background-color: gold;
+    height: 100%;
+}
+
+.span-empty {
+    max-width: 0;
+}
+
+.mini-divider-y {
+    width: 1.5px;
+    height: 100px;
+    background-color: gold;
+    opacity: 0.5;
+}
+
+.divider-x {
+    width: 85%;
+    height: 1.5px;
+    background-color: gold;
+    opacity: 0.5;
+}
+
+.connect-btn {
+    width: 270px;
+    height: 50px;
+    background-color: gold;
+    border: none;
+    border-radius: 5px;
+}
+
+#dynamic-col {
+    height: 694px;
+    overflow: scroll;
+}
+
+#dynamic-col::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+#dynamic-col::-webkit-scrollbar-thumb {
+    background-color: transparent;
+
+}
+
+#dynamic-col::-webkit-scrollbar-track {
+    background-color: transparent;
+
+}
+
+#dynamic-col {
+    scrollbar-width: 0 !important;
+}
+
+#dynamic-row {
+    font-size: 14px;
+}
+
+.nav-mini-btn {
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+}
+
+.nav-link-mini {
+    font-size: 12px;
+}
+
+
+::-webkit-scrollbar {
+    width: 0px;
+    background-color: hsl(var(--background));
+}
+
+
+.menu-underline {
+    width: 20px;
+    height: 2px;
+    background-color: gold;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+}
+
+.menu-link {
+    font-size: xx-small;
+}
+
+
+.car-image{
+    
+    height: auto;
+}
+
+
+
+
+@keyframes progressBar {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes progressBack {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
+}
+
+.book-quote {
+    text-align: center;
+}
+
+.mobile-tab{
+    width: 100%;
+    height: 1px;
+    background-color: gold;
+}
+
+
+
+/* MEDIA QUERIES */
+
+
+
+
+@media screen and (max-width: 390px) {
+    #photo {
+        height: 125%;
+    }
+
+    #photo-col {
+        padding: 0;
+    }
+    #goals-row-3 {
+        padding: 20px !important;
+    }
+    #quote{
+        padding-left: 15px!important;
+        padding-right: 15px!important;
+    }
+    #brands-section-3{
+        padding: 0 !important;
+    }
+}
+
+
+
+@media screen and (max-width: 375px) {
+    #photo-bg {
+        border-radius: 55px;
+    }
+
+    .copyright-text {
+        font-size: x-small;
+    }
+
+    .divider-x {
+        width: 95%;
+    }
+
+    #book-row-3 {
+        font-size: small;
+
+    }
+
+    #book-name-3 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #about-section-2,
+    #goals-row-3 {
+        font-size: small;
+        
+        margin-bottom: 20px;
+    }
+
+    #goals-row-3 {
+        padding: 15px !important;
+    }
+
+    .hey-text {
+        margin-bottom: 0;
+        font-size: small;
+
+    }
+
+    #photo-col {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        height: 250px;
+    }
+
+    .menu-icon {
+        height: 15px;
+        width: 15px;
+        
+        
+    }
+
+}
+
+@media screen and (max-width: 340px) {
+    #photo-bg {
+        border-radius: 52px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    #quote,
+    #author {
+        font-size: small;
+    }
+
+    .connect-btn {
+        width: 200px;
+        font-size: small;
+    }
+
+    .connect-label {
+        font-size: small;
+    }
+
+    .email-input {
+        width: 260px;
+        height: 45px;
+    }
+
+    #book-row-3 {
+
+        padding: 10px;
+    }
+
+    .social-div {
+        height: 40px;
+    }
+
+    .icon-stroke img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .section-underline {
+        width: 60px !important;
+    }
+}
+
+
+
+@media (max-width: 1400px) {
+    #dynamic-row {
+        font-size: 13.7px;
+    }
+
+    .line-x {
+        width: 110px;
+    }
+
+
+}
+
+@media (max-width: 1200px) {
+    #dynamic-row {
+        font-size: 14px;
+    }
+
+    .line-x {
+        width: 90px;
+    }
+
+    .goal-desc {
+        font-size: 12px;
+    }
+
+    .goal-heading {
+        font-size: 16px;
+    }
+
+    .goal-icon {
+        padding-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1212px) {
+    .link-y {
+        font-size: small;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1300px) {
+    .goal-desc {
+        font-size: 14px;
+    }
+
+    .goal-heading {
+        font-size: 20px;
+    }
+
+    .goal-icon {
+        padding-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 576px) {
+    .copyright-text {
+        font-size: small;
+    }
+
+    #book-row-3 {
+        font-size: 14px;
+    }
+
+    #book-name-3 {
+        font-size: 26px;
+        text-align: center;
+    }
+    #photo-col {
+        padding-left: 30px;
+        padding-right: 30px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .line-x-2 {
+        width: 13vw;
+        height: 2.7px;
+    }
+
+    .goal-desc {
+        text-align: center;
+    }
+
+    .section {
+        font-size: small;
+    }
+    #book{
+        margin-left: 20px;
+    }
+
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    .link-text-2 {
+        font-size: 12px;
+    }
+
+    .sub-desc {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .section {
+        height: auto;
+        margin-bottom: 50px;
+    }
+
+    .inside-section {
+        height: auto;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .hey-text {
+        margin-bottom: 30px;
+    }
+
+    .about-content {
+        height: auto;
+
+    }
+
+    #goals-row {
+        margin-top: 0;
+    }
+
+    .section-underline {
+        margin-left: 0;
+        width: 90px;
+    }
+
+    #book-row-2 {
+        font-size: 14px;
+    }
+
+    #book-name-2 {
+        font-size: 25px;
+    }
+    /* .link-text-2{
+        font-size: x-small;
+    } */
+
+
+}
+
+@media screen and (min-width: 375px) and (max-width: 992px) {
+    #quote {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 992px) {
+
+    /* Styles for screens exactly at 992px */
+    #goals-row {
+        margin-top: 75px;
+    }
+}
+
+@media (max-width: 1312px) {
+    #book-row {
+        font-size: 14px;
+    }
+
+    #book-name {
+        font-size: 28px;
+    }
+}
+
+@media (max-width:576px) {
+
+
+    #photo-col {
+        padding-left: 30px;
+        padding-right: 30px;
+        height: 350px;
+    }
+
+    #about-section-2 {
+        padding: 30px !important;
+    }
+
+    .about-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+}
+
+
+@media (max-width:375px) {
+    #main {
+        font-size: xx-small;
+    }
+
+    #navbar {
+        width: 3em;
+    }
+
+
+}
+
+@media (max-width: 1010px){
+
+    .goal-heading{
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+}

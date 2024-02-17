@@ -1,0 +1,10 @@
+4OZ7SdK9HVohgHMn password
+
+mongodb+srv://admin:4OZ7SdK9HVohgHMn@cluster0.khg432f.mongodb.net/portfolio?retryWrites=true&w=majority
+
+access  7$B&uP9@qZ#sY3
+
+src="data:<%= data.photo.contentType %>;base64,<%= data.photo.data.toString('base64') %>"
+
+
+

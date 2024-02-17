@@ -1,0 +1,3533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trail Testing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+    <% mainData.forEach(data=> { %>
+        <div class="container-fluid">
+
+
+            <!-- SIGNATURE -->
+
+
+
+            <div class="row dark py-3 " id="sign-row">
+                <div id="sign-col" class="col-lg-6 success  d-flex justify-content-center align-items-center ">
+                    <img width="177" height="70"
+                        src="data:<%= data.signature.contentType %>;base64,<%= data.signature.data.toString('base64') %>"
+                        alt="">
+                </div>
+            </div>
+
+
+            <!-- PHOTO & QUOTE -->
+
+
+            <div class="row  mb-5  " id="photo-row">
+                <div id="photo-col" class="col-lg-6 success d-flex justify-content-center align-items-center ">
+                    <div id="photo-stroke"
+                        class="col-xl-7 col-lg-9 col-md-6 col-sm-8 col   d-flex justify-content-center align-items-center ">
+                        <div id="photo-bg" class=" d-flex justify-content-center">
+                            <img id="photo"
+                                src="data:<%= data.photo.contentType %>;base64,<%= data.photo.data.toString('base64') %>"
+                                alt="">
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-5 mt-4 mt-lg-0 px-4 info d-flex flex-column justify-content-center " id="quote-div">
+
+
+                    <p class="" id="quote">"<%= data.quote %>"</p>
+                    <p class=" fw-bold" id="author">~ <%= data.author %>
+                    </p>
+
+
+
+
+                </div>
+            </div>
+
+
+            <!-- DYNAMIC ROW - 1  -->
+
+
+            <div class="row d-sm-none d-md-none d-none d-lg-flex d-xl-flex d-xxl-flex  " id="dynamic-row">
+
+                <div class="col-xxl-4 col-lg-3  d-flex flex-column align-items-xxl-end align-items-lg-center  "
+                    id="nav-col">
+
+                    <div class="d-flex  col-xl-4 col-lg-6  ">
+                        <div class="d-flex flex-column align-items-center">
+                            <button onclick="scrollToSection('about-section-1')" id="about-btn-1"
+                                class="nav-btn-default"></button>
+                            <div class="line-y">
+                                <div id="about-progress" class="w-100 progress-style"></div>
+                            </div>
+                        </div>
+                        <span class="link-y ms-2 ">
+                            <%= data.menuItems[0] %>
+                        </span>
+                    </div>
+                    <div class="d-flex  col-xl-4 col-lg-6  ">
+                        <div class="d-flex flex-column align-items-center">
+                            <button onclick="scrollToSection('brands-section-1')" id="brands-btn-1"
+                                class="nav-btn "></button>
+                            <div class="line-y">
+                                <div id="brands-progress" class="w-100 progress-style"></div>
+                            </div>
+                        </div>
+                        <span class="link-y ms-2 ">
+                            <%= data.menuItems[1] %>
+                        </span>
+                    </div>
+                    <div class="d-flex  col-xl-4 col-lg-6  ">
+                        <div class="d-flex flex-column align-items-center">
+                            <button onclick="scrollToSection('investments-section-1')" id="investments-btn-1"
+                                class="nav-btn"></button>
+                            <div class="line-y">
+                                <div id="investments-progress" class="w-100 progress-style"></div>
+                            </div>
+                        </div>
+                        <span class="link-y ms-2 ">
+                            <%= data.menuItems[2] %>
+                        </span>
+                    </div>
+                    <div class="d-flex  col-xl-4 col-lg-6  ">
+                        <div class="d-flex flex-column align-items-center">
+                            <button onclick="scrollToSection('holdings-section-1')" id="holdings-btn-1"
+                                class="nav-btn"></button>
+                            <div class="line-y">
+                                <div id="holdings-progress" class="w-100 progress-style"></div>
+                            </div>
+                        </div>
+                        <span class="link-y ms-2 ">
+                            <%= data.menuItems[3] %>
+                        </span>
+                    </div>
+                    <div class="d-flex  col-xl-4 col-lg-6  ">
+                        <div class="d-flex flex-column align-items-center">
+                            <button onclick="scrollToSection('media-section-1')" id="media-btn-1"
+                                class="nav-btn"></button>
+                            <div class="line-y">
+                                <div id="media-progress" class="w-100 progress-style"></div>
+                            </div>
+                        </div>
+                        <span class="link-y ms-2 ">
+                            <%= data.menuItems[4] %>
+                        </span>
+                    </div>
+                    <div class="d-flex  col-xl-4 col-lg-6  ">
+                        <div class="d-flex flex-column align-items-center">
+                            <button onclick="scrollToSection('events-section-1')" id="events-btn-1"
+                                class="nav-btn"></button>
+
+                        </div>
+                        <span class="link-y ms-2 ">
+                            <%= data.menuItems[5] %>
+                        </span>
+                    </div>
+
+
+
+
+
+                </div>
+
+                <div class="col-xxl-8 col-lg-9  section-col " id="dynamic-col">
+                    <div id="about-section-1" class="section px-5 ">
+                        <div class=" justify-content-between align-items-center inside-section d-flex flex-column">
+
+                            <div>
+                                <h1 class="mb-0">
+                                    <%= data.menuItems[0] %>
+                                </h1>
+                                <div class="section-underline ms-1"></div>
+                            </div>
+
+                            <h4 class="hey-text mt-4 mb-4 ">
+                                <%= data.menu.about.subContent %>
+                            </h4>
+
+                            <p class="about-content  ">
+                                <%= data.menu.about.mainContent %>
+                            </p>
+
+
+
+
+                        </div>
+
+
+                    </div>
+                    <div id="brands-section-1" class="section px-5  ">
+                        <div class=" justify-content- align-items-center inside-section d-flex flex-column">
+
+                            <div class="mb-4">
+
+
+                                <h1 class="mb-0">
+                                    <%= data.menuItems[1] %>
+
+                                </h1>
+
+
+
+
+                                <div class="section-underline ms-1"></div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class="d-flex mb- ">
+
+                                <div class="d-flex  ">
+                                    <div class="d-flex link-x flex-column align-items-center">
+                                        <button id="brands-0-btn-1" class=" nav-btn-default  "></button>
+                                        <span>
+                                            <%= data.menu.brands[0].name %>
+                                        </span>
+                                    </div>
+                                    <div class="line-x   mt-2" id="dxg-line">
+                                        <div class=" h-100 progress-style-x " id="dxg-span"></div>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex  ">
+                                    <div class="d-flex link-x flex-column align-items-center">
+                                        <button id="brands-1-btn-1" class=" nav-btn  "></button>
+                                        <span>
+                                            <%= data.menu.brands[1].name %>
+                                        </span>
+                                    </div>
+                                    <div class="line-x   mt-2" id="adtaken-line">
+                                        <div class=" h-100 progress-style-x   " id="adtaken-span"></div>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex  ">
+                                    <div class="d-flex link-x flex-column align-items-center">
+                                        <button id="brands-2-btn-1" class=" nav-btn  "></button>
+                                        <span>
+                                            <%= data.menu.brands[2].name %>
+                                        </span>
+                                    </div>
+                                    <div class="line-x   mt-2">
+                                        <div class=" h-100 progress-style-x   " id="devicelux-span"></div>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex  ">
+                                    <div class="d-flex link-x flex-column align-items-center">
+                                        <button id="brands-3-btn-1" class=" nav-btn  "></button>
+                                        <span>
+                                            <%= data.menu.brands[3].name %>
+                                        </span>
+                                    </div>
+                                    <div class="line-x   mt-2">
+                                        <div class=" h-100 progress-style-x   " id="ayurnano-span"></div>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex  ">
+                                    <div class="d-flex link-x flex-column align-items-center">
+                                        <button id="brands-4-btn-1" class=" nav-btn  "></button>
+                                        <span>
+                                            <%= data.menu.brands[4].name %>
+                                        </span>
+                                    </div>
+                                    <div class="line-x   mt-2">
+                                        <div class=" h-100 progress-style-x   " id="jotins-span"></div>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex  ">
+                                    <div class="d-flex link-x flex-column align-items-center">
+                                        <button id="brands-5-btn-1" class=" nav-btn  "></button>
+                                        <span>
+                                            <%= data.menu.brands[5].name %>
+                                        </span>
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                            <a href="" class=" text-decoration-none ms-auto me-5 mt-3 mb-3 ">View all</a>
+
+
+
+
+
+                            <div id="brands-carousel-1" class="carousel slide ">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+
+                                        <div class="d-flex flex-column align-items-center ">
+
+
+
+                                            <img src="data:<%= data.menu.brands[0].logo.contentType %>;base64,<%= data.menu.brands[0].logo.data.toString('base64') %>"
+                                                width="275" height="125" alt="">
+
+
+
+                                            <p class="sub-desc px-5">
+                                                <%= data.menu.brands[0].subContent %>
+                                            </p>
+
+
+
+                                            <div class="d-flex social-div ">
+
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                    <a href="<%= data.menu.brands[0].socialMedia.insta%>"><img src="images/instagram.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                    <a href="<%= data.menu.brands[0].socialMedia.fb%>"><img src="images/facebook.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                    <a href="<%= data.menu.brands[0].socialMedia.linkedin%>"><img src="images/linkedin.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 ">
+                                                    <a href="<%= data.menu.brands[0].socialMedia.twitter%>"><img src="images/twitter-x.svg" width="32" height="32" alt=""></a>
+                                                </div>
+
+
+                                            </div>
+
+
+
+
+                                            <div class="d-flex align-items-center mt-4 ">
+
+                                                <button class=" scroll-btn hidden-elements "><img
+                                                        src="images/left arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+                                                <p class="main-desc  ">
+                                                    <%= data.menu.brands[0].mainContent %>
+                                                </p>
+
+                                                <button id="brands-0-next-1" class=" scroll-btn "><img
+                                                        src="images/right arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+
+
+                                            </div>
+
+
+
+
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+                                    <% for (let i=1; i < data.menu.brands.length; i++) { %>
+                                        <div class="carousel-item  ">
+                                            <div class="d-flex flex-column align-items-center ">
+
+
+
+                                                <img src="data:<%= data.menu.brands[i].logo.contentType %>;base64,<%= data.menu.brands[i].logo.data.toString('base64') %>"
+                                                    width="275" height="125" alt="">
+
+
+
+                                                <p class="sub-desc px-5">
+                                                    <%= data.menu.brands[i].subContent %>
+                                                </p>
+
+
+
+                                                <div class="d-flex social-div ">
+
+                                                    <div
+                                                        class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                        <a href="<%= data.menu.brands[i].socialMedia.insta%>"><img src="images/instagram.svg" width="32" height="32" alt=""></a>
+                                                    </div>
+                                                    <div
+                                                        class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                        <a href="<%= data.menu.brands[i].socialMedia.fb%>"><img src="images/facebook.svg" width="32" height="32" alt=""></a>
+                                                    </div>
+                                                    <div
+                                                        class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                        <a href="<%= data.menu.brands[i].socialMedia.linkedin%>"><img src="images/linkedin.svg" width="32" height="32" alt=""></a>
+                                                    </div>
+                                                    <div
+                                                        class="icon-stroke d-flex justify-content-center align-items-center h-100 ">
+                                                        <a href="<%= data.menu.brands[i].socialMedia.twitter%>"><img src="images/twitter-x.svg" width="32" height="32" alt=""></a>
+                                                    </div>
+
+
+                                                </div>
+
+
+
+
+                                                <div class="d-flex align-items-center mt-4 ">
+
+                                                    <button id="brands-<%= i %>-prev-1" class="scroll-btn pe-5 "><img
+                                                            src="images/left arrow.svg" width="30" height="30"
+                                                            alt=""></button>
+
+                                                    <p class="main-desc  ">
+                                                        <%= data.menu.brands[i].mainContent %>
+                                                    </p>
+
+                                                    <% if (i !==data.menu.brands.length - 1) { %>
+
+                                                        <button id="brands-<%= i %>-next-1"
+                                                            class="scroll-btn ps-3  "><img src="images/right arrow.svg"
+                                                                width="30" height="30" alt=""></button>
+
+                                                        <% } %>
+
+
+
+                                                </div>
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                        <% } %>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+                    <div id="investments-section-1" class="section px-5  ">
+                        <div class=" justify-content- align-items-center inside-section d-flex flex-column">
+
+                            <div class="mb-4">
+                                <h1 class="mb-0">
+                                    <%= data.menuItems[2] %>
+                                </h1>
+                                <div class="section-underline ms-1"></div>
+                            </div>
+
+
+
+
+
+                            <div class="d-flex  ">
+
+                                <div class="d-flex  ">
+                                    <div class="d-flex link-x flex-column align-items-center">
+                                        <button id="invest-0-btn-1" class=" nav-btn-default  "></button>
+                                        <span>
+                                            <%= data.menu.investments[0].name %>
+                                        </span>
+                                    </div>
+                                    <div class="line-x   mt-2" id="dxg-line">
+                                        <div class=" h-100 progress-style-x " id="invest-1-span"></div>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex  ">
+                                    <div class="d-flex link-x flex-column align-items-center">
+                                        <button id="invest-1-btn-1" class=" nav-btn  "></button>
+                                        <span>
+                                            <%= data.menu.investments[1].name %>
+                                        </span>
+                                    </div>
+                                    <div class="line-x   mt-2" id="adtaken-line">
+                                        <div class=" h-100 progress-style-x   " id="invest-2-span"></div>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex  ">
+                                    <div class="d-flex link-x flex-column align-items-center">
+                                        <button id="invest-2-btn-1" class=" nav-btn  "></button>
+                                        <span>
+                                            <%= data.menu.investments[2].name %>
+                                        </span>
+                                    </div>
+                                    <div class="line-x   mt-2">
+                                        <div class=" h-100 progress-style-x   " id="invest-3-span"></div>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex  ">
+                                    <div class="d-flex link-x flex-column align-items-center">
+                                        <button id="invest-3-btn-1" class=" nav-btn  "></button>
+                                        <span>
+                                            <%= data.menu.investments[3].name %>
+                                        </span>
+                                    </div>
+                                    <div class="line-x   mt-2">
+                                        <div class=" h-100 progress-style-x   " id="invest-4-span"></div>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex  ">
+                                    <div class="d-flex link-x flex-column align-items-center">
+                                        <button id="invest-4-btn-1" class=" nav-btn  "></button>
+                                        <span>
+                                            <%= data.menu.investments[4].name %>
+                                        </span>
+                                    </div>
+                                    <div class="line-x   mt-2">
+                                        <div class=" h-100 progress-style-x   " id="invest-5-span"></div>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex  ">
+                                    <div class="d-flex link-x flex-column align-items-center">
+                                        <button id="invest-5-btn-1" class=" nav-btn  "></button>
+                                        <span>
+                                            <%= data.menu.investments[5].name %>
+                                        </span>
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                            <a href="" class=" text-decoration-none ms-auto me-5 mt-3 mb-3 ">View all</a>
+
+
+
+
+                            <div id="investments-carousel-1" class="carousel slide ">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+
+                                        <div class="d-flex flex-column align-items-center ">
+
+
+
+                                            <img src="data:<%= data.menu.investments[0].logo.contentType %>;base64,<%= data.menu.investments[0].logo.data.toString('base64') %>"
+                                                width="275" height="125" alt="">
+
+
+
+                                            <p class="sub-desc px-5">
+                                                <%= data.menu.investments[0].subContent %>
+                                            </p>
+
+
+
+                                            <div class="d-flex social-div ">
+
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                    <a href="<%= data.menu.investments[0].socialMedia.insta%>"><img src="images/instagram.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                    <a href="<%= data.menu.investments[0].socialMedia.fb%>"><img src="images/facebook.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                    <a href="<%= data.menu.investments[0].socialMedia.linkedin%>"><img src="images/linkedin.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 ">
+                                                    <a href="<%= data.menu.investments[0].socialMedia.twitter%>"><img src="images/twitter-x.svg" width="32" height="32" alt=""></a>
+                                                </div>
+
+
+                                            </div>
+
+
+
+
+                                            <div class="d-flex align-items-center mt-4 ">
+
+                                                <button class=" scroll-btn hidden-elements "><img
+                                                        src="images/left arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+                                                <p class="main-desc  ">
+                                                    <%= data.menu.investments[0].mainContent %>
+                                                </p>
+
+                                                <button id="invest-0-next-1" class=" scroll-btn "><img
+                                                        src="images/right arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+
+
+                                            </div>
+
+
+
+
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+                                    <% for (let i=1; i < data.menu.investments.length; i++) { %>
+                                        <div class="carousel-item  ">
+                                            <div class="d-flex flex-column align-items-center ">
+
+
+
+                                                <img src="data:<%= data.menu.investments[i].logo.contentType %>;base64,<%= data.menu.investments[i].logo.data.toString('base64') %>"
+                                                    width="275" height="125" alt="">
+
+
+
+                                                <p class="sub-desc px-5">
+                                                    <%= data.menu.investments[i].subContent %>
+                                                </p>
+
+
+
+                                                <div class="d-flex social-div ">
+
+                                                    <div
+                                                        class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                        <a href="<%= data.menu.investments[i].socialMedia.insta%>"><img src="images/instagram.svg" width="32" height="32" alt=""></a>
+                                                    </div>
+                                                    <div
+                                                        class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                        <a href="<%= data.menu.investments[i].socialMedia.fb%>"><img src="images/facebook.svg" width="32" height="32" alt=""></a>
+                                                    </div>
+                                                    <div
+                                                        class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                        <a href="<%= data.menu.investments[i].socialMedia.linkedin%>"><img src="images/linkedin.svg" width="32" height="32" alt=""></a>
+                                                    </div>
+                                                    <div
+                                                        class="icon-stroke d-flex justify-content-center align-items-center h-100 ">
+                                                        <a href="<%= data.menu.investments[i].socialMedia.twitter%>"><img src="images/twitter-x.svg" width="32" height="32" alt=""></a>
+                                                    </div>
+
+
+                                                </div>
+
+
+
+
+                                                <div class="d-flex align-items-center mt-4 ">
+
+                                                    <button id="invest-<%= i %>-prev-1" class="scroll-btn pe-5 "><img
+                                                            src="images/left arrow.svg" width="30" height="30"
+                                                            alt=""></button>
+
+                                                    <p class="main-desc  ">
+                                                        <%= data.menu.investments[i].mainContent %>
+                                                    </p>
+
+                                                    <% if (i !==data.menu.investments.length - 1) { %>
+
+                                                        <button id="invest-<%= i %>-next-1"
+                                                            class="scroll-btn ps-3  "><img src="images/right arrow.svg"
+                                                                width="30" height="30" alt=""></button>
+
+                                                        <% } %>
+
+
+
+                                                </div>
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                        <% } %>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+                    <div id="holdings-section-1" class="section px-5  ">
+                        <div class=" justify-content- align-items-center inside-section d-flex flex-column">
+
+                            <div class="mb-4">
+                                <h1 class="mb-0">
+                                    <%= data.menuItems[3] %>
+                                </h1>
+                                <div class="section-underline ms-1"></div>
+                            </div>
+
+
+
+
+                            <div class="d-flex  ">
+
+                                <div class="d-flex  ">
+                                    <div class="d-flex link-x flex-column align-items-center">
+                                        <button id="hold-0-btn-1" class=" nav-btn-default  "></button>
+                                        <span>
+                                            <%= data.menu.holdings[0].name %>
+                                        </span>
+                                    </div>
+                                    <div class="line-x   mt-2" id="dxg-line">
+                                        <div class=" h-100 progress-style-x " id="hold-1-span"></div>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex  ">
+                                    <div class="d-flex link-x flex-column align-items-center">
+                                        <button id="hold-1-btn-1" class=" nav-btn  "></button>
+                                        <span>
+                                            <%= data.menu.holdings[1].name %>
+                                        </span>
+                                    </div>
+                                    <div class="line-x   mt-2" id="adtaken-line">
+                                        <div class=" h-100 progress-style-x   " id="hold-2-span"></div>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex  ">
+                                    <div class="d-flex link-x flex-column align-items-center">
+                                        <button id="hold-2-btn-1" class=" nav-btn  "></button>
+                                        <span>
+                                            <%= data.menu.holdings[2].name %>
+                                        </span>
+                                    </div>
+                                    <div class="line-x   mt-2">
+                                        <div class=" h-100 progress-style-x   " id="hold-3-span"></div>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex  ">
+                                    <div class="d-flex link-x flex-column align-items-center">
+                                        <button id="hold-3-btn-1" class=" nav-btn  "></button>
+                                        <span>
+                                            <%= data.menu.holdings[3].name %>
+                                        </span>
+                                    </div>
+                                    <div class="line-x   mt-2">
+                                        <div class=" h-100 progress-style-x   " id="hold-4-span"></div>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex  ">
+                                    <div class="d-flex link-x flex-column align-items-center">
+                                        <button id="hold-4-btn-1" class=" nav-btn  "></button>
+                                        <span>
+                                            <%= data.menu.holdings[4].name %>
+                                        </span>
+                                    </div>
+                                    <div class="line-x   mt-2">
+                                        <div class=" h-100 progress-style-x   " id="hold-5-span"></div>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex  ">
+                                    <div class="d-flex link-x flex-column align-items-center">
+                                        <button id="hold-5-btn-1" class=" nav-btn  "></button>
+                                        <span>
+                                            <%= data.menu.holdings[5].name %>
+                                        </span>
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                            <a href="" class=" text-decoration-none ms-auto me-5 mt-3 mb-3 ">View all</a>
+
+
+
+
+                            <div id="holdings-carousel-1" class="carousel slide ">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+
+                                        <div class="d-flex flex-column align-items-center ">
+
+
+
+                                            <img src="data:<%= data.menu.holdings[0].logo.contentType %>;base64,<%= data.menu.holdings[0].logo.data.toString('base64') %>"
+                                                width="275" height="125" alt="">
+
+
+
+                                            <p class="sub-desc px-5">
+                                                <%= data.menu.holdings[0].subContent %>
+                                            </p>
+
+
+
+                                            <div class="d-flex social-div ">
+
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href="<%= data.menu.holdings[0].socialMedia.insta%>"><img src="images/instagram.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href="<%= data.menu.holdings[0].socialMedia.fb%>"><img src="images/facebook.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href="<%= data.menu.holdings[0].socialMedia.linkedin%>"><img src="images/linkedin.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 ">
+                                                   <a href="<%= data.menu.holdings[0].socialMedia.twitter%>"><img src="images/twitter-x.svg" width="32" height="32" alt=""></a>
+                                                </div>
+
+
+                                            </div>
+
+
+
+
+                                            <div class="d-flex align-items-center mt-4 ">
+
+                                                <button class=" scroll-btn hidden-elements "><img
+                                                        src="images/left arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+                                                <p class="main-desc  ">
+                                                    <%= data.menu.holdings[0].mainContent %>
+                                                </p>
+
+
+
+                                                <button id="hold-0-next-1" class=" scroll-btn "><img
+                                                        src="images/right arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+
+
+                                            </div>
+
+
+
+
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+                                    <% for (let i=1; i < data.menu.holdings.length; i++) { %>
+                                        <div class="carousel-item  ">
+                                            <div class="d-flex flex-column align-items-center ">
+
+
+
+                                                <img src="data:<%= data.menu.holdings[i].logo.contentType %>;base64,<%= data.menu.holdings[i].logo.data.toString('base64') %>"
+                                                    width="275" height="125" alt="">
+
+
+
+                                                <p class="sub-desc px-5">
+                                                    <%= data.menu.holdings[i].subContent %>
+                                                </p>
+
+
+
+                                                <div class="d-flex social-div ">
+
+                                                    <div
+                                                        class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                       <a href="<%= data.menu.holdings[i].socialMedia.insta%>"><img src="images/instagram.svg" width="32" height="32" alt=""></a>
+                                                    </div>
+                                                    <div
+                                                        class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                       <a href="<%= data.menu.holdings[i].socialMedia.fb%>"><img src="images/facebook.svg" width="32" height="32" alt=""></a>
+                                                    </div>
+                                                    <div
+                                                        class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                       <a href="<%= data.menu.holdings[i].socialMedia.linkedin%>"><img src="images/linkedin.svg" width="32" height="32" alt=""></a>
+                                                    </div>
+                                                    <div
+                                                        class="icon-stroke d-flex justify-content-center align-items-center h-100 ">
+                                                       <a href="<%= data.menu.holdings[i].socialMedia.twitter%>"><img src="images/twitter-x.svg" width="32" height="32" alt=""></a>
+                                                    </div>
+
+
+                                                </div>
+
+
+
+
+                                                <div class="d-flex align-items-center mt-4 ">
+
+                                                    <button id="hold-<%= i %>-prev-1" class="scroll-btn pe-5 "><img
+                                                            src="images/left arrow.svg" width="30" height="30"
+                                                            alt=""></button>
+
+                                                    <p class="main-desc  ">
+                                                        <%= data.menu.holdings[i].mainContent %>
+                                                    </p>
+
+                                                    <% if (i !==data.menu.holdings.length - 1) { %>
+
+                                                        <button id="hold-<%= i %>-next-1" class="scroll-btn ps-3  "><img
+                                                                src="images/right arrow.svg" width="30" height="30"
+                                                                alt=""></button>
+
+                                                        <% } %>
+
+
+
+                                                </div>
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                        <% } %>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+                    <div id="media-section-1" class="section px-5 mb-5 ">
+                        <div class=" justify-content-between align-items-center inside-section d-flex flex-column">
+
+                            <div class="mb-4">
+                                <h1 class="mb-0">
+                                    <%= data.menuItems[4] %>
+                                </h1>
+                                <div class="section-underline ms-1"></div>
+                            </div>
+
+                            <a href="" class=" text-decoration-none ms-auto me-5 mt-3 mb-3 ">View all</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div id="media-carousel-1" class="carousel slide  ">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+
+                                        <div class="d-flex flex-column align-items-center ">
+
+                                            <h5 class="fw-bold mb-3" style="text-align: center;" class="mb-4">
+                                                <%= data.menu.media[0].overlayContent %>
+                                            </h5>
+
+
+
+                                            <img class="car-image col-7 "
+                                                src="data:<%= data.menu.media[0].image.contentType %>;base64,<%= data.menu.media[0].image.data.toString('base64') %>"
+                                                alt="">
+
+
+
+
+
+
+
+
+
+                                            <div class="d-flex align-items-center mt-4 ">
+
+                                                <button class=" scroll-btn hidden-elements "><img
+                                                        src="images/left arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+                                                <p class="main-desc  ">
+                                                    <%= data.menu.media[0].mainContent %>
+                                                </p>
+
+                                                <button id="media-0-next-1" class=" scroll-btn "><img
+                                                        src="images/right arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+
+
+                                            </div>
+
+                                            <a href="<%= data.menu.media[0].mediaLink%>" class="ms-auto text-decoration-none me-5">read more</a>
+
+
+                                            
+                                            
+
+
+
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+                                    <% for (let i=1; i < data.menu.media.length; i++) { %>
+
+
+                                        <div class="carousel-item">
+                                            <div class="d-flex flex-column align-items-center ">
+
+                                                <h5 class="fw-bold mb-3" style="text-align: center;" class="mb-4">
+                                                    <%= data.menu.media[i].overlayContent %>
+                                                </h5>
+
+
+
+                                                <img class="car-image col-7 "
+                                                    src="data:<%= data.menu.media[i].image.contentType %>;base64,<%= data.menu.media[i].image.data.toString('base64') %>"
+                                                    alt="">
+
+
+
+
+
+
+
+
+
+
+                                                <div class="d-flex align-items-center mt-4 ">
+
+                                                    <button id="media-<%= i %>-prev-1" class=" scroll-btn  "><img
+                                                            src="images/left arrow.svg" width="30" height="30"
+                                                            alt=""></button>
+
+                                                    <p class="main-desc  ">
+                                                        <%= data.menu.media[i].mainContent %>
+                                                    </p>
+
+
+                                                    <% if (i !==data.menu.media.length - 1) { %>
+
+                                                        <button id="media-<%= i %>-next-1" class=" scroll-btn "><img
+                                                                src="images/right arrow.svg" width="30" height="30"
+                                                                alt=""></button>
+
+                                                        <% } %>
+
+
+
+                                                </div>
+
+                                                <a href="<%= data.menu.media[i].mediaLink%>" class="ms-auto text-decoration-none me-5">read more</a>
+
+
+
+
+
+                                            </div>
+                                        </div>
+
+                                        <% } %>
+
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+                    <div id="events-section-1" class="section px-5  ">
+                        <div class=" justify-content-between align-items-center inside-section d-flex flex-column">
+
+                            <div class="mb-4">
+                                <h1 class="mb-0">
+                                    <%= data.menuItems[5] %>
+                                </h1>
+                                <div class="section-underline ms-1"></div>
+
+                            </div>
+
+                            <a href="" class=" text-decoration-none ms-auto me-5 mt-3 mb-3 ">View all</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div id="events-carousel-1" class="carousel slide  ">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+
+                                        <div class="d-flex flex-column align-items-center ">
+
+                                            <h5 class="fw-bold mb-3" style="text-align: center;" class="mb-4">
+                                                <%= data.menu.events[0].overlayContent %>
+                                            </h5>
+
+
+
+                                            <img class="car-image col-7 "
+                                                src="data:<%= data.menu.events[0].image.contentType %>;base64,<%= data.menu.events[0].image.data.toString('base64') %>"
+                                                alt="">
+
+
+
+
+
+
+
+
+
+
+                                            <div class="d-flex align-items-center mt-4 ">
+
+                                                <button class=" scroll-btn hidden-elements "><img
+                                                        src="images/left arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+                                                <p class="main-desc  ">
+                                                    <%= data.menu.events[0].mainContent %>
+                                                </p>
+
+                                                <button id="event-0-next-1" class=" scroll-btn "><img
+                                                        src="images/right arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+
+
+                                            </div>
+
+
+                                            <a href="<%= data.menu.events[0].mediaLink%>" class="ms-auto text-decoration-none me-5">read more</a>
+
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+                                    <% for (let i=1; i < data.menu.events.length; i++) { %>
+
+
+                                        <div class="carousel-item">
+                                            <div class="d-flex flex-column align-items-center ">
+
+                                                <h5 class="fw-bold mb-3" style="text-align: center;" class="mb-4">
+                                                    <%= data.menu.events[i].overlayContent %>
+                                                </h5>
+
+
+
+                                                <img class="car-image col-7 "
+                                                    src="data:<%= data.menu.events[i].image.contentType %>;base64,<%= data.menu.events[i].image.data.toString('base64') %>"
+                                                    alt="">
+
+
+
+
+
+
+
+
+
+
+                                                <div class="d-flex align-items-center mt-4 ">
+
+                                                    <button id="event-<%= i %>-prev-1" class=" scroll-btn  "><img
+                                                            src="images/left arrow.svg" width="30" height="30"
+                                                            alt=""></button>
+
+                                                    <p class="main-desc  ">
+                                                        <%= data.menu.events[i].mainContent %>
+                                                    </p>
+
+                                                    <% if (i !==data.menu.events.length - 1) { %>
+
+
+
+                                                        <button id="event-<%= i %>-next-1" class=" scroll-btn "><img
+                                                                src="images/right arrow.svg" width="30" height="30"
+                                                                alt=""></button>
+
+                                                        <% } %>
+
+
+
+                                                </div>
+
+                                                <a href="<%= data.menu.events[i].mediaLink%>" class="ms-auto text-decoration-none me-5">read more</a>
+
+
+
+
+
+                                            </div>
+                                        </div>
+
+                                        <% } %>
+
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DYNAMIC ROW - 2  -->
+
+
+
+            <div id="dynamic-row-2"
+                class="row d-none d-sm-flex d-md-flex flex-column   d-lg-none d-xl-none d-xxl-none  ">
+
+
+                <div class="d-flex justify-content-center  ">
+
+                    <div class="d-flex  ">
+                        <div class="d-flex link-x flex-column align-items-center">
+                            <button id="about-btn-2" class=" nav-btn-default  "></button>
+                            <span class="link-text-2">
+
+
+                                <% const menuItem=data.menuItems[0]; const result=menuItem.replace(" ", "\u00A0"); %>
+
+                                    <%= result %>
+
+
+                            </span>
+                        </div>
+                        <div class="line-x-2   mt-2" id="dxg-line">
+                            <div class=" h-100 progress-style-x " id="dxg-span"></div>
+                        </div>
+
+                    </div>
+                    <div class="d-flex  ">
+                        <div class="d-flex link-x flex-column align-items-center">
+                            <button id="brands-btn-2" class=" nav-btn  "></button>
+                            <span class="link-text-2">
+                                <%= data.menuItems[1] %>
+                            </span>
+                        </div>
+                        <div class="line-x-2   mt-2" id="adtaken-line">
+                            <div class=" h-100 progress-style-x   " id="adtaken-span"></div>
+                        </div>
+
+                    </div>
+                    <div class="d-flex  ">
+                        <div class="d-flex link-x flex-column align-items-center">
+                            <button id="investments-btn-2" class=" nav-btn  "></button>
+                            <span class="link-text-2">
+                                <%= data.menuItems[2] %>
+                            </span>
+                        </div>
+                        <div class="line-x-2   mt-2">
+                            <div class=" h-100 progress-style-x   " id="devicelux-span"></div>
+                        </div>
+
+                    </div>
+                    <div class="d-flex  ">
+                        <div class="d-flex link-x flex-column align-items-center">
+                            <button id="holdings-btn-2" class=" nav-btn  "></button>
+                            <span class="link-text-2">
+                                <%= data.menuItems[3] %>
+                            </span>
+                        </div>
+                        <div class="line-x-2   mt-2">
+                            <div class=" h-100 progress-style-x   " id="ayurnano-span"></div>
+                        </div>
+
+                    </div>
+                    <div class="d-flex  ">
+                        <div class="d-flex link-x flex-column align-items-center">
+                            <button id="media-btn-2" class=" nav-btn  "></button>
+                            <span class="link-text-2">
+                                <%= data.menuItems[4] %>
+                            </span>
+                        </div>
+                        <div class="line-x-2   mt-2">
+                            <div class=" h-100 progress-style-x   " id="jotins-span"></div>
+                        </div>
+
+                    </div>
+                    <div class="d-flex  ">
+                        <div class="d-flex link-x flex-column align-items-center">
+                            <button id="events-btn-2" class=" nav-btn  "></button>
+                            <span class="link-text-2">
+                                <%= data.menuItems[5] %>
+                            </span>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <div id="about-section-2" class="section px-5 mt-5 ">
+                    <div class=" justify-content-between align-items-center inside-section d-flex flex-column">
+
+                        <div class="section-heading">
+                            <h1 class="mb-0">
+                                <%= data.menuItems[0] %>
+                            </h1>
+                            <div class="section-underline ms-1"></div>
+                        </div>
+
+                        <h4 class="hey-text">
+                            <%= data.menu.about.subContent %>
+                        </h4>
+
+                        <p class="about-content  ">
+                            <%= data.menu.about.mainContent %>
+                        </p>
+
+
+
+
+                    </div>
+
+
+                </div>
+                <div id="brands-section-2" class="section d-none px-5 mt-5  ">
+                    <div class=" justify-content-evenly align-items-center inside-section d-flex flex-column">
+
+                        <div class="">
+                            <h1 class="mb-0">
+                                <%= data.menuItems[1] %>
+                            </h1>
+                            <div class="section-underline ms-1"></div>
+                        </div>
+                        <a href="" class=" text-decoration-none ms-auto me-5 mt-3 mb-3 ">View all</a>
+
+
+
+
+
+
+                        <div id="brands-carousel-2" class="carousel slide ">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+
+                                    <div class="d-flex flex-column align-items-center ">
+
+
+
+                                        <img src="data:<%= data.menu.brands[0].logo.contentType %>;base64,<%= data.menu.brands[0].logo.data.toString('base64') %>"
+                                            width="275" height="125" alt="">
+
+
+
+                                        <p class="sub-desc px-5">
+                                            <%= data.menu.brands[0].subContent %>
+                                        </p>
+
+
+
+                                        <div class="d-flex social-div ">
+
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                               <a href=""><img src="images/instagram.svg" width="32" height="32" alt=""></a>
+                                            </div>
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                               <a href=""><img src="images/facebook.svg" width="32" height="32" alt=""></a>
+                                            </div>
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                               <a href=""><img src="images/linkedin.svg" width="32" height="32" alt=""></a>
+                                            </div>
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 ">
+                                               <a href=""><img src="images/twitter-x.svg" width="32" height="32" alt=""></a>
+                                            </div>
+
+
+                                        </div>
+
+
+
+
+                                        <div class="d-flex align-items-center mt-4 ">
+
+                                            <button class=" scroll-btn hidden-elements "><img
+                                                    src="images/left arrow.svg" width="30" height="30" alt=""></button>
+
+                                            <p class="main-desc  ">
+                                                <%= data.menu.brands[0].mainContent %>
+                                            </p>
+
+                                            <button id="brands-0-next-2" class=" scroll-btn "><img
+                                                    src="images/right arrow.svg" width="30" height="30" alt=""></button>
+
+
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+
+
+
+
+                                </div>
+
+                                <% for (let i=1; i < data.menu.brands.length; i++) { %>
+                                    <div class="carousel-item  ">
+                                        <div class="d-flex flex-column align-items-center ">
+
+
+
+                                            <img src="data:<%= data.menu.brands[i].logo.contentType %>;base64,<%= data.menu.brands[i].logo.data.toString('base64') %>"
+                                                width="275" height="125" alt="">
+
+
+
+                                            <p class="sub-desc px-5">
+                                                <%= data.menu.brands[i].subContent %>
+                                            </p>
+
+
+
+                                            <div class="d-flex social-div ">
+
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href=""><img src="images/instagram.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href=""><img src="images/facebook.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href=""><img src="images/linkedin.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 ">
+                                                   <a href=""><img src="images/twitter-x.svg" width="32" height="32" alt=""></a>
+                                                </div>
+
+
+                                            </div>
+
+
+
+
+                                            <div class="d-flex align-items-center mt-4 ">
+
+                                                <button id="brands-<%= i %>-prev-2" class="scroll-btn pe-5 "><img
+                                                        src="images/left arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+                                                <p class="main-desc  ">
+                                                    <%= data.menu.brands[i].mainContent %>
+                                                </p>
+                                                <% if (i !==data.menu.brands.length - 1) { %>
+
+
+                                                    <button id="brands-<%= i %>-next-2" class="scroll-btn ps-3  "><img
+                                                            src="images/right arrow.svg" width="30" height="30"
+                                                            alt=""></button>
+
+                                                    <% } %>
+
+
+
+                                            </div>
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                    <% } %>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+                </div>
+                <div id="investments-section-2" class="section d-none px-5 mt-5 ">
+                    <div class=" justify-content-evenly align-items-center inside-section d-flex flex-column">
+
+                        <div class="">
+                            <h1 class="mb-0">
+                                <%= data.menuItems[2] %>
+                            </h1>
+                            <div class="section-underline ms-1"></div>
+                        </div>
+
+                        <a href="" class=" text-decoration-none ms-auto me-5 mt-3 mb-3 ">View all</a>
+
+
+
+                        <div id="investments-carousel-2" class="carousel slide ">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+
+                                    <div class="d-flex flex-column align-items-center ">
+
+
+
+                                        <img src="data:<%= data.menu.investments[0].logo.contentType %>;base64,<%= data.menu.investments[0].logo.data.toString('base64') %>"
+                                            width="275" height="125" alt="">
+
+
+
+                                        <p class="sub-desc px-5">
+                                            <%= data.menu.investments[0].subContent %>
+                                        </p>
+
+
+
+                                        <div class="d-flex social-div ">
+
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                               <a href=""><img src="images/instagram.svg" width="32" height="32" alt=""></a>
+                                            </div>
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                               <a href=""><img src="images/facebook.svg" width="32" height="32" alt=""></a>
+                                            </div>
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                               <a href=""><img src="images/linkedin.svg" width="32" height="32" alt=""></a>
+                                            </div>
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 ">
+                                               <a href=""><img src="images/twitter-x.svg" width="32" height="32" alt=""></a>
+                                            </div>
+
+
+                                        </div>
+
+
+
+
+                                        <div class="d-flex align-items-center mt-4 ">
+
+                                            <button class=" scroll-btn hidden-elements "><img
+                                                    src="images/left arrow.svg" width="30" height="30" alt=""></button>
+
+                                            <p class="main-desc  ">
+                                                <%= data.menu.investments[0].mainContent %>
+                                            </p>
+
+                                            <button id="invest-0-next-2" class=" scroll-btn "><img
+                                                    src="images/right arrow.svg" width="30" height="30" alt=""></button>
+
+
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+
+
+
+
+                                </div>
+
+                                <% for (let i=1; i < data.menu.investments.length; i++) { %>
+                                    <div class="carousel-item  ">
+                                        <div class="d-flex flex-column align-items-center ">
+
+
+
+                                            <img src="data:<%= data.menu.investments[i].logo.contentType %>;base64,<%= data.menu.investments[i].logo.data.toString('base64') %>"
+                                                width="275" height="125" alt="">
+
+
+
+                                            <p class="sub-desc px-5">
+                                                <%= data.menu.investments[i].subContent %>
+                                            </p>
+
+
+
+                                            <div class="d-flex social-div ">
+
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href=""><img src="images/instagram.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href=""><img src="images/facebook.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href=""><img src="images/linkedin.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 ">
+                                                   <a href=""><img src="images/twitter-x.svg" width="32" height="32" alt=""></a>
+                                                </div>
+
+
+                                            </div>
+
+
+
+
+                                            <div class="d-flex align-items-center mt-4 ">
+
+                                                <button id="invest-<%= i %>-prev-2" class="scroll-btn pe-5 "><img
+                                                        src="images/left arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+                                                <p class="main-desc  ">
+                                                    <%= data.menu.investments[i].mainContent %>
+                                                </p>
+
+                                                <% if (i !==data.menu.investments.length - 1) { %>
+
+
+                                                    <button id="invest-<%= i %>-next-2" class="scroll-btn ps-3  "><img
+                                                            src="images/right arrow.svg" width="30" height="30"
+                                                            alt=""></button>
+
+                                                    <% } %>
+
+
+
+                                            </div>
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                    <% } %>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+                </div>
+                <div id="holdings-section-2" class="section d-none px-5 mt-5 ">
+                    <div class=" justify-content-evenly align-items-center inside-section d-flex flex-column">
+
+                        <div class="">
+                            <h1 class="mb-0">
+                                <%= data.menuItems[3] %>
+                            </h1>
+                            <div class="section-underline ms-1"></div>
+                        </div>
+                        <a href="" class=" text-decoration-none ms-auto me-5 mt-3 mb-3 ">View all</a>
+
+
+
+                        <div id="holdings-carousel-2" class="carousel slide ">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+
+                                    <div class="d-flex flex-column align-items-center ">
+
+
+
+                                        <img src="data:<%= data.menu.holdings[0].logo.contentType %>;base64,<%= data.menu.holdings[0].logo.data.toString('base64') %>"
+                                            width="275" height="125" alt="">
+
+
+
+                                        <p class="sub-desc px-5">
+                                            <%= data.menu.holdings[0].subContent %>
+                                        </p>
+
+
+
+                                        <div class="d-flex social-div ">
+
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                               <a href=""><img src="images/instagram.svg" width="32" height="32" alt=""></a>
+                                            </div>
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                               <a href=""><img src="images/facebook.svg" width="32" height="32" alt=""></a>
+                                            </div>
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                               <a href=""><img src="images/linkedin.svg" width="32" height="32" alt=""></a>
+                                            </div>
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 ">
+                                               <a href=""><img src="images/twitter-x.svg" width="32" height="32" alt=""></a>
+                                            </div>
+
+
+                                        </div>
+
+
+
+
+                                        <div class="d-flex align-items-center mt-4 ">
+
+                                            <button class=" scroll-btn hidden-elements "><img
+                                                    src="images/left arrow.svg" width="30" height="30" alt=""></button>
+
+                                            <p class="main-desc  ">
+                                                <%= data.menu.holdings[0].mainContent %>
+                                            </p>
+
+                                            <button id="hold-0-next-2" class=" scroll-btn "><img
+                                                    src="images/right arrow.svg" width="30" height="30" alt=""></button>
+
+
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+
+
+
+
+                                </div>
+
+                                <% for (let i=1; i < data.menu.holdings.length; i++) { %>
+                                    <div class="carousel-item  ">
+                                        <div class="d-flex flex-column align-items-center ">
+
+
+
+                                            <img src="data:<%= data.menu.holdings[i].logo.contentType %>;base64,<%= data.menu.holdings[i].logo.data.toString('base64') %>"
+                                                width="275" height="125" alt="">
+
+
+
+                                            <p class="sub-desc px-5">
+                                                <%= data.menu.holdings[i].subContent %>
+                                            </p>
+
+
+
+                                            <div class="d-flex social-div ">
+
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href=""><img src="images/instagram.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href=""><img src="images/facebook.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href=""><img src="images/linkedin.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 ">
+                                                   <a href=""><img src="images/twitter-x.svg" width="32" height="32" alt=""></a>
+                                                </div>
+
+
+                                            </div>
+
+
+
+
+                                            <div class="d-flex align-items-center mt-4 ">
+
+                                                <button id="hold-<%= i %>-prev-2" class="scroll-btn pe-5 "><img
+                                                        src="images/left arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+                                                <p class="main-desc  ">
+                                                    <%= data.menu.holdings[i].mainContent %>
+                                                </p>
+
+                                                <% if (i !==data.menu.holdings.length - 1) { %>
+
+
+                                                    <button id="hold-<%= i %>-next-2" class="scroll-btn ps-3  "><img
+                                                            src="images/right arrow.svg" width="30" height="30"
+                                                            alt=""></button>
+
+                                                    <% } %>
+
+
+
+                                            </div>
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                    <% } %>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+                </div>
+                <div id="media-section-2" class="section d-none px-5 mt-5 ">
+                    <div class=" justify-content-evenly align-items-center inside-section d-flex flex-column">
+
+                        <div class="">
+                            <h1 class="mb-0">
+                                <%= data.menuItems[4] %>
+                            </h1>
+                            <div class="section-underline ms-1"></div>
+                        </div>
+
+                        <a href="" class=" text-decoration-none ms-auto me-5 mt-3 mb-3 ">View all</a>
+
+
+
+                        <div id="media-carousel-2" class="carousel slide  ">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+
+                                    <div class="d-flex flex-column align-items-center ">
+
+                                        <h5 class="fw-bold mb-3" style="text-align: center;" class="mb-4">
+                                            <%= data.menu.media[0].overlayContent %>
+                                        </h5>
+
+
+
+                                        <img class="car-image col-7 "
+                                            src="data:<%= data.menu.media[0].image.contentType %>;base64,<%= data.menu.media[0].image.data.toString('base64') %>"
+                                            alt="">
+
+
+
+
+
+
+
+
+                                        <div class="d-flex align-items-center mt-4 ">
+
+                                            <button class=" scroll-btn hidden-elements "><img
+                                                    src="images/left arrow.svg" width="30" height="30" alt=""></button>
+
+                                            <p class="main-desc  ">
+                                                <%= data.menu.media[0].mainContent %>
+                                            </p>
+
+                                            <button id="media-0-next-2" class=" scroll-btn "><img
+                                                    src="images/right arrow.svg" width="30" height="30" alt=""></button>
+
+
+
+                                        </div>
+
+                                        <a href="" class="ms-auto text-decoration-none me-5">read more</a>
+
+
+
+
+
+                                    </div>
+
+
+
+
+
+                                </div>
+
+                                <% for (let i=1; i < data.menu.media.length; i++) { %>
+
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex flex-column align-items-center ">
+
+                                            <h5 class="fw-bold mb-3" style="text-align: center;" class="mb-4">
+                                                <%= data.menu.media[i].overlayContent %>
+                                            </h5>
+
+
+
+                                            <img class="car-image col-7 "
+                                                src="data:<%= data.menu.media[i].image.contentType %>;base64,<%= data.menu.media[i].image.data.toString('base64') %>"
+                                                alt="">
+
+
+
+
+
+
+
+
+                                            <div class="d-flex align-items-center mt-4 ">
+
+                                                <button id="media<%= i %>-prev-2" class=" scroll-btn  "><img
+                                                        src="images/left arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+                                                <p class="main-desc  ">
+                                                    <%= data.menu.media[i].mainContent %>
+                                                </p>
+
+                                                <% if (i !==data.menu.media.length - 1) { %>
+
+
+                                                    <button id="media-<%= i %>-next-2" class=" scroll-btn "><img
+                                                            src="images/right arrow.svg" width="30" height="30"
+                                                            alt=""></button>
+
+                                                    <% } %>
+
+
+
+                                            </div>
+
+                                            <a href="" class="ms-auto text-decoration-none me-5">read more</a>
+
+
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <% } %>
+
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+                </div>
+                <div id="events-section-2" class="section d-none px-5  mt-5">
+                    <div class=" justify-content-evenly align-items-center inside-section d-flex flex-column">
+
+                        <div class="">
+                            <h1 class="mb-0">
+                                <%= data.menuItems[5] %>
+                            </h1>
+                            <div class="section-underline ms-1"></div>
+                        </div>
+                        <a href="" class=" text-decoration-none ms-auto me-5 mt-3 mb-3 ">View all</a>
+
+
+
+                        <div id="events-carousel-2" class="carousel slide  ">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+
+                                    <div class="d-flex flex-column align-items-center ">
+
+                                        <h5 class="fw-bold mb-3" style="text-align: center;" class="mb-4">
+                                            <%= data.menu.events[0].overlayContent %>
+                                        </h5>
+
+
+
+                                        <img class="car-image col-7 "
+                                            src="data:<%= data.menu.events[0].image.contentType %>;base64,<%= data.menu.events[0].image.data.toString('base64') %>"
+                                            alt="">
+
+
+
+
+
+
+
+
+                                        <div class="d-flex align-items-center mt-4 ">
+
+                                            <button class=" scroll-btn hidden-elements "><img
+                                                    src="images/left arrow.svg" width="30" height="30" alt=""></button>
+
+                                            <p class="main-desc  ">
+                                                <%= data.menu.events[0].mainContent %>
+                                            </p>
+
+                                            <button id="event-0-next-2" class=" scroll-btn "><img
+                                                    src="images/right arrow.svg" width="30" height="30" alt=""></button>
+
+
+
+                                        </div>
+
+                                        <a href="" class="ms-auto text-decoration-none me-5">read more</a>
+
+
+
+
+
+                                    </div>
+
+
+
+
+
+                                </div>
+
+                                <% for (let i=1; i < data.menu.events.length; i++) { %>
+
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex flex-column align-items-center ">
+
+                                            <h5 class="fw-bold mb-3" style="text-align: center;" class="mb-4">
+                                                <%= data.menu.events[i].overlayContent %>
+                                            </h5>
+
+
+
+                                            <img class="car-image col-7 "
+                                                src="data:<%= data.menu.events[i].image.contentType %>;base64,<%= data.menu.events[i].image.data.toString('base64') %>"
+                                                alt="">
+
+
+
+
+
+
+
+
+                                            <div class="d-flex align-items-center mt-4 ">
+
+                                                <button id="event-<%= i %>-prev-2" class=" scroll-btn  "><img
+                                                        src="images/left arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+                                                <p class="main-desc  ">
+                                                    <%= data.menu.events[i].mainContent %>
+                                                </p>
+
+
+                                                <% if (i !==data.menu.events.length - 1) { %>
+
+
+                                                    <button id="event-<%= i %>-next-2" class=" scroll-btn "><img
+                                                            src="images/right arrow.svg" width="30" height="30"
+                                                            alt=""></button>
+
+                                                    <% } %>
+
+
+
+                                            </div>
+
+
+                                            <a href="" class="ms-auto text-decoration-none me-5">read more</a>
+
+
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <% } %>
+
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+            </div>
+
+
+
+
+            <div class="row d-sm-none d-flex flex-column ">
+
+                <div class="d-flex justify-content-around ">
+                    <div class="d-flex flex-column">
+                        <button id="about-btn-3" class="menu-btn"><img class="menu-icon" src="images/about me.svg"
+                                width="20" height="20" alt=""></button>
+                        <span class="menu-link">
+                            <%= data.menuItems[0] %>
+                        </span>
+                        <div id="about-tab" class="mobile-tab"></div>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <button id="brands-btn-3" class="menu-btn"><img class="menu-icon" src="images/brands.svg"
+                                width="20" height="20" alt=""></button>
+                        <span class="menu-link">
+                            <%= data.menuItems[1] %>
+                        </span>
+                        <div id="brands-tab" class=""></div>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <button id="investments-btn-3" class="menu-btn"><img class="menu-icon"
+                                src="images/investments.svg" width="20" height="20" alt=""></button>
+                        <span class="menu-link">
+                            <%= data.menuItems[2] %>
+                        </span>
+                        <div id="investments-tab" class=""></div>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <button id="holdings-btn-3" class="menu-btn"><img class="menu-icon" src="images/holdings.svg"
+                                width="20" height="20" alt=""></button>
+                        <span class="menu-link">
+                            <%= data.menuItems[3] %>
+                        </span>
+                        <div id="holdings-tab" class=""></div>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <button id="media-btn-3" class="menu-btn"><img class="menu-icon" src="images/media.svg"
+                                width="20" height="20" alt=""></button>
+                        <span class="menu-link">
+                            <%= data.menuItems[4] %>
+                        </span>
+                        <div id="media-tab" class=""></div>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <button id="events-btn-3" class="menu-btn"><img class="menu-icon" src="images/events.svg"
+                                width="20" height="20" alt=""></button>
+                        <span class="menu-link">
+                            <%= data.menuItems[5] %>
+                        </span>
+                        <div id="events-tab" class=""></div>
+                    </div>
+                </div>
+
+                <div id="about-section-3" class="section section-3  mt-5  ">
+                    <div class=" justify-content-between align-items-center inside-section d-flex flex-column">
+
+                        <div class="section-heading  ">
+                            <h1 class="mb-0">
+                                <%= data.menuItems[0] %>
+                            </h1>
+                            <div class="section-underline ms-1"></div>
+                        </div>
+
+                        <h4 class="hey-text  ">
+                            <%= data.menu.about.subContent %>
+                        </h4>
+
+                        <p class="about-content  ">
+                            <%= data.menu.about.mainContent %>
+                        </p>
+
+
+
+
+                    </div>
+
+
+                </div>
+                <div id="brands-section-3" class="section section-3 d-none  mt-5   ">
+                    <div class=" justify-content-evenly align-items-center inside-section d-flex flex-column">
+
+                        <div class="">
+                            <h1 class="mb-0">
+                                <%= data.menuItems[1] %>
+                            </h1>
+                            <div class="section-underline ms-1"></div>
+                        </div>
+                        <a href="" class=" text-decoration-none ms-auto me-5 mt-3 mb-3 ">View all</a>
+
+
+
+
+
+
+                        <div id="brands-carousel-3" class="carousel slide ">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+
+                                    <div class="d-flex flex-column align-items-center ">
+
+
+
+                                        <img src="data:<%= data.menu.brands[0].logo.contentType %>;base64,<%= data.menu.brands[0].logo.data.toString('base64') %>"
+                                            width="275" height="125" alt="">
+
+
+
+                                        <p class="sub-desc px-5">
+                                            <%= data.menu.brands[0].subContent %>
+                                        </p>
+
+
+
+                                        <div class="d-flex social-div ">
+
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                               <a href=""><img src="images/instagram.svg" width="32" height="32" alt=""></a>
+                                            </div>
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                               <a href=""><img src="images/facebook.svg" width="32" height="32" alt=""></a>
+                                            </div>
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                               <a href=""><img src="images/linkedin.svg" width="32" height="32" alt=""></a>
+                                            </div>
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 ">
+                                               <a href=""><img src="images/twitter-x.svg" width="32" height="32" alt=""></a>
+                                            </div>
+
+
+                                        </div>
+
+
+
+
+                                        <div class="d-flex align-items-center mt-4 ">
+
+                                            <button class=" scroll-btn hidden-elements "><img
+                                                    src="images/left arrow.svg" width="30" height="30" alt=""></button>
+
+                                            <p class="main-desc  ">
+                                                <%= data.menu.brands[0].mainContent %>
+                                            </p>
+
+                                            <button id="brands-0-next-3" class=" scroll-btn "><img
+                                                    src="images/right arrow.svg" width="30" height="30" alt=""></button>
+
+
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+
+
+
+
+                                </div>
+
+                                <% for (let i=1; i < data.menu.brands.length; i++) { %>
+                                    <div class="carousel-item  ">
+                                        <div class="d-flex flex-column align-items-center ">
+
+
+
+                                            <img src="data:<%= data.menu.brands[i].logo.contentType %>;base64,<%= data.menu.brands[i].logo.data.toString('base64') %>"
+                                                width="275" height="125" alt="">
+
+
+
+                                            <p class="sub-desc px-5">
+                                                <%= data.menu.brands[i].subContent %>
+                                            </p>
+
+
+
+                                            <div class="d-flex social-div ">
+
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href=""><img src="images/instagram.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href=""><img src="images/facebook.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href=""><img src="images/linkedin.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 ">
+                                                   <a href=""><img src="images/twitter-x.svg" width="32" height="32" alt=""></a>
+                                                </div>
+
+
+                                            </div>
+
+
+
+
+                                            <div class="d-flex align-items-center mt-4 ">
+
+                                                <button id="brands-<%= i %>-prev-3" class="scroll-btn pe-5 "><img
+                                                        src="images/left arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+                                                <p class="main-desc  ">
+                                                    <%= data.menu.brands[i].mainContent %>
+                                                </p>
+
+
+                                                <% if (i !==data.menu.brands.length - 1) { %>
+
+
+                                                    <button id="brands-<%= i %>-next-3" class="scroll-btn ps-3  "><img
+                                                            src="images/right arrow.svg" width="30" height="30"
+                                                            alt=""></button>
+
+                                                    <% } %>
+
+
+
+                                            </div>
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                    <% } %>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+                </div>
+                <div id="investments-section-3" class="section section-3 d-none px-2 mt-5  ">
+                    <div class=" justify-content-evenly align-items-center inside-section d-flex flex-column">
+
+                        <div class="">
+                            <h1 class="mb-0">
+                                <%= data.menuItems[2] %>
+                            </h1>
+                            <div class="section-underline ms-1"></div>
+                        </div>
+
+                        <a href="" class=" text-decoration-none ms-auto me-5 mt-3 mb-3 ">View all</a>
+
+
+
+                        <div id="investments-carousel-3" class="carousel slide ">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+
+                                    <div class="d-flex flex-column align-items-center ">
+
+
+
+                                        <img src="data:<%= data.menu.investments[0].logo.contentType %>;base64,<%= data.menu.investments[0].logo.data.toString('base64') %>"
+                                            width="275" height="125" alt="">
+
+
+
+                                        <p class="sub-desc px-5">
+                                            <%= data.menu.investments[0].subContent %>
+                                        </p>
+
+
+
+                                        <div class="d-flex social-div ">
+
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                               <a href=""><img src="images/instagram.svg" width="32" height="32" alt=""></a>
+                                            </div>
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                               <a href=""><img src="images/facebook.svg" width="32" height="32" alt=""></a>
+                                            </div>
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                               <a href=""><img src="images/linkedin.svg" width="32" height="32" alt=""></a>
+                                            </div>
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 ">
+                                               <a href=""><img src="images/twitter-x.svg" width="32" height="32" alt=""></a>
+                                            </div>
+
+
+                                        </div>
+
+
+
+
+                                        <div class="d-flex align-items-center mt-4 ">
+
+                                            <button class=" scroll-btn hidden-elements "><img
+                                                    src="images/left arrow.svg" width="30" height="30" alt=""></button>
+
+                                            <p class="main-desc  ">
+                                                <%= data.menu.investments[0].mainContent %>
+                                            </p>
+
+                                            <button id="invest-0-next-3" class=" scroll-btn "><img
+                                                    src="images/right arrow.svg" width="30" height="30" alt=""></button>
+
+
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+
+
+
+
+                                </div>
+
+                                <% for (let i=1; i < data.menu.investments.length; i++) { %>
+                                    <div class="carousel-item  ">
+                                        <div class="d-flex flex-column align-items-center ">
+
+
+
+                                            <img src="data:<%= data.menu.investments[i].logo.contentType %>;base64,<%= data.menu.investments[i].logo.data.toString('base64') %>"
+                                                width="275" height="125" alt="">
+
+
+
+                                            <p class="sub-desc px-5">
+                                                <%= data.menu.investments[i].subContent %>
+                                            </p>
+
+
+
+                                            <div class="d-flex social-div ">
+
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href=""><img src="images/instagram.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href=""><img src="images/facebook.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href=""><img src="images/linkedin.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 ">
+                                                   <a href=""><img src="images/twitter-x.svg" width="32" height="32" alt=""></a>
+                                                </div>
+
+
+                                            </div>
+
+
+
+
+                                            <div class="d-flex align-items-center mt-4 ">
+
+                                                <button id="invest-<%= i %>-prev-3" class="scroll-btn pe-5 "><img
+                                                        src="images/left arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+                                                <p class="main-desc  ">
+                                                    <%= data.menu.investments[i].mainContent %>
+                                                </p>
+
+
+                                                <% if (i !==data.menu.investments.length - 1) { %>
+
+
+                                                    <button id="invest-<%= i %>-next-3" class="scroll-btn ps-3  "><img
+                                                            src="images/right arrow.svg" width="30" height="30"
+                                                            alt=""></button>
+
+                                                    <% } %>
+
+
+
+                                            </div>
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                    <% } %>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+                </div>
+                <div id="holdings-section-3" class="section section-3 d-none px-2 mt-5  ">
+                    <div class=" justify-content-evenly align-items-center inside-section d-flex flex-column">
+
+                        <div class="">
+                            <h1 class="mb-0">
+                                <%= data.menuItems[3] %>
+                            </h1>
+                            <div class="section-underline ms-1"></div>
+                        </div>
+
+                        <a href="" class=" text-decoration-none ms-auto me-5 mt-3 mb-3 ">View all</a>
+
+
+
+                        <div id="holdings-carousel-3" class="carousel slide ">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+
+                                    <div class="d-flex flex-column align-items-center ">
+
+
+
+                                        <img src="data:<%= data.menu.holdings[0].logo.contentType %>;base64,<%= data.menu.holdings[0].logo.data.toString('base64') %>"
+                                            width="275" height="125" alt="">
+
+
+
+                                        <p class="sub-desc px-5">
+                                            <%= data.menu.holdings[0].subContent %>
+                                        </p>
+
+
+
+                                        <div class="d-flex social-div ">
+
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                               <a href=""><img src="images/instagram.svg" width="32" height="32" alt=""></a>
+                                            </div>
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                               <a href=""><img src="images/facebook.svg" width="32" height="32" alt=""></a>
+                                            </div>
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                               <a href=""><img src="images/linkedin.svg" width="32" height="32" alt=""></a>
+                                            </div>
+                                            <div
+                                                class="icon-stroke d-flex justify-content-center align-items-center h-100 ">
+                                               <a href=""><img src="images/twitter-x.svg" width="32" height="32" alt=""></a>
+                                            </div>
+
+
+                                        </div>
+
+
+
+
+                                        <div class="d-flex align-items-center mt-4 ">
+
+                                            <button class=" scroll-btn hidden-elements "><img
+                                                    src="images/left arrow.svg" width="30" height="30" alt=""></button>
+
+                                            <p class="main-desc  ">
+                                                <%= data.menu.holdings[0].mainContent %>
+                                            </p>
+
+                                            <button id="hold-0-next-3" class=" scroll-btn "><img
+                                                    src="images/right arrow.svg" width="30" height="30" alt=""></button>
+
+
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+
+
+
+
+                                </div>
+
+                                <% for (let i=1; i < data.menu.holdings.length; i++) { %>
+                                    <div class="carousel-item  ">
+                                        <div class="d-flex flex-column align-items-center ">
+
+
+
+                                            <img src="data:<%= data.menu.holdings[i].logo.contentType %>;base64,<%= data.menu.holdings[i].logo.data.toString('base64') %>"
+                                                width="275" height="125" alt="">
+
+
+
+                                            <p class="sub-desc px-5">
+                                                <%= data.menu.holdings[i].subContent %>
+                                            </p>
+
+
+
+                                            <div class="d-flex social-div ">
+
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href=""><img src="images/instagram.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href=""><img src="images/facebook.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 me-3 ">
+                                                   <a href=""><img src="images/linkedin.svg" width="32" height="32" alt=""></a>
+                                                </div>
+                                                <div
+                                                    class="icon-stroke d-flex justify-content-center align-items-center h-100 ">
+                                                   <a href=""><img src="images/twitter-x.svg" width="32" height="32" alt=""></a>
+                                                </div>
+
+
+                                            </div>
+
+
+
+
+                                            <div class="d-flex align-items-center mt-4 ">
+
+                                                <button id="hold-<%= i %>-prev-3" class="scroll-btn pe-5 "><img
+                                                        src="images/left arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+                                                <p class="main-desc  ">
+                                                    <%= data.menu.holdings[i].mainContent %>
+                                                </p>
+
+
+                                                <% if (i !==data.menu.holdings.length - 1) { %>
+
+
+                                                    <button id="hold-<%= i %>-next-3" class="scroll-btn ps-3  "><img
+                                                            src="images/right arrow.svg" width="30" height="30"
+                                                            alt=""></button>
+
+                                                    <% } %>
+
+
+
+                                            </div>
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                    <% } %>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+                </div>
+                <div id="media-section-3" class="section section-3 d-none px-2 mt-5  ">
+                    <div class=" justify-content-evenly align-items-center inside-section d-flex flex-column">
+
+                        <div class="">
+                            <h1 class="mb-0">
+                                <%= data.menuItems[4] %>
+                            </h1>
+                            <div class="section-underline ms-1"></div>
+                        </div>
+
+                        <a href="" class=" text-decoration-none ms-auto me-5 mt-3 mb-3 ">View all</a>
+
+
+
+                        <div id="media-carousel-3" class="carousel slide  ">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+
+                                    <div class="d-flex flex-column align-items-center ">
+
+                                        <h5 class="fw-bold mb-3" style="text-align: center;" class="mb-4">
+                                            <%= data.menu.media[0].overlayContent %>
+                                        </h5>
+
+
+
+                                        <img class="car-image col-7 "
+                                            src="data:<%= data.menu.media[0].image.contentType %>;base64,<%= data.menu.media[0].image.data.toString('base64') %>"
+                                            alt="">
+
+
+
+
+
+
+
+
+                                        <div class="d-flex align-items-center mt-4 ">
+
+                                            <button class=" scroll-btn hidden-elements "><img
+                                                    src="images/left arrow.svg" width="30" height="30" alt=""></button>
+
+                                            <p class="main-desc  ">
+                                                <%= data.menu.media[0].mainContent %>
+                                            </p>
+
+                                            <button id="media-0-next-3" class=" scroll-btn "><img
+                                                    src="images/right arrow.svg" width="30" height="30" alt=""></button>
+
+
+
+                                        </div>
+
+                                        <a href="" class="ms-auto text-decoration-none me-5">read more</a>
+
+
+
+
+
+                                    </div>
+
+
+
+
+
+                                </div>
+
+                                <% for (let i=1; i < data.menu.media.length; i++) { %>
+
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex flex-column align-items-center ">
+
+                                            <h5 class="fw-bold mb-3" style="text-align: center;" class="mb-4">
+                                                <%= data.menu.media[i].overlayContent %>
+                                            </h5>
+
+
+
+                                            <img class="car-image col-7 "
+                                                src="data:<%= data.menu.media[i].image.contentType %>;base64,<%= data.menu.media[i].image.data.toString('base64') %>"
+                                                alt="">
+
+
+
+
+
+
+
+
+                                            <div class="d-flex align-items-center mt-4 ">
+
+                                                <button id="media<%= i %>-prev-3" class=" scroll-btn  "><img
+                                                        src="images/left arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+                                                <p class="main-desc  ">
+                                                    <%= data.menu.media[i].mainContent %>
+                                                </p>
+
+
+                                                <% if (i !==data.menu.media.length - 1) { %>
+
+
+                                                    <button id="media-<%= i %>-next-3" class=" scroll-btn "><img
+                                                            src="images/right arrow.svg" width="30" height="30"
+                                                            alt=""></button>
+
+
+                                                    <% } %>
+
+
+
+                                            </div>
+
+                                            <a href="" class="ms-auto text-decoration-none me-5">read more</a>
+
+
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <% } %>
+
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+                </div>
+                <div id="events-section-3" class="section section-3 d-none px-2  mt-5 ">
+                    <div class=" justify-content-evenly align-items-center inside-section d-flex flex-column">
+
+                        <div class="">
+                            <h1 class="mb-0">
+                                <%= data.menuItems[5] %>
+                            </h1>
+                            <div class="section-underline ms-1"></div>
+                        </div>
+
+                        <a href="" class=" text-decoration-none ms-auto me-5 mt-3 mb-3 ">View all</a>
+
+
+                        <div id="events-carousel-3" class="carousel slide  ">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+
+                                    <div class="d-flex flex-column align-items-center ">
+
+                                        <h5 class="fw-bold mb-3" style="text-align: center;" class="mb-4">
+                                            <%= data.menu.events[0].overlayContent %>
+                                        </h5>
+
+
+
+                                        <img class="car-image col-7 "
+                                            src="data:<%= data.menu.events[0].image.contentType %>;base64,<%= data.menu.events[0].image.data.toString('base64') %>"
+                                            alt="">
+
+
+
+
+
+
+
+
+                                        <div class="d-flex align-items-center mt-4 ">
+
+                                            <button class=" scroll-btn hidden-elements "><img
+                                                    src="images/left arrow.svg" width="30" height="30" alt=""></button>
+
+                                            <p class="main-desc  ">
+                                                <%= data.menu.events[0].mainContent %>
+                                            </p>
+
+                                            <button id="event-0-next-3" class=" scroll-btn "><img
+                                                    src="images/right arrow.svg" width="30" height="30" alt=""></button>
+
+
+
+                                        </div>
+
+                                        <a href="" class="ms-auto text-decoration-none me-5">read more</a>
+
+
+
+
+
+                                    </div>
+
+
+
+
+
+                                </div>
+
+                                <% for (let i=1; i < data.menu.events.length; i++) { %>
+
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex flex-column align-items-center ">
+
+                                            <h5 class="fw-bold mb-3" style="text-align: center;" class="mb-4">
+                                                <%= data.menu.events[i].overlayContent %>
+                                            </h5>
+
+
+
+                                            <img class="car-image col-7 "
+                                                src="data:<%= data.menu.events[i].image.contentType %>;base64,<%= data.menu.events[i].image.data.toString('base64') %>"
+                                                alt="">
+
+
+
+
+
+
+
+
+                                            <div class="d-flex align-items-center mt-4 ">
+
+                                                <button id="event-<%= i %>-prev-3" class=" scroll-btn  "><img
+                                                        src="images/left arrow.svg" width="30" height="30"
+                                                        alt=""></button>
+
+                                                <p class="main-desc  ">
+                                                    <%= data.menu.events[i].mainContent %>
+                                                </p>
+
+                                                <% if (i !==data.menu.events.length - 1) { %>
+
+
+                                                    <button id="event-<%= i %>-next-3" class=" scroll-btn "><img
+                                                            src="images/right arrow.svg" width="30" height="30"
+                                                            alt=""></button>
+
+                                                    <% } %>
+
+
+
+                                            </div>
+
+                                            <a href="" class="ms-auto text-decoration-none me-5">read more</a>
+
+
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <% } %>
+
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            <div id="goals-row"
+                class="row   d-none d-lg-flex d-xl-flex d-xxl-flex  px-5  d-flex flex-column align-items-center">
+
+                <div class="d-flex mb-5 flex-column align-items-center ">
+                    <h1 class="mb-0">Goals</h1>
+                    <div class="section-underline ms-1"></div>
+                </div>
+                <div class="  d-flex mb-5 justify-content-evenly align-items-start">
+
+                    <% for (let i=0; i < 3; i++) { %>
+
+
+                        <div class="col-3  ">
+                            <div class="d-flex align-items-">
+                                <img class="goal-icon"
+                                    src="data:<%= data.goals[i].icon.contentType %>;base64,<%= data.goals[i].icon.data.toString('base64') %>"
+                                    width="30" height="30" alt="">
+
+                                <div class="d-flex flex-column">
+                                    <h5 class="ms-2 goal-heading mt- ">
+                                        <%= data.goals[i].name %>
+                                    </h5>
+                                    <p class="ms-2 goal-desc ">
+                                        <%= data.goals[i].content %>
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                        <% if (i!==2 ) { %>
+                            <div class="mini-divider-y"></div>
+
+                            <% } %>
+
+                                <% } %>
+
+
+
+
+
+
+                </div>
+                <div class="divider-x mb-5 "></div>
+                <div class="d-flex mb-5 justify-content-evenly align-items-center">
+                    <% for (let i=3; i < 6; i++) { %>
+
+
+                        <div class="col-3  ">
+                            <div class="d-flex align-items-">
+                                <img class="goal-icon"
+                                    src="data:<%= data.goals[i].icon.contentType %>;base64,<%= data.goals[i].icon.data.toString('base64') %>"
+                                    width="30" height="30" alt="">
+
+                                <div class="d-flex flex-column">
+                                    <h5 class="ms-2 goal-heading mt- ">
+                                        <%= data.goals[i].name %>
+                                    </h5>
+                                    <p class="ms-2 goal-desc ">
+                                        <%= data.goals[i].content %>
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                        <% if (i!==5 ) { %>
+                            <div class="mini-divider-y"></div>
+
+                            <% } %>
+
+                                <% } %>
+                </div>
+                <div class="d-flex mb-5 flex-column align-items-center ">
+                    <p class="mb-1">Connect me on</p>
+                    <button id="email-btn-1" data-email="<%= data.email %>"  class="connect-btn fw-bold ">
+                            <%= data.email %>
+                        </button>
+
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+            <div id="goals-row-2"
+                class="row d-none d-md-flex d-xl-none d-xxl-none d-lg-none   px-5  d-flex flex-column align-items-center">
+
+                <div class="d-flex mb-5 flex-column align-items-center ">
+                    <h1 class="mb-0">Goals</h1>
+                    <div class="section-underline ms-1"></div>
+                </div>
+
+
+                <div class="d-flex mb-5 justify-content-evenly align-items-center">
+                    <% for (let i=0; i < 2; i++) { %>
+
+
+                        <div class="col-4  ">
+                            <div class="d-flex align-items-">
+                                <img class="goal-icon"
+                                    src="data:<%= data.goals[i].icon.contentType %>;base64,<%= data.goals[i].icon.data.toString('base64') %>"
+                                    width="30" height="30" alt="">
+
+                                <div class="d-flex flex-column">
+                                    <h5 class="ms-2 goal-heading mt- ">
+                                        <%= data.goals[i].name %>
+                                    </h5>
+                                    <p class="ms-2 goal-desc ">
+                                        <%= data.goals[i].content %>
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                        <% if (i!==1 ) { %>
+                            <div class="mini-divider-y"></div>
+
+                            <% } %>
+
+                                <% } %>
+
+                </div>
+                <div class="divider-x mb-5 "></div>
+
+                <div class="d-flex mb-5 justify-content-evenly align-items-center">
+                    <% for (let i=2; i < 4; i++) { %>
+
+
+                        <div class="col-4  ">
+                            <div class="d-flex align-items-">
+                                <img class="goal-icon"
+                                    src="data:<%= data.goals[i].icon.contentType %>;base64,<%= data.goals[i].icon.data.toString('base64') %>"
+                                    width="30" height="30" alt="">
+
+                                <div class="d-flex flex-column">
+                                    <h5 class="ms-2 goal-heading mt- ">
+                                        <%= data.goals[i].name %>
+                                    </h5>
+                                    <p class="ms-2 goal-desc ">
+                                        <%= data.goals[i].content %>
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                        <% if (i!==3 ) { %>
+                            <div class="mini-divider-y"></div>
+
+                            <% } %>
+
+                                <% } %>
+
+                </div>
+                <div class="divider-x mb-5 "></div>
+                <div class="d-flex mb-5 justify-content-evenly align-items-center">
+                    <% for (let i=4; i < 6; i++) { %>
+
+
+                        <div class="col-4  ">
+                            <div class="d-flex align-items-">
+                                <img class="goal-icon"
+                                    src="data:<%= data.goals[i].icon.contentType %>;base64,<%= data.goals[i].icon.data.toString('base64') %>"
+                                    width="30" height="30" alt="">
+
+                                <div class="d-flex flex-column">
+                                    <h5 class="ms-2 goal-heading mt- ">
+                                        <%= data.goals[i].name %>
+                                    </h5>
+                                    <p class="ms-2 goal-desc ">
+                                        <%= data.goals[i].content %>
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                        <% if (i!==5 ) { %>
+                            <div class="mini-divider-y"></div>
+
+                            <% } %>
+
+                                <% } %>
+
+                </div>
+
+
+
+                <div class="d-flex mb-5 flex-column align-items-center ">
+                    <p class="mb-1">Connect me on</p>
+                    <button id="email-btn-2" data-email="<%= data.email %>" class="connect-btn fw-bold ">
+                            <%= data.email %>
+                        </button>
+
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+            <div id="goals-row-3"
+                class="row d-lg-none d-md-none d-xl-none d-xxl-none d-sm-flex    px-5  d-flex flex-column align-items-center">
+
+                <div class="d-flex mb-5 flex-column align-items-center ">
+                    <h1 class="mb-0">Goals</h1>
+                    <div class="section-underline ms-1"></div>
+                </div>
+
+
+
+                <% for (let i=0; i < data.goals.length; i++) { %>
+
+
+                    <div class="d-flex justify-content-center ">
+
+
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="d-flex mb-1">
+                                <img class="goal-icon"
+                                    src="data:<%= data.goals[i].icon.contentType %>;base64,<%= data.goals[i].icon.data.toString('base64') %>"
+                                    width="30" height="30" alt="">
+                                <h5 class="ms-1 goal-heading mt- ">
+                                    <%= data.goals[i].name %>
+                                </h5>
+                            </div>
+
+                            <p class=" goal-desc   ">
+                                <%= data.goals[i].content %>
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <% if (i!==5 ) { %>
+                        <div class="divider-x mb-4 mt-4"></div>
+
+                        <% } %>
+
+                            <% } %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <div class="d-flex mb-5 mt-5 flex-column align-items-center ">
+                                    <p class="mb-1 connect-label ">Connect me on</p>
+                                    <button id="email-btn-3" data-email="<%= data.email %>" class="connect-btn fw-bold ">
+                                            <%= data.email %>
+                                        </button>
+
+                                </div>
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+            <div id="book-row-1"
+                class="row d-none  d-xl-flex d-xxl-flex px-5 mt-5 align-items-center justify-content-center ">
+                <div class="col-xl-3  "><img id="book"
+                        src="data:<%= data.book.image.contentType %>;base64,<%= data.book.image.data.toString('base64') %>"
+                        alt=""></div>
+                <div class="col-xl-4 d-flex flex-column">
+                    <h2 id="book-name" class="mb-3">
+                        <%= data.book.name %>
+                    </h2>
+                    <p>"<%= data.book.quote %>"</p>
+                    <p>- <%= data.book.page %>
+                    </p>
+                    <a href="<%= data.book.link%>"><button class="download-btn">Download Now</button></a>
+                </div>
+
+                <div class="col-xl-4 d-flex align-items-center justify-content-around ">
+                    <div class="divider-y k "></div>
+                    <div class="d-flex flex-column ">
+
+                        <p>Subscribe to Newsletter</p>
+                        <form action="">
+                        <input class="email-input ps-3 mb-4 " type="email" placeholder="Enter your email"><br>
+                        <button type="submit" class="sub-btn">Subscribe</button></form>
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div id="book-row-2"
+                class="row d-none d-xl-none d-xxl-none   d-lg-flex d-md-flex px-5 mt-5 align-items-center justify-content-center ">
+
+                <div class="col-6  "><img id="book" src="images/book.png" alt=""></div>
+
+                <div class="d-flex flex-column col-6">
+                    <div class=" d-flex flex-column mb-5 ">
+                        <h2 id="book-name-2" class="mb-3">A Private Limited Dream</h2>
+                        <p>"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas sapiente, quae quisquam
+                            facere mollitia soluta non eum distinctio minus impedit quis ducimus alias fugiat possimus
+                            consequatur ullam, dolor illo accusantium."</p>
+                        <p>- 3:146:8</p>
+                        <a href="<%= data.book.link%>"><button class="download-btn">Download Now</button></a>
+                    </div>
+
+                    <div class=" d-flex align-items- justify-content- ">
+
+                        <div class="d-flex flex-column ">
+
+                            <p>Subscribe to Newsletter</p>
+                            <form action="">
+                            <input class="email-input ps-3 mb-2 " type="email" placeholder="Enter your email"><br>
+                            <button class="sub-btn">Subscribe</button></form>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+            <div id="book-row-3"
+                class="row flex-column d-lg-none d-md-none d-xl-none d-xxl-none   mt-5 align-items-center justify-content-center ">
+
+                <div class="d-flex justify-content-center  "><img id="book" src="images/book.png" alt=""></div>
+
+                <div class="d-flex flex-column  ">
+                    <div class=" d-flex flex-column mb-5 align-items-center">
+                        <h2 id="book-name-3" class="mb-3">A Private Limited Dream</h2>
+                        <p class="book-quote">"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas
+                            sapiente, quae quisquam facere mollitia soluta non eum distinctio minus impedit quis ducimus
+                            alias fugiat possimus consequatur ullam, dolor illo accusantium."</p>
+                        <p>- 3:146:8</p>
+                        <a href="<%= data.book.link%>"><button class="download-btn">Download Now</button></a>
+                    </div>
+
+
+                </div>
+                <div class="  d-flex align-items- justify-content-center ">
+
+                    <div class="d-flex flex-column align-items-center ">
+
+                        <p class="text-center">Subscribe to Newsletter</p>
+                        <form action="" class="d-flex flex-column align-items-center justify-content-evenly ">
+                        <input class="email-input ps-3 " type="email" placeholder="Enter your email"><br>
+                        <button class="sub-btn">Subscribe</button></form>
+
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="row flex-column align-items-center">
+                <div class="divider-x mt-5"></div>
+                <p class="my-4 text-center copyright-text ">Copyright © Royal Majestic. All Rights Reserved</p>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+        <% }); %>
+
+</body>
+
+</html>

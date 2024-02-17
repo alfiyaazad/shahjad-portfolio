@@ -1,0 +1,366 @@
+{
+    
+  "quote": "Some Quote",
+  "author": "Muhammad Shahjad S",
+  "menuItems": [
+    "About Me",
+    "Brands",
+    "investments",
+    "Holdings",
+    "Media",
+    "Events"
+  ],
+  "menu": {
+    "about": {
+      "subContent": "Company Overview",
+      "mainContent": "Detailed information about the company"
+    },
+    "brands": [
+      {
+        "name": "Brand 1",
+        "logo": "logo_url_1",
+        "subContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "socialMedia": {
+          "insta": "link1",
+          "fb": "link2",
+          "twitter": "link3",
+          "linkedin": "link4"
+        }
+      },
+      {
+        "name": "Brand 2",
+        "logo": "logo_url_1",
+        "subContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "socialMedia": {
+          "insta": "link1",
+          "fb": "link2",
+          "twitter": "link3",
+          "linkedin": "link4"
+        }
+      },
+      {
+        "name": "Brand 3",
+        "logo": "logo_url_1",
+        "subContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "socialMedia": {
+          "insta": "link1",
+          "fb": "link2",
+          "twitter": "link3",
+          "linkedin": "link4"
+        }
+      },
+      {
+        "name": "Brand 4",
+        "logo": "logo_url_1",
+        "subContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "socialMedia": {
+          "insta": "link1",
+          "fb": "link2",
+          "twitter": "link3",
+          "linkedin": "link4"
+        }
+      },
+      {
+        "name": "Brand 5",
+        "logo": "logo_url_1",
+        "subContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "socialMedia": {
+          "insta": "link1",
+          "fb": "link2",
+          "twitter": "link3",
+          "linkedin": "link4"
+        }
+      },
+      {
+        "name": "Brand 6",
+        "logo": "logo_url_1",
+        "subContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "socialMedia": {
+          "insta": "link1",
+          "fb": "link2",
+          "twitter": "link3",
+          "linkedin": "link4"
+        }
+      }
+    ],
+    "investments": [
+      {
+        "name": "Invest 1",
+        "logo": "logo_url_1",
+        "subContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "socialMedia": {
+          "insta": "link1",
+          "fb": "link2",
+          "twitter": "link3",
+          "linkedin": "link4"
+        }
+      },
+      {
+        "name": "Invest 2",
+        "logo": "logo_url_1",
+        "subContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "socialMedia": {
+          "insta": "link1",
+          "fb": "link2",
+          "twitter": "link3",
+          "linkedin": "link4"
+        }
+      },
+      {
+        "name": "Invest 3",
+        "logo": "logo_url_1",
+        "subContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "socialMedia": {
+          "insta": "link1",
+          "fb": "link2",
+          "twitter": "link3",
+          "linkedin": "link4"
+        }
+      },
+      {
+        "name": "Invest 4",
+        "logo": "logo_url_1",
+        "subContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "socialMedia": {
+          "insta": "link1",
+          "fb": "link2",
+          "twitter": "link3",
+          "linkedin": "link4"
+        }
+      },
+      {
+        "name": "Invest 5",
+        "logo": "logo_url_1",
+        "subContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "socialMedia": {
+          "insta": "link1",
+          "fb": "link2",
+          "twitter": "link3",
+          "linkedin": "link4"
+        }
+      },
+      {
+        "name": "Invest 6",
+        "logo": "logo_url_1",
+        "subContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "socialMedia": {
+          "insta": "link1",
+          "fb": "link2",
+          "twitter": "link3",
+          "linkedin": "link4"
+        }
+      }
+    ],
+    "holdings": [
+      {
+        "name": "Hold 1",
+        "logo": "logo_url_1",
+        "subContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "socialMedia": {
+          "insta": "link1",
+          "fb": "link2",
+          "twitter": "link3",
+          "linkedin": "link4"
+        }
+      },
+      {
+        "name": "Hold 2",
+        "logo": "logo_url_1",
+        "subContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "socialMedia": {
+          "insta": "link1",
+          "fb": "link2",
+          "twitter": "link3",
+          "linkedin": "link4"
+        }
+      },
+      {
+        "name": "Hold 3",
+        "logo": "logo_url_1",
+        "subContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "socialMedia": {
+          "insta": "link1",
+          "fb": "link2",
+          "twitter": "link3",
+          "linkedin": "link4"
+        }
+      },
+      {
+        "name": "Hold 4",
+        "logo": "logo_url_1",
+        "subContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "socialMedia": {
+          "insta": "link1",
+          "fb": "link2",
+          "twitter": "link3",
+          "linkedin": "link4"
+        }
+      },
+      {
+        "name": "Hold 5",
+        "logo": "logo_url_1",
+        "subContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "socialMedia": {
+          "insta": "link1",
+          "fb": "link2",
+          "twitter": "link3",
+          "linkedin": "link4"
+        }
+      },
+      {
+        "name": "Hold 6",
+        "logo": "logo_url_1",
+        "subContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "socialMedia": {
+          "insta": "link1",
+          "fb": "link2",
+          "twitter": "link3",
+          "linkedin": "link4"
+        }
+      }
+    ],
+    "media": [
+      {
+        "image": "image_url",
+        "overlayContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "mediaLink": "link1"
+      },
+      {
+        "image": "image_url",
+        "overlayContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "mediaLink": "link1"
+      },
+      {
+        "image": "image_url",
+        "overlayContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "mediaLink": "link1"
+      },
+      {
+        "image": "image_url",
+        "overlayContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "mediaLink": "link1"
+      },
+      {
+        "image": "image_url",
+        "overlayContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "mediaLink": "link1"
+      },
+      {
+        "image": "image_url",
+        "overlayContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "mediaLink": "link1"
+      }
+    ],
+    "events": [
+      {
+        "image": "image_url",
+        "overlayContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "mediaLink": "link1"
+      },
+      {
+        "image": "image_url",
+        "overlayContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "mediaLink": "link1"
+      },
+      {
+        "image": "image_url",
+        "overlayContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "mediaLink": "link1"
+      },
+      {
+        "image": "image_url",
+        "overlayContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "mediaLink": "link1"
+      },
+      {
+        "image": "image_url",
+        "overlayContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "mediaLink": "link1"
+      },
+      {
+        "image": "image_url",
+        "overlayContent": "Brand 1 Subcontent",
+        "mainContent": "Brand 1 Main content",
+        "mediaLink": "link1"
+      }
+    ]
+  },
+  "goals": [
+    {
+      "name": "Brand 1",
+      "icon": "logo_url_1",
+      "content": "Brand 1 Subcontent"
+      
+    },
+    {
+        "name": "Brand 1",
+        "icon": "logo_url_1",
+        "content": "Brand 1 Subcontent"
+        
+      },
+      {
+        "name": "Brand 1",
+        "icon": "logo_url_1",
+        "content": "Brand 1 Subcontent"
+        
+      },
+      {
+        "name": "Brand 1",
+        "icon": "logo_url_1",
+        "content": "Brand 1 Subcontent"
+        
+      },
+      {
+        "name": "Brand 1",
+        "icon": "logo_url_1",
+        "content": "Brand 1 Subcontent"
+        
+      },
+      {
+        "name": "Brand 1",
+        "icon": "logo_url_1",
+        "content": "Brand 1 Subcontent"
+        
+      }
+  ],
+  "email":"email address",
+  "book":{
+    "name":"A Private Limited Dream",
+    "quote":"quote from book",
+    "page":"page number",
+    "link":"link"
+
+
+  }
+
+ 
+}
