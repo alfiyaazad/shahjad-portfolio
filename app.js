@@ -7,7 +7,7 @@ const multer = require("multer");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
 const session = require("express-session");
-
+require('dotenv').config();
 const crypto = require("crypto");
 
 // Generate a secure random string of bytes
@@ -21,7 +21,7 @@ const { accessModel } = require("./models/db");
 // DECLARATION
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
@@ -65,7 +65,7 @@ const checkAdminSession = (req, res, next) => {
 // DATABASE CONNECTION
 
 mongoose.connect(
-  "mongodb+srv://admin:4OZ7SdK9HVohgHMn@cluster0.khg432f.mongodb.net/portfolio?retryWrites=true&w=majority",
+    process.env.DB_CONNECTION_STRING,
   {}
 );
 
