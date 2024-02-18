@@ -1,5 +1,5 @@
 // REQUIREMENT
-
+require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
 const ejs = require("ejs");
@@ -7,7 +7,7 @@ const multer = require("multer");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
 const session = require("express-session");
-require('dotenv').config();
+
 const crypto = require("crypto");
 
 // Generate a secure random string of bytes
@@ -17,6 +17,8 @@ const generateSecretKey = () => {
 
 const { ContentModel } = require("./models/db");
 const { accessModel } = require("./models/db");
+const { CLOSING } = require('ws');
+const { log } = require('console');
 
 // DECLARATION
 
@@ -55,14 +57,13 @@ const checkSession = (req, res, next) => {
 
 const checkAdminSession = (req, res, next) => {
   if (req.session && req.session.user) {
-    // User has an active session, proceed to the dashboard
+    
     next();
   } else {
-    // User does not have an active session, redirect to login page
+    
     res.redirect("/admin");
   }
 };
-// DATABASE CONNECTION
 
 mongoose.connect(
     process.env.DB_CONNECTION_STRING,
