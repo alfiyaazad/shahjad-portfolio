@@ -181,11 +181,6 @@ document.getElementById("brands-5-prev-1").addEventListener("click", () => {
   instantEmptyButton(brandBtn6, "nav-btn");
 });
 
-
-
-
-  
-
 brandBtn1.addEventListener("click", () => {
   moveBrandsCarousel1(0);
   instantEmptySpan(dxgSpan, "span-empty");
@@ -937,211 +932,338 @@ document.getElementById("email-btn-3").addEventListener("click", function () {
   window.location.href = mailtoLink;
 });
 
-document.getElementById("brands-0-next-3").addEventListener("click", () => {
-    moveBrandsCarousel3(1);
-  });
-  
-  document.getElementById("brands-1-next-3").addEventListener("click", () => {
-    moveBrandsCarousel3(2);
-  });
-  document.getElementById("brands-2-next-3").addEventListener("click", () => {
-    moveBrandsCarousel3(3);
-  });
-  document.getElementById("brands-3-next-3").addEventListener("click", () => {
-    moveBrandsCarousel3(4);
-  });
-  document.getElementById("brands-4-next-3").addEventListener("click", () => {
-    moveBrandsCarousel3(5);
-  });
-  
-  document.getElementById("brands-1-prev-3").addEventListener("click", () => {
-    moveBrandsCarousel3(0);
-  });
-  document.getElementById("brands-2-prev-3").addEventListener("click", () => {
-    moveBrandsCarousel3(1);
-  });
-  document.getElementById("brands-3-prev-3").addEventListener("click", () => {
-    moveBrandsCarousel3(2);
-  });
-  document.getElementById("brands-4-prev-3").addEventListener("click", () => {
-    moveBrandsCarousel3(3);
-  });
-  document.getElementById("brands-5-prev-3").addEventListener("click", () => {
-    moveBrandsCarousel3(4);
-  });
-  
-  document.getElementById("invest-0-next-3").addEventListener("click", () => {
-      moveInvestmentsCarousel3(1);
-      fillSpan(investSpan1, "progress");
-      fillButtonWithDelay(investBtn2, "nav-btn-default", 500);
-    });
-    
-    document.getElementById("invest-1-next-3").addEventListener("click", () => {
-      moveInvestmentsCarousel3(2);
-      fillSpan(investSpan2, "progress");
-      fillButtonWithDelay(investBtn3, "nav-btn-default", 500);
-    });
-    document.getElementById("invest-2-next-3").addEventListener("click", () => {
-      moveInvestmentsCarousel3(3);
-      fillSpan(investSpan3, "progress");
-      fillButtonWithDelay(investBtn4, "nav-btn-default", 500);
-    });
-    document.getElementById("invest-3-next-3").addEventListener("click", () => {
-      moveInvestmentsCarousel3(4);
-      fillSpan(investSpan4, "progress");
-      fillButtonWithDelay(investBtn5, "nav-btn-default", 500);
-    });
-    document.getElementById("invest-4-next-3").addEventListener("click", () => {
-      moveInvestmentsCarousel3(5);
-      fillSpan(investSpan5, "progress");
-      fillButtonWithDelay(investBtn6, "nav-btn-default", 500);
-    });
-    
-    document.getElementById("invest-1-prev-3").addEventListener("click", () => {
-      moveInvestmentsCarousel3(0);
-      emptySpan(investSpan1, "progress-back");
-      instantEmptyButton(investBtn2, "nav-btn");
-    });
-    document.getElementById("invest-2-prev-3").addEventListener("click", () => {
-      moveInvestmentsCarousel3(1);
-      emptySpan(investSpan2, "progress-back");
-      instantEmptyButton(investBtn3, "nav-btn");
-    });
-    document.getElementById("invest-3-prev-3").addEventListener("click", () => {
-      moveInvestmentsCarousel3(2);
-      emptySpan(investSpan3, "progress-back");
-      instantEmptyButton(investBtn4, "nav-btn");
-    });
-    document.getElementById("invest-4-prev-3").addEventListener("click", () => {
-      moveInvestmentsCarousel3(3);
-      emptySpan(investSpan4, "progress-back");
-      instantEmptyButton(investBtn5, "nav-btn");
-    });
-    document.getElementById("invest-5-prev-3").addEventListener("click", () => {
-      moveInvestmentsCarousel3(4);
-      emptySpan(investSpan5, "progress-back");
-      instantEmptyButton(investBtn6, "nav-btn");
-    });
-  
-  
-    document.getElementById("hold-0-next-3").addEventListener("click", () => {
-      moveHoldingsCarousel3(1);
-      fillSpan(holdSpan1, "progress");
-      fillButtonWithDelay(holdBtn2, "nav-btn-default", 500);
-    });
-    
-    document.getElementById("hold-1-next-3").addEventListener("click", () => {
-      moveHoldingsCarousel3(2);
-      fillSpan(holdSpan2, "progress");
-      fillButtonWithDelay(holdBtn3, "nav-btn-default", 500);
-    });
-    document.getElementById("hold-2-next-3").addEventListener("click", () => {
-      moveHoldingsCarousel3(3);
-      fillSpan(holdSpan3, "progress");
-      fillButtonWithDelay(holdBtn4, "nav-btn-default", 500);
-    });
-    document.getElementById("hold-3-next-3").addEventListener("click", () => {
-      moveHoldingsCarousel3(4);
-      fillSpan(holdSpan4, "progress");
-      fillButtonWithDelay(holdBtn5, "nav-btn-default", 500);
-    });
-    document.getElementById("hold-4-next-3").addEventListener("click", () => {
-      moveHoldingsCarousel3(5);
-      fillSpan(holdSpan5, "progress");
-      fillButtonWithDelay(holdBtn6, "nav-btn-default", 500);
-    });
-    
-    document.getElementById("hold-1-prev-3").addEventListener("click", () => {
-      moveHoldingsCarousel3(0);
-      emptySpan(holdSpan1, "progress-back");
-      instantEmptyButton(holdBtn2, "nav-btn");
-    });
-    document.getElementById("hold-2-prev-3").addEventListener("click", () => {
-      moveHoldingsCarousel3(1);
-      emptySpan(holdSpan2, "progress-back");
-      instantEmptyButton(holdBtn3, "nav-btn");
-    });
-    document.getElementById("hold-3-prev-3").addEventListener("click", () => {
-      moveHoldingsCarousel3(2);
-      emptySpan(holdSpan3, "progress-back");
-      instantEmptyButton(holdBtn4, "nav-btn");
-    });
-    document.getElementById("hold-4-prev-3").addEventListener("click", () => {
-      moveHoldingsCarousel3(3);
-      emptySpan(holdSpan4, "progress-back");
-      instantEmptyButton(holdBtn5, "nav-btn");
-    });
-    document.getElementById("hold-5-prev-3").addEventListener("click", () => {
-      moveHoldingsCarousel3(4);
-      emptySpan(holdSpan5, "progress-back");
-      instantEmptyButton(holdBtn6, "nav-btn");
-    });
-  
-  
-    document.getElementById("media-0-next-3").addEventListener("click", () => {
-      moveMediaCarousel3(1);
-    });
-    
-    document.getElementById("media-1-next-3").addEventListener("click", () => {
-      moveMediaCarousel3(2);
-    });
-    document.getElementById("media-2-next-3").addEventListener("click", () => {
-      moveMediaCarousel3(3);
-    });
-    document.getElementById("media-3-next-3").addEventListener("click", () => {
-      moveMediaCarousel3(4);
-    });
-    document.getElementById("media-4-next-3").addEventListener("click", () => {
-      moveMediaCarousel3(5);
-    });
-    
-    document.getElementById("media-1-prev-3").addEventListener("click", () => {
-      moveMediaCarousel3(0);
-    });
-    document.getElementById("media-2-prev-3").addEventListener("click", () => {
-      moveMediaCarousel3(1);
-    });
-    document.getElementById("media-3-prev-3").addEventListener("click", () => {
-      moveMediaCarousel3(2);
-    });
-    document.getElementById("media-4-prev-3").addEventListener("click", () => {
-      moveMediaCarousel3(3);
-    });
-    document.getElementById("media-5-prev-3").addEventListener("click", () => {
-      moveMediaCarousel3(4);
-    });
-    
-    document.getElementById("event-0-next-3").addEventListener("click", () => {
-      moveEventsCarousel3(1);
-    });
-    
-    document.getElementById("event-1-next-3").addEventListener("click", () => {
-      moveEventsCarousel3(2);
-    });
-    document.getElementById("event-2-next-3").addEventListener("click", () => {
-      moveEventsCarousel3(3);
-    });
-    document.getElementById("event-3-next-3").addEventListener("click", () => {
-      moveEventsCarousel3(4);
-    });
-    document.getElementById("event-4-next-3").addEventListener("click", () => {
-      moveEventsCarousel3(5);
-    });
-    
-    document.getElementById("event-1-prev-3").addEventListener("click", () => {
-      moveEventsCarousel3(0);
-    });
-    document.getElementById("event-2-prev-3").addEventListener("click", () => {
-      moveEventsCarousel3(1);
-    });
-    document.getElementById("event-3-prev-3").addEventListener("click", () => {
-      moveEventsCarousel3(2);
-    });
-    document.getElementById("event-4-prev-3").addEventListener("click", () => {
-      moveEventsCarousel3(3);
-    });
-    document.getElementById("event-5-prev-3").addEventListener("click", () => {
-      moveEventsCarousel3(4);
-    });
 
-    
+document.getElementById("brands-0-next-2").addEventListener("click", () => {
+    moveBrandsCarousel2(1);
+  });
+  
+  document.getElementById("brands-1-next-2").addEventListener("click", () => {
+    moveBrandsCarousel2(2);
+  });
+  document.getElementById("brands-2-next-2").addEventListener("click", () => {
+    moveBrandsCarousel2(3);
+  });
+  document.getElementById("brands-3-next-2").addEventListener("click", () => {
+    moveBrandsCarousel2(4);
+  });
+  document.getElementById("brands-4-next-2").addEventListener("click", () => {
+    moveBrandsCarousel2(5);
+  });
+  
+  document.getElementById("brands-1-prev-2").addEventListener("click", () => {
+    moveBrandsCarousel2(0);
+  });
+  document.getElementById("brands-2-prev-2").addEventListener("click", () => {
+    moveBrandsCarousel2(1);
+  });
+  document.getElementById("brands-3-prev-2").addEventListener("click", () => {
+    moveBrandsCarousel2(2);
+  });
+  document.getElementById("brands-4-prev-2").addEventListener("click", () => {
+    moveBrandsCarousel2(3);
+  });
+  document.getElementById("brands-5-prev-2").addEventListener("click", () => {
+    moveBrandsCarousel2(4);
+  });
+  
+  document.getElementById("invest-0-next-2").addEventListener("click", () => {
+    moveInvestmentsCarousel2(1);
+  });
+  
+  document.getElementById("invest-1-next-2").addEventListener("click", () => {
+    moveInvestmentsCarousel2(2);
+  });
+  document.getElementById("invest-2-next-2").addEventListener("click", () => {
+    moveInvestmentsCarousel2(3);
+  });
+  document.getElementById("invest-3-next-2").addEventListener("click", () => {
+    moveInvestmentsCarousel2(4);
+  });
+  document.getElementById("invest-4-next-2").addEventListener("click", () => {
+    moveInvestmentsCarousel2(5);
+  });
+  
+  document.getElementById("invest-1-prev-2").addEventListener("click", () => {
+    moveInvestmentsCarousel2(0);
+  });
+  document.getElementById("invest-2-prev-2").addEventListener("click", () => {
+    moveInvestmentsCarousel2(1);
+  });
+  document.getElementById("invest-3-prev-2").addEventListener("click", () => {
+    moveInvestmentsCarousel2(2);
+  });
+  document.getElementById("invest-4-prev-2").addEventListener("click", () => {
+    moveInvestmentsCarousel2(3);
+  });
+  document.getElementById("invest-5-prev-2").addEventListener("click", () => {
+    moveInvestmentsCarousel2(4);
+  });
+  
+  document.getElementById("hold-0-next-2").addEventListener("click", () => {
+    moveHoldingsCarousel2(1);
+  });
+  
+  document.getElementById("hold-1-next-2").addEventListener("click", () => {
+    moveHoldingsCarousel2(2);
+  });
+  document.getElementById("hold-2-next-2").addEventListener("click", () => {
+    moveHoldingsCarousel2(3);
+  });
+  document.getElementById("hold-3-next-2").addEventListener("click", () => {
+    moveHoldingsCarousel2(4);
+  });
+  document.getElementById("hold-4-next-2").addEventListener("click", () => {
+    moveHoldingsCarousel2(5);
+  });
+  
+  document.getElementById("hold-1-prev-2").addEventListener("click", () => {
+    moveHoldingsCarousel2(0);
+  });
+  document.getElementById("hold-2-prev-2").addEventListener("click", () => {
+    moveHoldingsCarousel2(1);
+  });
+  document.getElementById("hold-3-prev-2").addEventListener("click", () => {
+    moveHoldingsCarousel2(2);
+  });
+  document.getElementById("hold-4-prev-2").addEventListener("click", () => {
+    moveHoldingsCarousel2(3);
+  });
+  document.getElementById("hold-5-prev-2").addEventListener("click", () => {
+    moveHoldingsCarousel2(4);
+  });
+  
+  document.getElementById("media-0-next-2").addEventListener("click", () => {
+    moveMediaCarousel2(1);
+  });
+  
+  document.getElementById("media-1-next-2").addEventListener("click", () => {
+    moveMediaCarousel2(2);
+  });
+  document.getElementById("media-2-next-2").addEventListener("click", () => {
+    moveMediaCarousel2(3);
+  });
+  document.getElementById("media-3-next-2").addEventListener("click", () => {
+    moveMediaCarousel2(4);
+  });
+  document.getElementById("media-4-next-2").addEventListener("click", () => {
+    moveMediaCarousel2(5);
+  });
+  
+  document.getElementById("media-1-prev-2").addEventListener("click", () => {
+    moveMediaCarousel2(0);
+  });
+  document.getElementById("media-2-prev-2").addEventListener("click", () => {
+    moveMediaCarousel2(1);
+  });
+  document.getElementById("media-3-prev-2").addEventListener("click", () => {
+    moveMediaCarousel2(2);
+  });
+  document.getElementById("media-4-prev-2").addEventListener("click", () => {
+    moveMediaCarousel2(3);
+  });
+  document.getElementById("media-5-prev-2").addEventListener("click", () => {
+    moveMediaCarousel2(4);
+  });
+  
+  document.getElementById("event-0-next-2").addEventListener("click", () => {
+    moveEventsCarousel2(1);
+  });
+  
+  document.getElementById("event-1-next-2").addEventListener("click", () => {
+    moveEventsCarousel2(2);
+  });
+  document.getElementById("event-2-next-2").addEventListener("click", () => {
+    moveEventsCarousel2(3);
+  });
+  document.getElementById("event-3-next-2").addEventListener("click", () => {
+    moveEventsCarousel2(4);
+  });
+  document.getElementById("event-4-next-2").addEventListener("click", () => {
+    moveEventsCarousel2(5);
+  });
+  
+  document.getElementById("event-1-prev-2").addEventListener("click", () => {
+    moveEventsCarousel2(0);
+  });
+  document.getElementById("event-2-prev-2").addEventListener("click", () => {
+    moveEventsCarousel2(1);
+  });
+  document.getElementById("event-3-prev-2").addEventListener("click", () => {
+    moveEventsCarousel2(2);
+  });
+  document.getElementById("event-4-prev-2").addEventListener("click", () => {
+    moveEventsCarousel2(3);
+  });
+  document.getElementById("event-5-prev-2").addEventListener("click", () => {
+    moveEventsCarousel2(4);
+  });
+  
+
+
+
+
+
+document.getElementById("brands-0-next-3").addEventListener("click", () => {
+  moveBrandsCarousel3(1);
+});
+
+document.getElementById("brands-1-next-3").addEventListener("click", () => {
+  moveBrandsCarousel3(2);
+});
+document.getElementById("brands-2-next-3").addEventListener("click", () => {
+  moveBrandsCarousel3(3);
+});
+document.getElementById("brands-3-next-3").addEventListener("click", () => {
+  moveBrandsCarousel3(4);
+});
+document.getElementById("brands-4-next-3").addEventListener("click", () => {
+  moveBrandsCarousel3(5);
+});
+
+document.getElementById("brands-1-prev-3").addEventListener("click", () => {
+  moveBrandsCarousel3(0);
+});
+document.getElementById("brands-2-prev-3").addEventListener("click", () => {
+  moveBrandsCarousel3(1);
+});
+document.getElementById("brands-3-prev-3").addEventListener("click", () => {
+  moveBrandsCarousel3(2);
+});
+document.getElementById("brands-4-prev-3").addEventListener("click", () => {
+  moveBrandsCarousel3(3);
+});
+document.getElementById("brands-5-prev-3").addEventListener("click", () => {
+  moveBrandsCarousel3(4);
+});
+
+document.getElementById("invest-0-next-3").addEventListener("click", () => {
+  moveInvestmentsCarousel3(1);
+});
+
+document.getElementById("invest-1-next-3").addEventListener("click", () => {
+  moveInvestmentsCarousel3(2);
+});
+document.getElementById("invest-2-next-3").addEventListener("click", () => {
+  moveInvestmentsCarousel3(3);
+});
+document.getElementById("invest-3-next-3").addEventListener("click", () => {
+  moveInvestmentsCarousel3(4);
+});
+document.getElementById("invest-4-next-3").addEventListener("click", () => {
+  moveInvestmentsCarousel3(5);
+});
+
+document.getElementById("invest-1-prev-3").addEventListener("click", () => {
+  moveInvestmentsCarousel3(0);
+});
+document.getElementById("invest-2-prev-3").addEventListener("click", () => {
+  moveInvestmentsCarousel3(1);
+});
+document.getElementById("invest-3-prev-3").addEventListener("click", () => {
+  moveInvestmentsCarousel3(2);
+});
+document.getElementById("invest-4-prev-3").addEventListener("click", () => {
+  moveInvestmentsCarousel3(3);
+});
+document.getElementById("invest-5-prev-3").addEventListener("click", () => {
+  moveInvestmentsCarousel3(4);
+});
+
+document.getElementById("hold-0-next-3").addEventListener("click", () => {
+  moveHoldingsCarousel3(1);
+});
+
+document.getElementById("hold-1-next-3").addEventListener("click", () => {
+  moveHoldingsCarousel3(2);
+});
+document.getElementById("hold-2-next-3").addEventListener("click", () => {
+  moveHoldingsCarousel3(3);
+});
+document.getElementById("hold-3-next-3").addEventListener("click", () => {
+  moveHoldingsCarousel3(4);
+});
+document.getElementById("hold-4-next-3").addEventListener("click", () => {
+  moveHoldingsCarousel3(5);
+});
+
+document.getElementById("hold-1-prev-3").addEventListener("click", () => {
+  moveHoldingsCarousel3(0);
+});
+document.getElementById("hold-2-prev-3").addEventListener("click", () => {
+  moveHoldingsCarousel3(1);
+});
+document.getElementById("hold-3-prev-3").addEventListener("click", () => {
+  moveHoldingsCarousel3(2);
+});
+document.getElementById("hold-4-prev-3").addEventListener("click", () => {
+  moveHoldingsCarousel3(3);
+});
+document.getElementById("hold-5-prev-3").addEventListener("click", () => {
+  moveHoldingsCarousel3(4);
+});
+
+document.getElementById("media-0-next-3").addEventListener("click", () => {
+  moveMediaCarousel3(1);
+});
+
+document.getElementById("media-1-next-3").addEventListener("click", () => {
+  moveMediaCarousel3(2);
+});
+document.getElementById("media-2-next-3").addEventListener("click", () => {
+  moveMediaCarousel3(3);
+});
+document.getElementById("media-3-next-3").addEventListener("click", () => {
+  moveMediaCarousel3(4);
+});
+document.getElementById("media-4-next-3").addEventListener("click", () => {
+  moveMediaCarousel3(5);
+});
+
+document.getElementById("media-1-prev-3").addEventListener("click", () => {
+  moveMediaCarousel3(0);
+});
+document.getElementById("media-2-prev-3").addEventListener("click", () => {
+  moveMediaCarousel3(1);
+});
+document.getElementById("media-3-prev-3").addEventListener("click", () => {
+  moveMediaCarousel3(2);
+});
+document.getElementById("media-4-prev-3").addEventListener("click", () => {
+  moveMediaCarousel3(3);
+});
+document.getElementById("media-5-prev-3").addEventListener("click", () => {
+  moveMediaCarousel3(4);
+});
+
+document.getElementById("event-0-next-3").addEventListener("click", () => {
+  moveEventsCarousel3(1);
+});
+
+document.getElementById("event-1-next-3").addEventListener("click", () => {
+  moveEventsCarousel3(2);
+});
+document.getElementById("event-2-next-3").addEventListener("click", () => {
+  moveEventsCarousel3(3);
+});
+document.getElementById("event-3-next-3").addEventListener("click", () => {
+  moveEventsCarousel3(4);
+});
+document.getElementById("event-4-next-3").addEventListener("click", () => {
+  moveEventsCarousel3(5);
+});
+
+document.getElementById("event-1-prev-3").addEventListener("click", () => {
+  moveEventsCarousel3(0);
+});
+document.getElementById("event-2-prev-3").addEventListener("click", () => {
+  moveEventsCarousel3(1);
+});
+document.getElementById("event-3-prev-3").addEventListener("click", () => {
+  moveEventsCarousel3(2);
+});
+document.getElementById("event-4-prev-3").addEventListener("click", () => {
+  moveEventsCarousel3(3);
+});
+document.getElementById("event-5-prev-3").addEventListener("click", () => {
+  moveEventsCarousel3(4);
+});
