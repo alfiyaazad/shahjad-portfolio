@@ -1,5 +1,5 @@
 // REQUIREMENT
-require('dotenv').config();
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const ejs = require("ejs");
@@ -7,8 +7,16 @@ const multer = require("multer");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
 const session = require("express-session");
-
+const https = require("https");
+const fs = require("fs");
 const crypto = require("crypto");
+
+const options = {
+  key: fs.readFileSync("/etc/letsencrypt/live/www.shahjad.com/privkey.pem"),
+  cert: fs.readFileSync("/etc/letsencrypt/live/www.shahjad.com/fullchain.pem"),
+};
+
+const server = https.createServer(options, app);
 
 // Generate a secure random string of bytes
 const generateSecretKey = () => {
@@ -17,8 +25,8 @@ const generateSecretKey = () => {
 
 const { ContentModel } = require("./models/db");
 const { accessModel } = require("./models/db");
-const { CLOSING } = require('ws');
-const { log } = require('console');
+const { CLOSING } = require("ws");
+const { log } = require("console");
 
 // DECLARATION
 
@@ -41,7 +49,7 @@ app.use((req, res, next) => {
 });
 app.use(
   session({
-    secret: process.env.SESSION_SECRET || generateSecretKey(), 
+    secret: process.env.SESSION_SECRET || generateSecretKey(),
     resave: false,
     saveUninitialized: true,
   })
@@ -57,18 +65,13 @@ const checkSession = (req, res, next) => {
 
 const checkAdminSession = (req, res, next) => {
   if (req.session && req.session.user) {
-    
     next();
   } else {
-    
     res.redirect("/admin");
   }
 };
 
-mongoose.connect(
-    process.env.DB_CONNECTION_STRING,
-  {}
-);
+mongoose.connect(process.env.DB_CONNECTION_STRING, {});
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
@@ -912,13 +915,13 @@ app.post("/admin/logout", (req, res) => {
       console.error("Error destroying session:", err);
       return res.status(500).json({ message: "Failed to logout" });
     }
-    
+
     res.redirect("/admin");
   });
 });
 
 // PORT LISTENING
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+server.listen(443, () => {
+  console.log("Server is running on port 443");
 });
