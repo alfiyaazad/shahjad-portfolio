@@ -11,12 +11,7 @@ const https = require("https");
 const fs = require("fs");
 const crypto = require("crypto");
 
-const options = {
-  key: fs.readFileSync("/etc/letsencrypt/live/www.shahjad.com/privkey.pem"),
-  cert: fs.readFileSync("/etc/letsencrypt/live/www.shahjad.com/fullchain.pem"),
-};
 
-const server = https.createServer(options, app);
 
 // Generate a secure random string of bytes
 const generateSecretKey = () => {
@@ -922,6 +917,6 @@ app.post("/admin/logout", (req, res) => {
 
 // PORT LISTENING
 
-server.listen(443, () => {
-  console.log("Server is running on port 443");
+app.listen(port, () => {
+  console.log(`Server is running on port ${port} `);
 });

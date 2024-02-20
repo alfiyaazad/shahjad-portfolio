@@ -951,22 +951,22 @@ const addEventListeners2 = (prefix, total, callback) => {
 //   MOBILE VIEW CAROUSEL SCROLL
 
 
-const addEventListeners3 = (prefix, total, callback) => {
-    for (let i = 0; i < total; i++) {
-      const nextId = `${prefix}-${i}-next-3`;
-      const prevId = `${prefix}-${i + 1}-prev-3`;
-      document.getElementById(nextId).addEventListener("click", () => {
-        callback(i + 1);
-      });
-      document.getElementById(prevId).addEventListener("click", () => {
-        callback(i);
-      });
-    }
-  };
+// const addEventListeners3 = (prefix, total, callback) => {
+//     for (let i = 0; i < total; i++) {
+//       const nextId = `${prefix}-${i}-next-3`;
+//       const prevId = `${prefix}-${i + 1}-prev-3`;
+//       document.getElementById(nextId).addEventListener("click", () => {
+//         callback(i + 1);
+//       });
+//       document.getElementById(prevId).addEventListener("click", () => {
+//         callback(i);
+//       });
+//     }
+//   };
   
-  addEventListeners3("brands", 5, moveBrandsCarousel3);
-  addEventListeners3("invest", 5, moveInvestmentsCarousel3);
-  addEventListeners3("hold", 5, moveHoldingsCarousel3);
-  addEventListeners3("media", 5, moveMediaCarousel3);
-  addEventListeners3("event", 5, moveEventsCarousel3);
+//   addEventListeners3("brands", 5, moveBrandsCarousel3);
+//   addEventListeners3("invest", 5, moveInvestmentsCarousel3);
+//   addEventListeners3("hold", 5, moveHoldingsCarousel3);
+//   addEventListeners3("media", 5, moveMediaCarousel3);
+//   addEventListeners3("event", 5, moveEventsCarousel3);
   
