@@ -31,9 +31,10 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ limit: '20mb' }));
 
 app.use((req, res, next) => {
   // Set Cache-Control headers to prevent caching
