@@ -21,7 +21,8 @@ const generateSecretKey = () => {
   return crypto.randomBytes(32).toString("hex");
 };
 
-module.exports = { ContentModel, accessModel };
+const { ContentModel, accessModel } = require("./models/Db");
+
 
 
 // DECLARATION
