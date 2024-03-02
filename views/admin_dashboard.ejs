@@ -34,20 +34,7 @@
     }
 </style>
 
-<script>
-    const socket = new WebSocket('ws://localhost:8080');
 
-    // Handle incoming WebSocket messages
-    socket.addEventListener('message', (event) => {
-        const data = JSON.parse(event.data);
-        if (data.event === 'logout') {
-            // Handle logout event, e.g., update UI
-            console.log('User logged out');
-            // Example: Redirect to login page or display a message
-        }
-    });
-
-</script>
 
 <body>
 
@@ -59,9 +46,16 @@
                 <button type="submit" class="btn btn-primary save-btn mt-5   ">Logout</button>
 
             </form>
+            <div class="d-flex">
+
+                <a href="/admin/add/brand"><button class="btn btn-primary mt-4 me-3">Add New Brand</button></a>
+                <a href="/admin/add/investment"><button class="btn btn-primary mt-4 me-3">Add New Investment</button></a>
+                <a href="/admin/add/holding"><button class="btn btn-primary mt-4 me-3">Add New Holding</button></a>
+                <a href="/admin/add/media"><button class="btn btn-primary mt-4 me-3">Add New Media</button></a>
+                <a href="/admin/add/event"><button class="btn btn-primary mt-4 me-3">Add New Event</button></a>
 
 
-
+            </div>
 
 
             <form method="post" action="/edit/content" enctype="multipart/form-data" class="row g-3 mt-5 ">
@@ -160,7 +154,7 @@
                                 <label for="m-2-i-1-logo" class="form-label">Item Logo</label>
                                 <div>Current: <%= item.menu.brands[0].logoFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.brands[0].logo" id="m-2-i-1-logo">
+                                <input type="file" class="form-control" name="m-2-i-1-logo" id="m-2-i-1-logo">
                             </div>
                             <div class="col-md-6">
                                 <label for="m-2-i-1-insta" class="form-label">Instagram</label>
@@ -212,7 +206,7 @@
                                 <label for="m-2-i-1-logo" class="form-label">Item Logo</label>
                                 <div>Current: <%= item.menu.brands[1].logoFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.brands[1].logo" id="m-2-i-1-logo">
+                                <input type="file" class="form-control" name="m-2-i-2-logo" id="m-2-i-2-logo">
                             </div>
                             <div class="col-md-6">
                                 <label for="m-2-i-1-insta" class="form-label">Instagram</label>
@@ -263,7 +257,7 @@
                                 <label for="m-2-i-1-logo" class="form-label">Item Logo</label>
                                 <div>Current: <%= item.menu.brands[2].logoFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.brands[2].logo" id="m-2-i-1-logo">
+                                <input type="file" class="form-control" name="m-2-i-3-logo" id="m-2-i-3-logo">
                             </div>
                             <div class="col-md-6">
                                 <label for="m-2-i-1-insta" class="form-label">Instagram</label>
@@ -314,7 +308,7 @@
                                 <label for="m-2-i-1-logo" class="form-label">Item Logo</label>
                                 <div>Current: <%= item.menu.brands[3].logoFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.brands[3].logo" id="m-2-i-1-logo">
+                                <input type="file" class="form-control" name="m-2-i-4-logo" id="m-2-i-4-logo">
                             </div>
                             <div class="col-md-6">
                                 <label for="m-2-i-1-insta" class="form-label">Instagram</label>
@@ -365,7 +359,7 @@
                                 <label for="m-2-i-1-logo" class="form-label">Item Logo</label>
                                 <div>Current: <%= item.menu.brands[4].logoFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.brands[4].logo" id="m-2-i-1-logo">
+                                <input type="file" class="form-control" name="m-2-i-5-logo" id="m-2-i-5-logo">
                             </div>
                             <div class="col-md-6">
                                 <label for="m-2-i-1-insta" class="form-label">Instagram</label>
@@ -416,7 +410,7 @@
                                 <label for="m-2-i-1-logo" class="form-label">Item Logo</label>
                                 <div>Current: <%= item.menu.brands[5].logoFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.brands[5].logo" id="m-2-i-1-logo">
+                                <input type="file" class="form-control" name="m-2-i-6-logo" id="m-2-i-6-logo">
                             </div>
                             <div class="col-md-6">
                                 <label for="m-2-i-1-insta" class="form-label">Instagram</label>
@@ -474,49 +468,49 @@
 
 
                             <div class="col-md-6">
-                                <label for="m-2-i-1" class="form-label">Item Name</label>
+                                <label for="m-3-i-1" class="form-label">Item Name</label>
                                 <input type="text" value="<%= item.menu.investments[0].name %>" class="form-control"
-                                    name="menu.investments[0].name" id="m-2-i-1">
+                                    name="menu.investments[0].name" id="m-3-i-1">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-logo" class="form-label">Item Logo</label>
+                                <label for="m-3-i-1-logo" class="form-label">Item Logo</label>
                                 <div>Current: <%= item.menu.investments[0].logoFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.investments[0].logo"
-                                    id="m-2-i-1-logo">
+                                <input type="file" class="form-control" name="m-3-i-1-logo"
+                                    id="m-3-i-1-logo">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-insta" class="form-label">Instagram</label>
+                                <label for="m-3-i-1-insta" class="form-label">Instagram</label>
                                 <input type="text" value="<%= item.menu.investments[0].socialMedia.insta %>"
                                     class="form-control" name="menu.investments[0].socialMedia.insta"
-                                    id="m-2-i-1-insta">
+                                    id="m-3-i-1-insta">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-fb" class="form-label">Facebook</label>
+                                <label for="m-3-i-1-fb" class="form-label">Facebook</label>
                                 <input type="text" value="<%= item.menu.investments[0].socialMedia.fb %>"
-                                    class="form-control" name="menu.investments[0].socialMedia.fb" id="m-2-i-1-fb">
+                                    class="form-control" name="menu.investments[0].socialMedia.fb" id="m-3-i-1-fb">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-linked" class="form-label">LinkedIn</label>
+                                <label for="m-3-i-1-linked" class="form-label">LinkedIn</label>
                                 <input type="text" value="<%= item.menu.investments[0].socialMedia.linkedin %>"
                                     class="form-control" name="menu.investments[0].socialMedia.linkedin"
-                                    id="m-2-i-1-linked">
+                                    id="m-3-i-1-linked">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-x" class="form-label">Twitter</label>
+                                <label for="m-3-i-1-x" class="form-label">Twitter</label>
                                 <input type="text" value="<%= item.menu.investments[0].socialMedia.twitter %>"
-                                    class="form-control" name="menu.investments[0].socialMedia.twitter" id="m-2-i-1-x">
+                                    class="form-control" name="menu.investments[0].socialMedia.twitter" id="m-3-i-1-x">
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-sub" class="form-label">Sub Content</label>
+                                <label for="m-3-i-1-sub" class="form-label">Sub Content</label>
                                 <textarea rows="12" type="text" class="form-control"
-                                    name="menu.investments[0].subContent" id="m-2-i-1-sub"
+                                    name="menu.investments[0].subContent" id="m-3-i-1-sub"
                                     placeholder="1234 Main St"><%= item.menu.investments[0].subContent %></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-main" class="form-label">Main Content</label>
+                                <label for="m-3-i-1-main" class="form-label">Main Content</label>
                                 <textarea rows="12" type="text" class="form-control"
-                                    name="menu.investments[0].mainContent" id="m-2-i-1-main"
+                                    name="menu.investments[0].mainContent" id="m-3-i-1-main"
                                     placeholder="1234 Main St"><%= item.menu.investments[0].mainContent %></textarea>
                             </div>
 
@@ -529,49 +523,49 @@
 
 
                             <div class="col-md-6">
-                                <label for="m-2-i-1" class="form-label">Item Name</label>
+                                <label for="m-3-i-1" class="form-label">Item Name</label>
                                 <input type="text" value="<%= item.menu.investments[1].name %>" class="form-control"
-                                    name="menu.investments[1].name" id="m-2-i-1">
+                                    name="menu.investments[1].name" id="m-3-i-1">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-logo" class="form-label">Item Logo</label>
+                                <label for="m-3-i-1-logo" class="form-label">Item Logo</label>
                                 <div>Current: <%= item.menu.investments[1].logoFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.investments[1].logo"
-                                    id="m-2-i-1-logo">
+                                <input type="file" class="form-control" name="m-3-i-2-logo"
+                                    id="m-3-i-2-logo">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-insta" class="form-label">Instagram</label>
+                                <label for="m-3-i-1-insta" class="form-label">Instagram</label>
                                 <input type="text" value="<%= item.menu.investments[1].socialMedia.insta %>"
                                     class="form-control" name="menu.investments[1].socialMedia.insta"
-                                    id="m-2-i-1-insta">
+                                    id="m-3-i-1-insta">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-fb" class="form-label">Facebook</label>
+                                <label for="m-3-i-1-fb" class="form-label">Facebook</label>
                                 <input type="text" value="<%= item.menu.investments[1].socialMedia.fb %>"
-                                    class="form-control" name="menu.investments[1].socialMedia.fb" id="m-2-i-1-fb">
+                                    class="form-control" name="menu.investments[1].socialMedia.fb" id="m-3-i-1-fb">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-linked" class="form-label">LinkedIn</label>
+                                <label for="m-3-i-1-linked" class="form-label">LinkedIn</label>
                                 <input type="text" value="<%= item.menu.investments[1].socialMedia.linkedin %>"
                                     class="form-control" name="menu.investments[1].socialMedia.linkedin"
-                                    id="m-2-i-1-linked">
+                                    id="m-3-i-1-linked">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-x" class="form-label">Twitter</label>
+                                <label for="m-3-i-1-x" class="form-label">Twitter</label>
                                 <input type="text" value="<%= item.menu.investments[1].socialMedia.twitter %>"
-                                    class="form-control" name="menu.investments[1].socialMedia.twitter" id="m-2-i-1-x">
+                                    class="form-control" name="menu.investments[1].socialMedia.twitter" id="m-3-i-1-x">
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-sub" class="form-label">Sub Content</label>
+                                <label for="m-3-i-1-sub" class="form-label">Sub Content</label>
                                 <textarea rows="12" type="text" class="form-control"
-                                    name="menu.investments[1].subContent" id="m-2-i-1-sub"
+                                    name="menu.investments[1].subContent" id="m-3-i-1-sub"
                                     placeholder="1234 Main St"><%= item.menu.investments[1].subContent %></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-main" class="form-label">Main Content</label>
+                                <label for="m-3-i-1-main" class="form-label">Main Content</label>
                                 <textarea rows="12" type="text" class="form-control"
-                                    name="menu.investments[1].mainContent" id="m-2-i-1-main"
+                                    name="menu.investments[1].mainContent" id="m-3-i-1-main"
                                     placeholder="1234 Main St"><%= item.menu.investments[1].mainContent %></textarea>
                             </div>
 
@@ -583,49 +577,49 @@
 
 
                             <div class="col-md-6">
-                                <label for="m-2-i-1" class="form-label">Item Name</label>
+                                <label for="m-3-i-1" class="form-label">Item Name</label>
                                 <input type="text" value="<%= item.menu.investments[2].name %>" class="form-control"
-                                    name="menu.investments[2].name" id="m-2-i-1">
+                                    name="menu.investments[2].name" id="m-3-i-1">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-logo" class="form-label">Item Logo</label>
+                                <label for="m-3-i-1-logo" class="form-label">Item Logo</label>
                                 <div>Current: <%= item.menu.investments[2].logoFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.investments[2].logo"
-                                    id="m-2-i-1-logo">
+                                <input type="file" class="form-control" name="m-3-i-3-logo"
+                                    id="m-3-i-3-logo">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-insta" class="form-label">Instagram</label>
+                                <label for="m-3-i-1-insta" class="form-label">Instagram</label>
                                 <input type="text" value="<%= item.menu.investments[2].socialMedia.insta %>"
                                     class="form-control" name="menu.investments[2].socialMedia.insta"
-                                    id="m-2-i-1-insta">
+                                    id="m-3-i-1-insta">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-fb" class="form-label">Facebook</label>
+                                <label for="m-3-i-1-fb" class="form-label">Facebook</label>
                                 <input type="text" value="<%= item.menu.investments[2].socialMedia.fb %>"
-                                    class="form-control" name="menu.investments[2].socialMedia.fb" id="m-2-i-1-fb">
+                                    class="form-control" name="menu.investments[2].socialMedia.fb" id="m-3-i-1-fb">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-linked" class="form-label">LinkedIn</label>
+                                <label for="m-3-i-1-linked" class="form-label">LinkedIn</label>
                                 <input type="text" value="<%= item.menu.investments[2].socialMedia.linkedin %>"
                                     class="form-control" name="menu.investments[2].socialMedia.linkedin"
-                                    id="m-2-i-1-linked">
+                                    id="m-3-i-1-linked">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-x" class="form-label">Twitter</label>
+                                <label for="m-3-i-1-x" class="form-label">Twitter</label>
                                 <input type="text" value="<%= item.menu.investments[2].socialMedia.twitter %>"
-                                    class="form-control" name="menu.investments[2].socialMedia.twitter" id="m-2-i-1-x">
+                                    class="form-control" name="menu.investments[2].socialMedia.twitter" id="m-3-i-1-x">
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-sub" class="form-label">Sub Content</label>
+                                <label for="m-3-i-1-sub" class="form-label">Sub Content</label>
                                 <textarea rows="12" type="text" class="form-control"
-                                    name="menu.investments[2].subContent" id="m-2-i-1-sub"
+                                    name="menu.investments[2].subContent" id="m-3-i-1-sub"
                                     placeholder="1234 Main St"><%= item.menu.investments[2].subContent %></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-main" class="form-label">Main Content</label>
+                                <label for="m-3-i-1-main" class="form-label">Main Content</label>
                                 <textarea rows="12" type="text" class="form-control"
-                                    name="menu.investments[2].mainContent" id="m-2-i-1-main"
+                                    name="menu.investments[2].mainContent" id="m-3-i-1-main"
                                     placeholder="1234 Main St"><%= item.menu.investments[2].mainContent %></textarea>
                             </div>
 
@@ -637,49 +631,49 @@
 
 
                             <div class="col-md-6">
-                                <label for="m-2-i-1" class="form-label">Item Name</label>
+                                <label for="m-3-i-1" class="form-label">Item Name</label>
                                 <input type="text" value="<%= item.menu.investments[3].name %>" class="form-control"
-                                    name="menu.investments[3].name" id="m-2-i-1">
+                                    name="menu.investments[3].name" id="m-3-i-1">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-logo" class="form-label">Item Logo</label>
+                                <label for="m-3-i-1-logo" class="form-label">Item Logo</label>
                                 <div>Current: <%= item.menu.investments[3].logoFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.investments[3].logo"
-                                    id="m-2-i-1-logo">
+                                <input type="file" class="form-control" name="m-3-i-4-logo"
+                                    id="m-3-i-4-logo">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-insta" class="form-label">Instagram</label>
+                                <label for="m-3-i-1-insta" class="form-label">Instagram</label>
                                 <input type="text" value="<%= item.menu.investments[3].socialMedia.insta %>"
                                     class="form-control" name="menu.investments[3].socialMedia.insta"
-                                    id="m-2-i-1-insta">
+                                    id="m-3-i-1-insta">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-fb" class="form-label">Facebook</label>
+                                <label for="m-3-i-1-fb" class="form-label">Facebook</label>
                                 <input type="text" value="<%= item.menu.investments[3].socialMedia.fb %>"
-                                    class="form-control" name="menu.investments[3].socialMedia.fb" id="m-2-i-1-fb">
+                                    class="form-control" name="menu.investments[3].socialMedia.fb" id="m-3-i-1-fb">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-linked" class="form-label">LinkedIn</label>
+                                <label for="m-3-i-1-linked" class="form-label">LinkedIn</label>
                                 <input type="text" value="<%= item.menu.investments[3].socialMedia.linkedin %>"
                                     class="form-control" name="menu.investments[3].socialMedia.linkedin"
-                                    id="m-2-i-1-linked">
+                                    id="m-3-i-1-linked">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-x" class="form-label">Twitter</label>
+                                <label for="m-3-i-1-x" class="form-label">Twitter</label>
                                 <input type="text" value="<%= item.menu.investments[3].socialMedia.twitter %>"
-                                    class="form-control" name="menu.investments[3].socialMedia.twitter" id="m-2-i-1-x">
+                                    class="form-control" name="menu.investments[3].socialMedia.twitter" id="m-3-i-1-x">
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-sub" class="form-label">Sub Content</label>
+                                <label for="m-3-i-1-sub" class="form-label">Sub Content</label>
                                 <textarea rows="12" type="text" class="form-control"
-                                    name="menu.investments[3].subContent" id="m-2-i-1-sub"
+                                    name="menu.investments[3].subContent" id="m-3-i-1-sub"
                                     placeholder="1234 Main St"><%= item.menu.investments[3].subContent %></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-main" class="form-label">Main Content</label>
+                                <label for="m-3-i-1-main" class="form-label">Main Content</label>
                                 <textarea rows="12" type="text" class="form-control"
-                                    name="menu.investments[3].mainContent" id="m-2-i-1-main"
+                                    name="menu.investments[3].mainContent" id="m-3-i-1-main"
                                     placeholder="1234 Main St"><%= item.menu.investments[3].mainContent %></textarea>
                             </div>
 
@@ -691,49 +685,49 @@
 
 
                             <div class="col-md-6">
-                                <label for="m-2-i-1" class="form-label">Item Name</label>
+                                <label for="m-3-i-1" class="form-label">Item Name</label>
                                 <input type="text" value="<%= item.menu.investments[4].name %>" class="form-control"
-                                    name="menu.investments[4].name" id="m-2-i-1">
+                                    name="menu.investments[4].name" id="m-3-i-1">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-logo" class="form-label">Item Logo</label>
+                                <label for="m-3-i-1-logo" class="form-label">Item Logo</label>
                                 <div>Current: <%= item.menu.investments[4].logoFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.investments[4].logo"
-                                    id="m-2-i-1-logo">
+                                <input type="file" class="form-control" name="m-3-i-5-logo"
+                                    id="m-3-i-5-logo">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-insta" class="form-label">Instagram</label>
+                                <label for="m-3-i-1-insta" class="form-label">Instagram</label>
                                 <input type="text" value="<%= item.menu.investments[4].socialMedia.insta %>"
                                     class="form-control" name="menu.investments[4].socialMedia.insta"
-                                    id="m-2-i-1-insta">
+                                    id="m-3-i-1-insta">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-fb" class="form-label">Facebook</label>
+                                <label for="m-3-i-1-fb" class="form-label">Facebook</label>
                                 <input type="text" value="<%= item.menu.investments[4].socialMedia.fb %>"
-                                    class="form-control" name="menu.investments[4].socialMedia.fb" id="m-2-i-1-fb">
+                                    class="form-control" name="menu.investments[4].socialMedia.fb" id="m-3-i-1-fb">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-linked" class="form-label">LinkedIn</label>
+                                <label for="m-3-i-1-linked" class="form-label">LinkedIn</label>
                                 <input type="text" value="<%= item.menu.investments[4].socialMedia.linkedin %>"
                                     class="form-control" name="menu.investments[4].socialMedia.linkedin"
-                                    id="m-2-i-1-linked">
+                                    id="m-3-i-1-linked">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-x" class="form-label">Twitter</label>
+                                <label for="m-3-i-1-x" class="form-label">Twitter</label>
                                 <input type="text" value="<%= item.menu.investments[4].socialMedia.twitter %>"
-                                    class="form-control" name="menu.investments[4].socialMedia.twitter" id="m-2-i-1-x">
+                                    class="form-control" name="menu.investments[4].socialMedia.twitter" id="m-3-i-1-x">
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-sub" class="form-label">Sub Content</label>
+                                <label for="m-3-i-1-sub" class="form-label">Sub Content</label>
                                 <textarea rows="12" type="text" class="form-control"
-                                    name="menu.investments[4].subContent" id="m-2-i-1-sub"
+                                    name="menu.investments[4].subContent" id="m-3-i-1-sub"
                                     placeholder="1234 Main St"><%= item.menu.investments[4].subContent %></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-main" class="form-label">Main Content</label>
+                                <label for="m-3-i-1-main" class="form-label">Main Content</label>
                                 <textarea rows="12" type="text" class="form-control"
-                                    name="menu.investments[4].mainContent" id="m-2-i-1-main"
+                                    name="menu.investments[4].mainContent" id="m-3-i-1-main"
                                     placeholder="1234 Main St"><%= item.menu.investments[4].mainContent %></textarea>
                             </div>
 
@@ -745,49 +739,49 @@
 
 
                             <div class="col-md-6">
-                                <label for="m-2-i-1" class="form-label">Item Name</label>
+                                <label for="m-3-i-1" class="form-label">Item Name</label>
                                 <input type="text" value="<%= item.menu.investments[5].name %>" class="form-control"
-                                    name="menu.investments[5].name" id="m-2-i-1">
+                                    name="menu.investments[5].name" id="m-3-i-1">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-logo" class="form-label">Item Logo</label>
+                                <label for="m-3-i-1-logo" class="form-label">Item Logo</label>
                                 <div>Current: <%= item.menu.investments[5].logoFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.investments[5].logo"
-                                    id="m-2-i-1-logo">
+                                <input type="file" class="form-control" name="m-3-i-6-logo"
+                                    id="m-3-i-6-logo">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-insta" class="form-label">Instagram</label>
+                                <label for="m-3-i-1-insta" class="form-label">Instagram</label>
                                 <input type="text" value="<%= item.menu.investments[5].socialMedia.insta %>"
                                     class="form-control" name="menu.investments[5].socialMedia.insta"
-                                    id="m-2-i-1-insta">
+                                    id="m-3-i-1-insta">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-fb" class="form-label">Facebook</label>
+                                <label for="m-3-i-1-fb" class="form-label">Facebook</label>
                                 <input type="text" value="<%= item.menu.investments[5].socialMedia.fb %>"
-                                    class="form-control" name="menu.investments[5].socialMedia.fb" id="m-2-i-1-fb">
+                                    class="form-control" name="menu.investments[5].socialMedia.fb" id="m-3-i-1-fb">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-linked" class="form-label">LinkedIn</label>
+                                <label for="m-3-i-1-linked" class="form-label">LinkedIn</label>
                                 <input type="text" value="<%= item.menu.investments[5].socialMedia.linkedin %>"
                                     class="form-control" name="menu.investments[5].socialMedia.linkedin"
-                                    id="m-2-i-1-linked">
+                                    id="m-3-i-1-linked">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-x" class="form-label">Twitter</label>
+                                <label for="m-3-i-1-x" class="form-label">Twitter</label>
                                 <input type="text" value="<%= item.menu.investments[5].socialMedia.twitter %>"
-                                    class="form-control" name="menu.investments[5].socialMedia.twitter" id="m-2-i-1-x">
+                                    class="form-control" name="menu.investments[5].socialMedia.twitter" id="m-3-i-1-x">
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-sub" class="form-label">Sub Content</label>
+                                <label for="m-3-i-1-sub" class="form-label">Sub Content</label>
                                 <textarea rows="12" type="text" class="form-control"
-                                    name="menu.investments[5].subContent" id="m-2-i-1-sub"
+                                    name="menu.investments[5].subContent" id="m-3-i-1-sub"
                                     placeholder="1234 Main St"><%= item.menu.investments[5].subContent %></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-main" class="form-label">Main Content</label>
+                                <label for="m-3-i-1-main" class="form-label">Main Content</label>
                                 <textarea rows="12" type="text" class="form-control"
-                                    name="menu.investments[5].mainContent" id="m-2-i-1-main"
+                                    name="menu.investments[5].mainContent" id="m-3-i-1-main"
                                     placeholder="1234 Main St"><%= item.menu.investments[5].mainContent %></textarea>
                             </div>
 
@@ -814,47 +808,47 @@
 
 
                             <div class="col-md-6">
-                                <label for="m-2-i-1" class="form-label">Item Name</label>
+                                <label for="m-4-i-1" class="form-label">Item Name</label>
                                 <input type="text" value="<%= item.menu.holdings[0].name %>" class="form-control"
-                                    name="menu.holdings[0].name" id="m-2-i-1">
+                                    name="menu.holdings[0].name" id="m-4-i-1">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-logo" class="form-label">Item Logo</label>
+                                <label for="m-4-i-1-logo" class="form-label">Item Logo</label>
                                 <div>Current: <%= item.menu.holdings[0].logoFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.holdings[0].logo" id="m-2-i-1-logo">
+                                <input type="file" class="form-control" name="m-4-i-1-logo" id="m-4-i-1-logo">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-insta" class="form-label">Instagram</label>
+                                <label for="m-4-i-1-insta" class="form-label">Instagram</label>
                                 <input type="text" value="<%= item.menu.holdings[0].socialMedia.insta %>"
-                                    class="form-control" name="menu.holdings[0].socialMedia.insta" id="m-2-i-1-insta">
+                                    class="form-control" name="menu.holdings[0].socialMedia.insta" id="m-4-i-1-insta">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-fb" class="form-label">Facebook</label>
+                                <label for="m-4-i-1-fb" class="form-label">Facebook</label>
                                 <input type="text" value="<%= item.menu.holdings[0].socialMedia.fb %>"
-                                    class="form-control" name="menu.holdings[0].socialMedia.fb" id="m-2-i-1-fb">
+                                    class="form-control" name="menu.holdings[0].socialMedia.fb" id="m-4-i-1-fb">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-linked" class="form-label">LinkedIn</label>
+                                <label for="m-4-i-1-linked" class="form-label">LinkedIn</label>
                                 <input type="text" value="<%= item.menu.holdings[0].socialMedia.linkedin %>"
                                     class="form-control" name="menu.holdings[0].socialMedia.linkedin"
-                                    id="m-2-i-1-linked">
+                                    id="m-4-i-1-linked">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-x" class="form-label">Twitter</label>
+                                <label for="m-4-i-1-x" class="form-label">Twitter</label>
                                 <input type="text" value="<%= item.menu.holdings[0].socialMedia.twitter %>"
-                                    class="form-control" name="menu.holdings[0].socialMedia.twitter" id="m-2-i-1-x">
+                                    class="form-control" name="menu.holdings[0].socialMedia.twitter" id="m-4-i-1-x">
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-sub" class="form-label">Sub Content</label>
+                                <label for="m-4-i-1-sub" class="form-label">Sub Content</label>
                                 <textarea rows="12" type="text" class="form-control" name="menu.holdings[0].subContent"
-                                    id="m-2-i-1-sub"
+                                    id="m-4-i-1-sub"
                                     placeholder="1234 Main St"><%= item.menu.holdings[0].subContent %></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-main" class="form-label">Main Content</label>
+                                <label for="m-4-i-1-main" class="form-label">Main Content</label>
                                 <textarea rows="12" type="text" class="form-control" name="menu.holdings[0].mainContent"
-                                    id="m-2-i-1-main"
+                                    id="m-4-i-1-main"
                                     placeholder="1234 Main St"><%= item.menu.holdings[0].mainContent %></textarea>
                             </div>
 
@@ -867,47 +861,47 @@
 
 
                             <div class="col-md-6">
-                                <label for="m-2-i-1" class="form-label">Item Name</label>
+                                <label for="m-4-i-1" class="form-label">Item Name</label>
                                 <input type="text" value="<%= item.menu.holdings[1].name %>" class="form-control"
-                                    name="menu.holdings[1].name" id="m-2-i-1">
+                                    name="menu.holdings[1].name" id="m-4-i-1">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-logo" class="form-label">Item Logo</label>
+                                <label for="m-4-i-1-logo" class="form-label">Item Logo</label>
                                 <div>Current: <%= item.menu.holdings[1].logoFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.holdings[1].logo" id="m-2-i-1-logo">
+                                <input type="file" class="form-control" name="m-4-i-2-logo" id="m-4-i-2-logo">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-insta" class="form-label">Instagram</label>
+                                <label for="m-4-i-1-insta" class="form-label">Instagram</label>
                                 <input type="text" value="<%= item.menu.holdings[1].socialMedia.insta %>"
-                                    class="form-control" name="menu.holdings[1].socialMedia.insta" id="m-2-i-1-insta">
+                                    class="form-control" name="menu.holdings[1].socialMedia.insta" id="m-4-i-1-insta">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-fb" class="form-label">Facebook</label>
+                                <label for="m-4-i-1-fb" class="form-label">Facebook</label>
                                 <input type="text" value="<%= item.menu.holdings[1].socialMedia.fb %>"
-                                    class="form-control" name="menu.holdings[1].socialMedia.fb" id="m-2-i-1-fb">
+                                    class="form-control" name="menu.holdings[1].socialMedia.fb" id="m-4-i-1-fb">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-linked" class="form-label">LinkedIn</label>
+                                <label for="m-4-i-1-linked" class="form-label">LinkedIn</label>
                                 <input type="text" value="<%= item.menu.holdings[1].socialMedia.linkedin %>"
                                     class="form-control" name="menu.holdings[1].socialMedia.linkedin"
-                                    id="m-2-i-1-linked">
+                                    id="m-4-i-1-linked">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-x" class="form-label">Twitter</label>
+                                <label for="m-4-i-1-x" class="form-label">Twitter</label>
                                 <input type="text" value="<%= item.menu.holdings[1].socialMedia.twitter %>"
-                                    class="form-control" name="menu.holdings[1].socialMedia.twitter" id="m-2-i-1-x">
+                                    class="form-control" name="menu.holdings[1].socialMedia.twitter" id="m-4-i-1-x">
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-sub" class="form-label">Sub Content</label>
+                                <label for="m-4-i-1-sub" class="form-label">Sub Content</label>
                                 <textarea rows="12" type="text" class="form-control" name="menu.holdings[1].subContent"
-                                    id="m-2-i-1-sub"
+                                    id="m-4-i-1-sub"
                                     placeholder="1234 Main St"><%= item.menu.holdings[1].subContent %></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-main" class="form-label">Main Content</label>
+                                <label for="m-4-i-1-main" class="form-label">Main Content</label>
                                 <textarea rows="12" type="text" class="form-control" name="menu.holdings[1].mainContent"
-                                    id="m-2-i-1-main"
+                                    id="m-4-i-1-main"
                                     placeholder="1234 Main St"><%= item.menu.holdings[1].mainContent %></textarea>
                             </div>
 
@@ -919,47 +913,47 @@
 
 
                             <div class="col-md-6">
-                                <label for="m-2-i-1" class="form-label">Item Name</label>
+                                <label for="m-4-i-1" class="form-label">Item Name</label>
                                 <input type="text" value="<%= item.menu.holdings[2].name %>" class="form-control"
-                                    name="menu.holdings[2].name" id="m-2-i-1">
+                                    name="menu.holdings[2].name" id="m-4-i-1">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-logo" class="form-label">Item Logo</label>
+                                <label for="m-4-i-1-logo" class="form-label">Item Logo</label>
                                 <div>Current: <%= item.menu.holdings[2].logoFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.holdings[2].logo" id="m-2-i-1-logo">
+                                <input type="file" class="form-control" name="m-4-i-3-logo" id="m-4-i-3-logo">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-insta" class="form-label">Instagram</label>
+                                <label for="m-4-i-1-insta" class="form-label">Instagram</label>
                                 <input type="text" value="<%= item.menu.holdings[2].socialMedia.insta %>"
-                                    class="form-control" name="menu.holdings[2].socialMedia.insta" id="m-2-i-1-insta">
+                                    class="form-control" name="menu.holdings[2].socialMedia.insta" id="m-4-i-1-insta">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-fb" class="form-label">Facebook</label>
+                                <label for="m-4-i-1-fb" class="form-label">Facebook</label>
                                 <input type="text" value="<%= item.menu.holdings[2].socialMedia.fb %>"
-                                    class="form-control" name="menu.holdings[2].socialMedia.fb" id="m-2-i-1-fb">
+                                    class="form-control" name="menu.holdings[2].socialMedia.fb" id="m-4-i-1-fb">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-linked" class="form-label">LinkedIn</label>
+                                <label for="m-4-i-1-linked" class="form-label">LinkedIn</label>
                                 <input type="text" value="<%= item.menu.holdings[2].socialMedia.linkedin %>"
                                     class="form-control" name="menu.holdings[2].socialMedia.linkedin"
-                                    id="m-2-i-1-linked">
+                                    id="m-4-i-1-linked">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-x" class="form-label">Twitter</label>
+                                <label for="m-4-i-1-x" class="form-label">Twitter</label>
                                 <input type="text" value="<%= item.menu.holdings[2].socialMedia.twitter %>"
-                                    class="form-control" name="menu.holdings[2].socialMedia.twitter" id="m-2-i-1-x">
+                                    class="form-control" name="menu.holdings[2].socialMedia.twitter" id="m-4-i-1-x">
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-sub" class="form-label">Sub Content</label>
+                                <label for="m-4-i-1-sub" class="form-label">Sub Content</label>
                                 <textarea rows="12" type="text" class="form-control" name="menu.holdings[2].subContent"
-                                    id="m-2-i-1-sub"
+                                    id="m-4-i-1-sub"
                                     placeholder="1234 Main St"><%= item.menu.holdings[2].subContent %></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-main" class="form-label">Main Content</label>
+                                <label for="m-4-i-1-main" class="form-label">Main Content</label>
                                 <textarea rows="12" type="text" class="form-control" name="menu.holdings[2].mainContent"
-                                    id="m-2-i-1-main"
+                                    id="m-4-i-1-main"
                                     placeholder="1234 Main St"><%= item.menu.holdings[2].mainContent %></textarea>
                             </div>
 
@@ -971,47 +965,47 @@
 
 
                             <div class="col-md-6">
-                                <label for="m-2-i-1" class="form-label">Item Name</label>
+                                <label for="m-4-i-1" class="form-label">Item Name</label>
                                 <input type="text" value="<%= item.menu.holdings[3].name %>" class="form-control"
-                                    name="menu.holdings[3].name" id="m-2-i-1">
+                                    name="menu.holdings[3].name" id="m-4-i-1">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-logo" class="form-label">Item Logo</label>
+                                <label for="m-4-i-1-logo" class="form-label">Item Logo</label>
                                 <div>Current: <%= item.menu.holdings[3].logoFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.holdings[3].logo" id="m-2-i-1-logo">
+                                <input type="file" class="form-control" name="m-4-i-4-logo" id="m-4-i-4-logo">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-insta" class="form-label">Instagram</label>
+                                <label for="m-4-i-1-insta" class="form-label">Instagram</label>
                                 <input type="text" value="<%= item.menu.holdings[3].socialMedia.insta %>"
-                                    class="form-control" name="menu.holdings[3].socialMedia.insta" id="m-2-i-1-insta">
+                                    class="form-control" name="menu.holdings[3].socialMedia.insta" id="m-4-i-1-insta">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-fb" class="form-label">Facebook</label>
+                                <label for="m-4-i-1-fb" class="form-label">Facebook</label>
                                 <input type="text" value="<%= item.menu.holdings[3].socialMedia.fb %>"
-                                    class="form-control" name="menu.holdings[3].socialMedia.fb" id="m-2-i-1-fb">
+                                    class="form-control" name="menu.holdings[3].socialMedia.fb" id="m-4-i-1-fb">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-linked" class="form-label">LinkedIn</label>
+                                <label for="m-4-i-1-linked" class="form-label">LinkedIn</label>
                                 <input type="text" value="<%= item.menu.holdings[3].socialMedia.linkedin %>"
                                     class="form-control" name="menu.holdings[3].socialMedia.linkedin"
-                                    id="m-2-i-1-linked">
+                                    id="m-4-i-1-linked">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-x" class="form-label">Twitter</label>
+                                <label for="m-4-i-1-x" class="form-label">Twitter</label>
                                 <input type="text" value="<%= item.menu.holdings[3].socialMedia.twitter %>"
-                                    class="form-control" name="menu.holdings[3].socialMedia.twitter" id="m-2-i-1-x">
+                                    class="form-control" name="menu.holdings[3].socialMedia.twitter" id="m-4-i-1-x">
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-sub" class="form-label">Sub Content</label>
+                                <label for="m-4-i-1-sub" class="form-label">Sub Content</label>
                                 <textarea rows="12" type="text" class="form-control" name="menu.holdings[3].subContent"
-                                    id="m-2-i-1-sub"
+                                    id="m-4-i-1-sub"
                                     placeholder="1234 Main St"><%= item.menu.holdings[3].subContent %></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-main" class="form-label">Main Content</label>
+                                <label for="m-4-i-1-main" class="form-label">Main Content</label>
                                 <textarea rows="12" type="text" class="form-control" name="menu.holdings[3].mainContent"
-                                    id="m-2-i-1-main"
+                                    id="m-4-i-1-main"
                                     placeholder="1234 Main St"><%= item.menu.holdings[3].mainContent %></textarea>
                             </div>
 
@@ -1023,47 +1017,47 @@
 
 
                             <div class="col-md-6">
-                                <label for="m-2-i-1" class="form-label">Item Name</label>
+                                <label for="m-4-i-1" class="form-label">Item Name</label>
                                 <input type="text" value="<%= item.menu.holdings[4].name %>" class="form-control"
-                                    name="menu.holdings[4].name" id="m-2-i-1">
+                                    name="menu.holdings[4].name" id="m-4-i-1">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-logo" class="form-label">Item Logo</label>
+                                <label for="m-4-i-1-logo" class="form-label">Item Logo</label>
                                 <div>Current: <%= item.menu.holdings[4].logoFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.holdings[4].logo" id="m-2-i-1-logo">
+                                <input type="file" class="form-control" name="m-4-i-5-logo" id="m-4-i-5-logo">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-insta" class="form-label">Instagram</label>
+                                <label for="m-4-i-1-insta" class="form-label">Instagram</label>
                                 <input type="text" value="<%= item.menu.holdings[4].socialMedia.insta %>"
-                                    class="form-control" name="menu.holdings[4].socialMedia.insta" id="m-2-i-1-insta">
+                                    class="form-control" name="menu.holdings[4].socialMedia.insta" id="m-4-i-1-insta">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-fb" class="form-label">Facebook</label>
+                                <label for="m-4-i-1-fb" class="form-label">Facebook</label>
                                 <input type="text" value="<%= item.menu.holdings[4].socialMedia.fb %>"
-                                    class="form-control" name="menu.holdings[4].socialMedia.fb" id="m-2-i-1-fb">
+                                    class="form-control" name="menu.holdings[4].socialMedia.fb" id="m-4-i-1-fb">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-linked" class="form-label">LinkedIn</label>
+                                <label for="m-4-i-1-linked" class="form-label">LinkedIn</label>
                                 <input type="text" value="<%= item.menu.holdings[4].socialMedia.linkedin %>"
                                     class="form-control" name="menu.holdings[4].socialMedia.linkedin"
-                                    id="m-2-i-1-linked">
+                                    id="m-4-i-1-linked">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-x" class="form-label">Twitter</label>
+                                <label for="m-4-i-1-x" class="form-label">Twitter</label>
                                 <input type="text" value="<%= item.menu.holdings[4].socialMedia.twitter %>"
-                                    class="form-control" name="menu.holdings[4].socialMedia.twitter" id="m-2-i-1-x">
+                                    class="form-control" name="menu.holdings[4].socialMedia.twitter" id="m-4-i-1-x">
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-sub" class="form-label">Sub Content</label>
+                                <label for="m-4-i-1-sub" class="form-label">Sub Content</label>
                                 <textarea rows="12" type="text" class="form-control" name="menu.holdings[4].subContent"
-                                    id="m-2-i-1-sub"
+                                    id="m-4-i-1-sub"
                                     placeholder="1234 Main St"><%= item.menu.holdings[4].subContent %></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-main" class="form-label">Main Content</label>
+                                <label for="m-4-i-1-main" class="form-label">Main Content</label>
                                 <textarea rows="12" type="text" class="form-control" name="menu.holdings[4].mainContent"
-                                    id="m-2-i-1-main"
+                                    id="m-4-i-1-main"
                                     placeholder="1234 Main St"><%= item.menu.holdings[4].mainContent %></textarea>
                             </div>
 
@@ -1075,47 +1069,47 @@
 
 
                             <div class="col-md-6">
-                                <label for="m-2-i-1" class="form-label">Item Name</label>
+                                <label for="m-4-i-1" class="form-label">Item Name</label>
                                 <input type="text" value="<%= item.menu.holdings[5].name %>" class="form-control"
-                                    name="menu.holdings[5].name" id="m-2-i-1">
+                                    name="menu.holdings[5].name" id="m-4-i-1">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-logo" class="form-label">Item Logo</label>
+                                <label for="m-4-i-1-logo" class="form-label">Item Logo</label>
                                 <div>Current: <%= item.menu.holdings[5].logoFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.holdings[5].logo" id="m-2-i-1-logo">
+                                <input type="file" class="form-control" name="m-4-i-6-logo" id="m-4-i-6-logo">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-insta" class="form-label">Instagram</label>
+                                <label for="m-4-i-1-insta" class="form-label">Instagram</label>
                                 <input type="text" value="<%= item.menu.holdings[5].socialMedia.insta %>"
-                                    class="form-control" name="menu.holdings[5].socialMedia.insta" id="m-2-i-1-insta">
+                                    class="form-control" name="menu.holdings[5].socialMedia.insta" id="m-4-i-1-insta">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-fb" class="form-label">Facebook</label>
+                                <label for="m-4-i-1-fb" class="form-label">Facebook</label>
                                 <input type="text" value="<%= item.menu.holdings[5].socialMedia.fb %>"
-                                    class="form-control" name="menu.holdings[5].socialMedia.fb" id="m-2-i-1-fb">
+                                    class="form-control" name="menu.holdings[5].socialMedia.fb" id="m-4-i-1-fb">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-linked" class="form-label">LinkedIn</label>
+                                <label for="m-4-i-1-linked" class="form-label">LinkedIn</label>
                                 <input type="text" value="<%= item.menu.holdings[5].socialMedia.linkedin %>"
                                     class="form-control" name="menu.holdings[5].socialMedia.linkedin"
-                                    id="m-2-i-1-linked">
+                                    id="m-4-i-1-linked">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-2-i-1-x" class="form-label">Twitter</label>
+                                <label for="m-4-i-1-x" class="form-label">Twitter</label>
                                 <input type="text" value="<%= item.menu.holdings[5].socialMedia.twitter %>"
-                                    class="form-control" name="menu.holdings[5].socialMedia.twitter" id="m-2-i-1-x">
+                                    class="form-control" name="menu.holdings[5].socialMedia.twitter" id="m-4-i-1-x">
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-sub" class="form-label">Sub Content</label>
+                                <label for="m-4-i-1-sub" class="form-label">Sub Content</label>
                                 <textarea rows="12" type="text" class="form-control" name="menu.holdings[5].subContent"
-                                    id="m-2-i-1-sub"
+                                    id="m-4-i-1-sub"
                                     placeholder="1234 Main St"><%= item.menu.holdings[5].subContent %></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="m-2-i-1-main" class="form-label">Main Content</label>
+                                <label for="m-4-i-1-main" class="form-label">Main Content</label>
                                 <textarea rows="12" type="text" class="form-control" name="menu.holdings[5].mainContent"
-                                    id="m-2-i-1-main"
+                                    id="m-4-i-1-main"
                                     placeholder="1234 Main St"><%= item.menu.holdings[5].mainContent %></textarea>
                             </div>
 
@@ -1146,7 +1140,7 @@
                                 <div>
                                     <%= item.menu.media[0].imageFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.media[0].image" id="m-5-i-1-image">
+                                <input type="file" class="form-control" name="m-5-i-1-image" id="m-5-i-1-image">
                             </div>
                             <div class="col-md-6">
                                 <label for="m-5-i-1-link" class="form-label">Link</label>
@@ -1180,7 +1174,7 @@
                                 <div>
                                     <%= item.menu.media[1].imageFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.media[1].image" id="m-5-i-1-image">
+                                <input type="file" class="form-control" name="m-5-i-2-image" id="m-5-i-2-image">
                             </div>
                             <div class="col-md-6">
                                 <label for="m-5-i-1-link" class="form-label">Link</label>
@@ -1214,7 +1208,7 @@
                                 <div>
                                     <%= item.menu.media[2].imageFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.media[2].image" id="m-5-i-1-image">
+                                <input type="file" class="form-control" name="m-5-i-3-image" id="m-5-i-3-image">
                             </div>
                             <div class="col-md-6">
                                 <label for="m-5-i-1-link" class="form-label">Link</label>
@@ -1248,7 +1242,7 @@
                                 <div>
                                     <%= item.menu.media[3].imageFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.media[3].image" id="m-5-i-1-image">
+                                <input type="file" class="form-control" name="m-5-i-4-image" id="m-5-i-4-image">
                             </div>
                             <div class="col-md-6">
                                 <label for="m-5-i-1-link" class="form-label">Link</label>
@@ -1282,7 +1276,7 @@
                                 <div>
                                     <%= item.menu.media[4].imageFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.media[4].image" id="m-5-i-1-image">
+                                <input type="file" class="form-control" name="m-5-i-5-image" id="m-5-i-5-image">
                             </div>
                             <div class="col-md-6">
                                 <label for="m-5-i-1-link" class="form-label">Link</label>
@@ -1316,7 +1310,7 @@
                                 <div>
                                     <%= item.menu.media[5].imageFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.media[5].image" id="m-5-i-1-image">
+                                <input type="file" class="form-control" name="m-5-i-6-image" id="m-5-i-6-image">
                             </div>
                             <div class="col-md-6">
                                 <label for="m-5-i-1-link" class="form-label">Link</label>
@@ -1360,28 +1354,28 @@
 
 
                             <div class="col-md-6">
-                                <label for="m-5-i-1-image" class="form-label">Image</label>
+                                <label for="m-6-i-1-image" class="form-label">Image</label>
                                 <div>
                                     <%= item.menu.events[0].imageFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.events[0].image" id="m-5-i-1-image">
+                                <input type="file" class="form-control" name="m-6-i-1-image" id="m-6-i-1-image">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-5-i-1-link" class="form-label">Link</label>
+                                <label for="m-6-i-1-link" class="form-label">Link</label>
                                 <input type="text" value="<%= item.menu.events[0].eventLink %>" class="form-control"
-                                    name="menu.events[0].eventLink" id="m-5-i-1-link">
+                                    name="menu.events[0].eventLink" id="m-6-i-1-link">
                             </div>
 
                             <div class="col-12">
-                                <label for="m-5-i-1-overlay" class="form-label">Overlay Content</label>
+                                <label for="m-6-i-1-overlay" class="form-label">Overlay Content</label>
                                 <textarea rows="12" type="text" class="form-control"
-                                    name="menu.events[0].overlayContent" id="m-5-i-1-overlay"
+                                    name="menu.events[0].overlayContent" id="m-6-i-1-overlay"
                                     placeholder="1234 Main St"><%= item.menu.events[0].overlayContent %></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="m-5-i-1-main" class="form-label">Main Content</label>
+                                <label for="m-6-i-1-main" class="form-label">Main Content</label>
                                 <textarea rows="12" type="text" class="form-control" name="menu.events[0].mainContent"
-                                    id="m-5-i-1-main"
+                                    id="m-6-i-1-main"
                                     placeholder="1234 Main St"><%= item.menu.events[0].mainContent %></textarea>
                             </div>
 
@@ -1394,28 +1388,28 @@
 
 
                             <div class="col-md-6">
-                                <label for="m-5-i-1-image" class="form-label">Image</label>
+                                <label for="m-6-i-1-image" class="form-label">Image</label>
                                 <div>
                                     <%= item.menu.events[1].imageFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.events[1].image" id="m-5-i-1-image">
+                                <input type="file" class="form-control" name="m-6-i-2-image" id="m-6-i-2-image">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-5-i-1-link" class="form-label">Link</label>
+                                <label for="m-6-i-1-link" class="form-label">Link</label>
                                 <input type="text" value="<%= item.menu.events[1].eventLink %>" class="form-control"
-                                    name="menu.events[1].eventLink" id="m-5-i-1-link">
+                                    name="menu.events[1].eventLink" id="m-6-i-1-link">
                             </div>
 
                             <div class="col-12">
-                                <label for="m-5-i-1-overlay" class="form-label">Overlay Content</label>
+                                <label for="m-6-i-1-overlay" class="form-label">Overlay Content</label>
                                 <textarea rows="12" type="text" class="form-control"
-                                    name="menu.events[1].overlayContent" id="m-5-i-1-overlay"
+                                    name="menu.events[1].overlayContent" id="m-6-i-1-overlay"
                                     placeholder="1234 Main St"><%= item.menu.events[1].overlayContent %></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="m-5-i-1-main" class="form-label">Main Content</label>
+                                <label for="m-6-i-1-main" class="form-label">Main Content</label>
                                 <textarea rows="12" type="text" class="form-control" name="menu.events[1].mainContent"
-                                    id="m-5-i-1-main"
+                                    id="m-6-i-1-main"
                                     placeholder="1234 Main St"><%= item.menu.events[1].mainContent %></textarea>
                             </div>
 
@@ -1428,28 +1422,28 @@
 
 
                             <div class="col-md-6">
-                                <label for="m-5-i-1-image" class="form-label">Image</label>
+                                <label for="m-6-i-1-image" class="form-label">Image</label>
                                 <div>
                                     <%= item.menu.events[2].imageFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.events[2].image" id="m-5-i-1-image">
+                                <input type="file" class="form-control" name="m-6-i-3-image" id="m-6-i-3-image">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-5-i-1-link" class="form-label">Link</label>
+                                <label for="m-6-i-1-link" class="form-label">Link</label>
                                 <input type="text" value="<%= item.menu.events[2].eventLink %>" class="form-control"
-                                    name="menu.events[2].eventLink" id="m-5-i-1-link">
+                                    name="menu.events[2].eventLink" id="m-6-i-1-link">
                             </div>
 
                             <div class="col-12">
-                                <label for="m-5-i-1-overlay" class="form-label">Overlay Content</label>
+                                <label for="m-6-i-1-overlay" class="form-label">Overlay Content</label>
                                 <textarea rows="12" type="text" class="form-control"
-                                    name="menu.events[2].overlayContent" id="m-5-i-1-overlay"
+                                    name="menu.events[2].overlayContent" id="m-6-i-1-overlay"
                                     placeholder="1234 Main St"><%= item.menu.events[2].overlayContent %></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="m-5-i-1-main" class="form-label">Main Content</label>
+                                <label for="m-6-i-1-main" class="form-label">Main Content</label>
                                 <textarea rows="12" type="text" class="form-control" name="menu.events[2].mainContent"
-                                    id="m-5-i-1-main"
+                                    id="m-6-i-1-main"
                                     placeholder="1234 Main St"><%= item.menu.events[2].mainContent %></textarea>
                             </div>
 
@@ -1462,28 +1456,28 @@
 
 
                             <div class="col-md-6">
-                                <label for="m-5-i-1-image" class="form-label">Image</label>
+                                <label for="m-6-i-1-image" class="form-label">Image</label>
                                 <div>
                                     <%= item.menu.events[3].imageFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.events[3].image" id="m-5-i-1-image">
+                                <input type="file" class="form-control" name="m-6-i-4-image" id="m-6-i-4-image">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-5-i-1-link" class="form-label">Link</label>
+                                <label for="m-6-i-1-link" class="form-label">Link</label>
                                 <input type="text" value="<%= item.menu.events[3].eventLink %>" class="form-control"
-                                    name="menu.events[3].eventLink" id="m-5-i-1-link">
+                                    name="menu.events[3].eventLink" id="m-6-i-1-link">
                             </div>
 
                             <div class="col-12">
-                                <label for="m-5-i-1-overlay" class="form-label">Overlay Content</label>
+                                <label for="m-6-i-1-overlay" class="form-label">Overlay Content</label>
                                 <textarea rows="12" type="text" class="form-control"
-                                    name="menu.events[3].overlayContent" id="m-5-i-1-overlay"
+                                    name="menu.events[3].overlayContent" id="m-6-i-1-overlay"
                                     placeholder="1234 Main St"><%= item.menu.events[3].overlayContent %></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="m-5-i-1-main" class="form-label">Main Content</label>
+                                <label for="m-6-i-1-main" class="form-label">Main Content</label>
                                 <textarea rows="12" type="text" class="form-control" name="menu.events[3].mainContent"
-                                    id="m-5-i-1-main"
+                                    id="m-6-i-1-main"
                                     placeholder="1234 Main St"><%= item.menu.events[3].mainContent %></textarea>
                             </div>
 
@@ -1496,28 +1490,28 @@
 
 
                             <div class="col-md-6">
-                                <label for="m-5-i-1-image" class="form-label">Image</label>
+                                <label for="m-6-i-1-image" class="form-label">Image</label>
                                 <div>
                                     <%= item.menu.events[4].imageFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.events[4].image" id="m-5-i-1-image">
+                                <input type="file" class="form-control" name="m-6-i-5-image" id="m-6-i-5-image">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-5-i-1-link" class="form-label">Link</label>
+                                <label for="m-6-i-1-link" class="form-label">Link</label>
                                 <input type="text" value="<%= item.menu.events[4].eventLink %>" class="form-control"
-                                    name="menu.events[4].eventLink" id="m-5-i-1-link">
+                                    name="menu.events[4].eventLink" id="m-6-i-1-link">
                             </div>
 
                             <div class="col-12">
-                                <label for="m-5-i-1-overlay" class="form-label">Overlay Content</label>
+                                <label for="m-6-i-1-overlay" class="form-label">Overlay Content</label>
                                 <textarea rows="12" type="text" class="form-control"
-                                    name="menu.events[4].overlayContent" id="m-5-i-1-overlay"
+                                    name="menu.events[4].overlayContent" id="m-6-i-1-overlay"
                                     placeholder="1234 Main St"><%= item.menu.events[4].overlayContent %></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="m-5-i-1-main" class="form-label">Main Content</label>
+                                <label for="m-6-i-1-main" class="form-label">Main Content</label>
                                 <textarea rows="12" type="text" class="form-control" name="menu.events[4].mainContent"
-                                    id="m-5-i-1-main"
+                                    id="m-6-i-1-main"
                                     placeholder="1234 Main St"><%= item.menu.events[4].mainContent %></textarea>
                             </div>
 
@@ -1530,28 +1524,28 @@
 
 
                             <div class="col-md-6">
-                                <label for="m-5-i-1-image" class="form-label">Image</label>
+                                <label for="m-6-i-1-image" class="form-label">Image</label>
                                 <div>
                                     <%= item.menu.events[5].imageFile %>
                                 </div>
-                                <input type="file" class="form-control" name="menu.events[5].image" id="m-5-i-1-image">
+                                <input type="file" class="form-control" name="m-6-i-6-image" id="m-6-i-6-image">
                             </div>
                             <div class="col-md-6">
-                                <label for="m-5-i-1-link" class="form-label">Link</label>
+                                <label for="m-6-i-1-link" class="form-label">Link</label>
                                 <input type="text" value="<%= item.menu.events[5].eventLink %>" class="form-control"
-                                    name="menu.events[5].eventLink" id="m-5-i-1-link">
+                                    name="menu.events[5].eventLink" id="m-6-i-1-link">
                             </div>
 
                             <div class="col-12">
-                                <label for="m-5-i-1-overlay" class="form-label">Overlay Content</label>
+                                <label for="m-6-i-1-overlay" class="form-label">Overlay Content</label>
                                 <textarea rows="12" type="text" class="form-control"
-                                    name="menu.events[5].overlayContent" id="m-5-i-1-overlay"
+                                    name="menu.events[5].overlayContent" id="m-6-i-1-overlay"
                                     placeholder="1234 Main St"><%= item.menu.events[5].overlayContent %></textarea>
                             </div>
                             <div class="col-12">
-                                <label for="m-5-i-1-main" class="form-label">Main Content</label>
+                                <label for="m-6-i-1-main" class="form-label">Main Content</label>
                                 <textarea rows="12" type="text" class="form-control" name="menu.events[5].mainContent"
-                                    id="m-5-i-1-main"
+                                    id="m-6-i-1-main"
                                     placeholder="1234 Main St"><%= item.menu.events[5].mainContent %></textarea>
                             </div>
 
@@ -1585,7 +1579,7 @@
                             <div>
                                 <%= item.goals[0].iconFile %>
                             </div>
-                            <input type="file" class="form-control" name="goals[0].icon" id="goal-icon-1">
+                            <input type="file" class="form-control" name="goal-icon-1" id="goal-icon-1">
                         </div>
                         <div class="col-12">
                             <label for="goal-content-1" class="form-label">Goal Content</label>
@@ -1605,11 +1599,11 @@
                                 name="goals[1].name" id="goal-name-1">
                         </div>
                         <div class="col-md-6">
-                            <label for="goal-icon-1" class="form-label">Goal Icon</label>
+                            <label for="goal-icon-2" class="form-label">Goal Icon</label>
                             <div>
                                 <%= item.goals[1].iconFile %>
                             </div>
-                            <input type="file" class="form-control" name="goals[1].icon" id="goal-icon-1">
+                            <input type="file" class="form-control" name="goal-icon-2" id="goal-icon-2">
                         </div>
                         <div class="col-12">
                             <label for="goal-content-1" class="form-label">Goal Content</label>
@@ -1633,7 +1627,7 @@
                             <div>
                                 <%= item.goals[2].iconFile %>
                             </div>
-                            <input type="file" class="form-control" name="goals[2].icon" id="goal-icon-1">
+                            <input type="file" class="form-control" name="goal-icon-3" id="goal-icon-3">
                         </div>
                         <div class="col-12">
                             <label for="goal-content-1" class="form-label">Goal Content</label>
@@ -1657,7 +1651,7 @@
                             <div>
                                 <%= item.goals[3].iconFile %>
                             </div>
-                            <input type="file" class="form-control" name="goals[3].icon" id="goal-icon-1">
+                            <input type="file" class="form-control" name="goal-icon-4" id="goal-icon-4">
                         </div>
                         <div class="col-12">
                             <label for="goal-content-1" class="form-label">Goal Content</label>
@@ -1681,7 +1675,7 @@
                             <div>
                                 <%= item.goals[4].iconFile %>
                             </div>
-                            <input type="file" class="form-control" name="goals[4].icon" id="goal-icon-1">
+                            <input type="file" class="form-control" name="goal-icon-5" id="goal-icon-5">
                         </div>
                         <div class="col-12">
                             <label for="goal-content-1" class="form-label">Goal Content</label>
@@ -1705,7 +1699,7 @@
                             <div>
                                 <%= item.goals[5].iconFile %>
                             </div>
-                            <input type="file" class="form-control" name="goals[5].icon" id="goal-icon-1">
+                            <input type="file" class="form-control" name="goal-icon-6" id="goal-icon-6">
                         </div>
                         <div class="col-12">
                             <label for="goal-content-1" class="form-label">Goal Content</label>
@@ -1747,7 +1741,7 @@
                         <div>
                             <%= item.book.imageFile %>
                         </div>
-                        <input type="file" class="form-control" name="book.image" id="book-image"
+                        <input type="file" class="form-control" name="book-image" id="book-image"
                             placeholder="Name of quote author">
                     </div>
 

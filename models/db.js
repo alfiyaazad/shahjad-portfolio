@@ -24,6 +24,7 @@ const investmentSchema = new mongoose.Schema({
   subContent: String,
   mainContent: String,
   socialMedia: socialMediaSchema,
+  logoFile: String,
 });
 
 const holdingSchema = new mongoose.Schema({
@@ -31,7 +32,8 @@ const holdingSchema = new mongoose.Schema({
   logo: { data: Buffer, contentType: String },
   subContent: String,
   mainContent: String,
-  socialMedia: socialMediaSchema,
+    socialMedia: socialMediaSchema,
+    logoFile: String,
 });
 
 const mediaSchema = new mongoose.Schema({

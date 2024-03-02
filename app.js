@@ -10,16 +10,19 @@ const session = require("express-session");
 const https = require("https");
 const fs = require("fs");
 const crypto = require("crypto");
-
-
+const Brand = require("./models/Brand");
+const Investment = require("./models/Investment");
+const Holding = require("./models/Holding");
+const Media = require("./models/Media");
+const Event = require("./models/Event");
 
 // Generate a secure random string of bytes
 const generateSecretKey = () => {
   return crypto.randomBytes(32).toString("hex");
 };
 
-const { ContentModel } = require("./models/db");
-const { accessModel } = require("./models/db");
+const { ContentModel } = require("./models/Db");
+const { accessModel } = require("./models/Db");
 const { CLOSING } = require("ws");
 const { log } = require("console");
 
@@ -30,11 +33,26 @@ const port = process.env.PORT;
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
+const brandStorage = multer.memoryStorage();
+const brandUpload = multer({ storage: brandStorage });
+
+const investmentStorage = multer.memoryStorage();
+const investmentUpload = multer({ storage: investmentStorage });
+
+const holdingStorage = multer.memoryStorage();
+const holdingUpload = multer({ storage: holdingStorage });
+
+const mediaStorage = multer.memoryStorage();
+const mediaUpload = multer({ storage: mediaStorage });
+
+const eventStorage = multer.memoryStorage();
+const eventUpload = multer({ storage: eventStorage });
+
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json({ limit: '20mb' }));
+app.use(bodyParser.json({ limit: "20mb" }));
 
 app.use((req, res, next) => {
   // Set Cache-Control headers to prevent caching
@@ -57,6 +75,14 @@ const checkSession = (req, res, next) => {
     return res.redirect("/admin/dashboard");
   }
   next(); // Proceed to the next middleware
+};
+
+const fileFilter = (req, file, cb) => {
+  if (file.mimetype === "image/svg+xml") {
+    cb(null, true);
+  } else {
+    cb(new Error("Only SVG files are allowed!"), false);
+  }
 };
 
 const checkAdminSession = (req, res, next) => {
@@ -109,6 +135,48 @@ app.get("/admin/dashboard", checkAdminSession, async (req, res) => {
   } else {
     res.redirect("/admin");
   }
+});
+
+app.get("/brands", async (req, res) => {
+  const brands = await Brand.find();
+  res.render("brands", { brands });
+});
+
+app.get("/investments", async (req, res) => {
+  const investments = await Investment.find();
+  res.render("investments", { investments });
+});
+
+app.get("/holdings", async (req, res) => {
+  const holdings = await Holding.find();
+  res.render("holdings", { holdings });
+});
+
+app.get("/media", async (req, res) => {
+  const media = await Media.find();
+  res.render("media", { media });
+});
+
+app.get("/events", async (req, res) => {
+  const events = await Event.find();
+  res.render("events", { events });
+});
+
+app.get("/admin/add/brand", checkAdminSession, (req, res) => {
+  res.render("add_brand");
+});
+
+app.get("/admin/add/investment", checkAdminSession, (req, res) => {
+  res.render("add_investment");
+});
+app.get("/admin/add/media", checkAdminSession, (req, res) => {
+  res.render("add_media");
+});
+app.get("/admin/add/holding", checkAdminSession, (req, res) => {
+  res.render("add_holding");
+});
+app.get("/admin/add/event", checkAdminSession, (req, res) => {
+  res.render("add_event");
 });
 
 app.post(
@@ -914,6 +982,124 @@ app.post("/admin/logout", (req, res) => {
 
     res.redirect("/admin");
   });
+});
+
+app.post("/admin/add/brand", brandUpload.single("image"), async (req, res) => {
+  try {
+    // Extract data from the request
+    const { name } = req.body;
+    const image = req.file;
+
+    // Create new document with the name and image buffer
+    const brand = new Brand({
+      name: name,
+      images: {
+        data: image.buffer,
+        contentType: image.mimetype,
+      },
+    });
+
+    // Save the brand document
+    await brand.save();
+
+    res.send("Brand added successfully");
+  } catch (error) {
+    console.error(error);
+    res.status(400).send("Error adding brand");
+  }
+});
+
+app.post(
+  "/admin/add/investment",
+  investmentUpload.single("image"),
+  async (req, res) => {
+    try {
+      // Extract data from the request
+      const { name } = req.body;
+      const image = req.file;
+
+      // Create new document with the name and image buffer
+      const investment = new Investment({
+        name: name,
+        images: {
+          data: image.buffer,
+          contentType: image.mimetype,
+        },
+      });
+
+      // Save the brand document
+      await investment.save();
+
+      res.send("Investment added successfully");
+    } catch (error) {
+      console.error(error);
+      res.status(400).send("Error adding brand");
+    }
+  }
+);
+
+app.post(
+  "/admin/add/holding",
+  holdingUpload.single("image"),
+  async (req, res) => {
+    try {
+      // Extract data from the request
+      const { name } = req.body;
+      const image = req.file;
+
+      // Create new document with the name and image buffer
+      const holding = new Holding({
+        name: name,
+        images: {
+          data: image.buffer,
+          contentType: image.mimetype,
+        },
+      });
+
+      // Save the brand document
+      await holding.save();
+
+      res.send("holding added successfully");
+    } catch (error) {
+      console.error(error);
+      res.status(400).send("Error adding holding");
+    }
+  }
+);
+
+app.post("/admin/add/media", mediaUpload.single("image"), async (req, res) => {
+  try {
+    // Extract data from request body
+    const { title, subtitle, published_date, link } = req.body;
+
+    // Create new Media instance
+    const newMedia = new Media({
+      title: title,
+      images: {
+        data: req.file.buffer,
+        contentType: req.file.mimetype,
+      },
+      subtitle: subtitle,
+      publicationDate: published_date,
+      link: link,
+    });
+
+    // Save the new media entry to the database
+    await newMedia.save();
+
+    // Send success response
+    res.status(201).json({ message: "Media added successfully." });
+  } catch (error) {
+    // Handle errors
+    console.error("Error adding media:", error);
+    res.status(500).json({ error: "Internal server error." });
+  }
+});
+
+// 404 PAGE
+
+app.use((req, res, next) => {
+  res.status(404).render("404"); 
 });
 
 // PORT LISTENING
