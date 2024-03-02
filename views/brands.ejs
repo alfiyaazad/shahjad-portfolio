@@ -15,7 +15,7 @@
         crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/brands.css">
-    <script src="js/brands.js" defer></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
 
         </div>
     </div>
-    <div class="container">
+    <div  class="container">
 
 
         <div class="row ">
@@ -47,9 +47,9 @@
             
 
             <% brands.forEach(brand=> { %>
-                <li class="logogrid__item  col-md-3" style="height: 100px;">
+                <li class="logogrid__item  col-lg-3 col-sm-6  " style="height: 100px;">
                     <img src="data:<%= brand.images.contentType %>;base64,<%= brand.images.data.toString('base64') %>"
-                        class="logogrid__img " alt="<%= brand.name %>" width="150"  height="66"  >
+                        class="logogrid__img col-5 " alt="<%= brand.name %>" width="150"  height="66"  >
                 </li>
                 <% }); %>
 
@@ -59,7 +59,7 @@
 
 
         
-    </div>
+        </div>
 
     </div>
 

@@ -15,7 +15,7 @@
         crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/brands.css">
-    <script src="js/brands.js" defer></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -28,27 +28,48 @@
             background-color: gold;
         }
 
-        .card {
-            height: 14rem;
-            border: none;
-            border-bottom: 2px solid rgba(255, 217, 0, 0.5);
-            border-radius: 0;
-
-        }
-
-        .card-body {
-            height: 100%;
+        .media-row {
+            border-bottom: 2px solid gold;
         }
 
         .media-img {
-            height: 100%;
+
             border-radius: 10px;
+            width: 100%;
+            height: 100%;
+
         }
 
         .read-btn {
             background-color: gold;
             color: black;
-            width: 85px;
+            width: 175px;
+        }
+
+        @media (max-width: 768px) {
+            .media-content {
+               text-align: center;
+               margin-top: 3rem;
+               margin-bottom: 2rem;
+            }
+            .read-btn{
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .media-content {
+               
+               padding-left: 0px !important ;
+               padding-right:0px !important;
+               
+            }
+            .media-subtitle{
+                margin-top: 1.5rem;
+            }
+            .read-btn{
+                width: 200px;
+            }
         }
     </style>
 
@@ -72,37 +93,47 @@
 
         </div>
     </div>
-    <div class="container">
+    <div class="container-fluid px-5">
         <% function formatDate(dateString) { %>
-            <% const options = { year: 'numeric', month: 'short', day: '2-digit' }; %>
-            <% return new Date(dateString).toLocaleDateString('en-US', options); %>
-        <% } %>
+            <% const options={ year: 'numeric' , month: 'short' , day: '2-digit' }; %>
+                <% return new Date(dateString).toLocaleDateString('en-US', options); %>
+                    <% } %>
 
-        <% media.forEach(media=> { %>
-
-
-            <div id="card" class="card mb-3  w-100">
+                        <% media.forEach(media=> { %>
 
 
-                <div class="card-body align-items-center d-flex">
-                    <img class="media-img" src="data:<%= media.images.contentType %>;base64,<%= media.images.data.toString('base64') %>" alt="">
-                    <div class="ms-5">
-                        <h5  class=" fw-bold card-title">
-                            <%= media.title %>
-                        </h5>
-                        <p class="card-text">
-                            <%= media.subtitle %>
-                        </p>
-                        <p style="font-size: small;" class="text-secondary">
-                            <%= formatDate(media.publicationDate) %> 
-                            
-                        </p>
-                        <a href="<%= media.link %>" class="btn read-btn " data-mdb-ripple-init>Read</a>
-                    </div>
-                </div>
-            </div>
+                            <div class="row mb-3 align-items-center media-row py-3">
 
-            <% }); %>
+
+                                <div class="col-lg-3 col-md-5">
+                                    <img class="img-responsive media-img"
+                                        src="data:<%= media.images.contentType %>;base64,<%= media.images.data.toString('base64') %>"
+                                        alt="">
+                                </div>
+
+                                <div class="col-lg-9 col-md-7 media-content">
+                                    <h5 class=" fw-bold ">
+                                        <%= media.title %>
+                                    </h5>
+                                    <p class="media-subtitle">
+                                        <%= media.subtitle %>
+                                    </p>
+                                    <p style="font-size: small;" class="text-secondary">
+                                        <%= formatDate(media.publicationDate) %>
+
+                                    </p>
+                                    <a href="<%= media.link %>" class="btn read-btn ">Read&nbsp;More</a>
+                                </div>
+
+                            </div>
+
+
+
+
+                            <% }); %>
+
+
+
 
 
 
