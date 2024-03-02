@@ -117,7 +117,4 @@ const accessModel = mongoose.model("Access", accessSchema);
 
 // MODEL EXPORTING
 
-module.exports = {
-  ContentModel,
-  accessModel,
-};
+module.exports = { ContentModel, accessModel };

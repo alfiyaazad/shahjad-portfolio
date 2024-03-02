@@ -21,10 +21,8 @@ const generateSecretKey = () => {
   return crypto.randomBytes(32).toString("hex");
 };
 
-const { ContentModel } = require("./models/Db");
-const { accessModel } = require("./models/Db");
-const { CLOSING } = require("ws");
-const { log } = require("console");
+module.exports = { ContentModel, accessModel };
+
 
 // DECLARATION
 
