@@ -1338,9 +1338,10 @@
                             <span class="link-text-2">
 
 
-                                <% const menuItem=data.menuItems[0]; const result=menuItem.replace(" ", " \u00A0"); %>
+                              <% const menuItem = data.menuItems[0]; const result = menuItem.replace(/ /g, "&nbsp;"); %>
 
-                                    <%= result %>
+
+                              <%- result %>
 
 
                             </span>
@@ -2275,7 +2276,7 @@
 
                 <div class="d-flex justify-content-around ">
                     <div class="d-flex flex-column">
-                        <button id="about-btn-3" class="menu-btn"><img class="menu-icon" src="images/about me.svg"
+                        <button id="about-btn-3" class="menu-btn p-0"><img class="menu-icon" src="images/about me.svg"
                                 width="20" height="20" alt=""></button>
                         <span class="menu-link">
                             <%= data.menuItems[0] %>
@@ -2283,7 +2284,7 @@
                         <div id="about-tab" class="mobile-tab"></div>
                     </div>
                     <div class="d-flex flex-column">
-                        <button id="brands-btn-3" class="menu-btn"><img class="menu-icon" src="images/brands.svg"
+                        <button id="brands-btn-3" class="menu-btn p-0"><img class="menu-icon" src="images/brands.svg"
                                 width="20" height="20" alt=""></button>
                         <span class="menu-link">
                             <%= data.menuItems[1] %>
@@ -2291,7 +2292,7 @@
                         <div id="brands-tab" class=""></div>
                     </div>
                     <div class="d-flex flex-column">
-                        <button id="investments-btn-3" class="menu-btn"><img class="menu-icon"
+                        <button id="investments-btn-3" class="menu-btn p-0"><img class="menu-icon"
                                 src="images/investments.svg" width="20" height="20" alt=""></button>
                         <span class="menu-link">
                             <%= data.menuItems[2] %>
@@ -2299,7 +2300,7 @@
                         <div id="investments-tab" class=""></div>
                     </div>
                     <div class="d-flex flex-column">
-                        <button id="holdings-btn-3" class="menu-btn"><img class="menu-icon" src="images/holdings.svg"
+                        <button id="holdings-btn-3" class="menu-btn p-0"><img class="menu-icon" src="images/holdings.svg"
                                 width="20" height="20" alt=""></button>
                         <span class="menu-link">
                             <%= data.menuItems[3] %>
@@ -2307,7 +2308,7 @@
                         <div id="holdings-tab" class=""></div>
                     </div>
                     <div class="d-flex flex-column">
-                        <button id="media-btn-3" class="menu-btn"><img class="menu-icon" src="images/media.svg"
+                        <button id="media-btn-3" class="menu-btn p-0"><img class="menu-icon" src="images/media.svg"
                                 width="20" height="20" alt=""></button>
                         <span class="menu-link">
                             <%= data.menuItems[4] %>
@@ -2315,7 +2316,7 @@
                         <div id="media-tab" class=""></div>
                     </div>
                     <div class="d-flex flex-column">
-                        <button id="events-btn-3" class="menu-btn"><img class="menu-icon" src="images/events.svg"
+                        <button id="events-btn-3" class="menu-btn p-0"><img class="menu-icon" src="images/events.svg"
                                 width="20" height="20" alt=""></button>
                         <span class="menu-link">
                             <%= data.menuItems[5] %>
