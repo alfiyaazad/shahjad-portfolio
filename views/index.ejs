@@ -48,7 +48,7 @@
             <div class="row  mb-5  " id="photo-row">
                 <div id="photo-col" class="col-lg-6 success d-flex justify-content-center align-items-center ">
                     <div id="photo-stroke"
-                        class="col-xl-7 col-lg-9 col-md-6 col-sm-8 col   d-flex justify-content-center align-items-center ">
+                        class="col-xl-8 col-lg-10 col-md-7 col-sm-9 col   d-flex justify-content-center align-items-center ">
                         <div id="photo-bg" class=" d-flex justify-content-center">
                             <img id="photo"
                                 src="data:<%= data.photo.contentType %>;base64,<%= data.photo.data.toString('base64') %>"
@@ -2274,7 +2274,7 @@
 
             <div class="row d-sm-none d-flex flex-column ">
 
-                <div class="d-flex justify-content-around ">
+                <div class="d-flex justify-content-between ">
                     <div class="d-flex flex-column">
                         <button id="about-btn-3" class="menu-btn p-0"><img class="menu-icon" src="images/about me.svg"
                                 width="20" height="20" alt=""></button>
@@ -3443,7 +3443,7 @@
 
 
             <div id="book-row-1"
-                class="row d-none  d-xl-flex d-xxl-flex px-5 mt-5 align-items-center justify-content-center ">
+                class="row d-none  d-xl-flex d-xxl-flex px-5 mt-4 align-items-center justify-content-center ">
                 <div class="col-xl-3  "><img id="book"
                         src="data:<%= data.book.image.contentType %>;base64,<%= data.book.image.data.toString('base64') %>"
                         alt=""></div>
@@ -3477,9 +3477,9 @@
 
 
             <div id="book-row-2"
-                class="row d-none d-xl-none d-xxl-none   d-lg-flex d-md-flex px-5 mt-5 align-items-center justify-content-center ">
+                class="row d-none d-xl-none d-xxl-none   d-lg-flex d-md-flex px-5 mt-4 align-items-center justify-content-center ">
 
-                <div class="col-6  "><img id="book" src="images/book.png" alt=""></div>
+                <div class="col-6  "><img id="book" src="data:<%= data.book.image.contentType %>;base64,<%= data.book.image.data.toString('base64') %>" alt=""></div>
 
                 <div class="d-flex flex-column col-6">
                     <div class=" d-flex flex-column mb-5 ">
@@ -3491,32 +3491,32 @@
                         <a href="<%= data.book.link%>"><button class="download-btn">Download Now</button></a>
                     </div>
 
-                    <div class=" d-flex align-items- justify-content- ">
-
-                        <div class="d-flex flex-column ">
-
-                            <p>Subscribe to Newsletter</p>
-                            <form action="">
-                                <input class="email-input ps-3 mb-2 " type="email" placeholder="Enter your email"><br>
-                                <button class="sub-btn">Subscribe</button>
-                            </form>
-
-
-
-                        </div>
-                    </div>
+                    
                 </div>
 
+                <div class=" d-flex  justify-content-center ">
 
+                  <div class="d-flex w-100 flex-column align-items-center ">
+
+                      <p>Subscribe to Newsletter</p>
+                      <form action="" class="d-flex flex-column w-100 justify-content-evenly align-items-center ">
+                          <input class="email-input ps-3 mb-2 w-75 " type="email" placeholder="Enter your email"><br>
+                          <button class="sub-btn">Subscribe</button>
+                      </form>
+
+
+
+                  </div>
+              </div>
 
             </div>
 
 
 
             <div id="book-row-3"
-                class="row flex-column d-lg-none d-md-none d-xl-none d-xxl-none   mt-5 align-items-center justify-content-center ">
+                class="row flex-column d-lg-none d-md-none d-xl-none d-xxl-none   mt-4 align-items-center justify-content-center ">
 
-                <div class="d-flex justify-content-center  "><img id="book" src="images/book.png" alt=""></div>
+                <div class="d-flex justify-content-center col-sm-10 "><img id="book" src="data:<%= data.book.image.contentType %>;base64,<%= data.book.image.data.toString('base64') %>" alt=""></div>
 
                 <div class="d-flex flex-column  ">
                     <div class=" d-flex flex-column mb-5 align-items-center">
@@ -3530,13 +3530,13 @@
 
 
                 </div>
-                <div class="  d-flex align-items- justify-content-center ">
+                <div class=" col-12  d-flex  ">
 
-                    <div class="d-flex flex-column align-items-center ">
+                    <div class="d-flex w-100 flex-column align-items-center  ">
 
-                        <p class="text-center">Subscribe to Newsletter</p>
-                        <form action="" class="d-flex flex-column align-items-center justify-content-evenly ">
-                            <input class="email-input ps-3 " type="email" placeholder="Enter your email"><br>
+                        <p class="">Subscribe to Newsletter</p>
+                        <form action="" class="d-flex flex-column w-100 justify-content-evenly align-items-center ">
+                            <input id="email-sub-input" class="email-input ps-3 w-75  " type="email" placeholder="Enter your email"><br>
                             <button class="sub-btn">Subscribe</button>
                         </form>
 

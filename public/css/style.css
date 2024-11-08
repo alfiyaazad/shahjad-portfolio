@@ -26,7 +26,7 @@ body {
     height: 96%;
     width: 96%;
     position: relative;
-    background-color: gold;
+    background-color: #ffd700;
 
 }
 
@@ -40,7 +40,7 @@ body {
     height: auto;
     display: block;
     position: absolute;
-    bottom: 0px;
+    bottom: 0.5px;
     max-height: 120%;
 }
 
@@ -391,9 +391,9 @@ body {
 
 
 @media screen and (max-width: 390px) {
-    #photo {
+    /* #photo {
         height: 125%;
-    }
+    } */
 
     #photo-col {
         padding: 0;
@@ -473,7 +473,7 @@ body {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575.98px) {
 
     #quote,
     #author {
@@ -511,6 +511,25 @@ body {
     .section-underline {
         width: 60px !important;
     }
+
+    #photo-col {
+      padding-left: 30px;
+      padding-right: 30px;
+      height: 350px;
+  }
+
+  #about-section-2 {
+      padding: 30px !important;
+  }
+
+  .about-content {
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+
+  #email-sub-input{
+width: 100% !important;
+  }
 }
 
 
@@ -569,7 +588,7 @@ body {
     }
 }
 
-@media only screen and (min-width: 375px) and (max-width: 576px) {
+@media only screen and (min-width: 375px) and (max-width: 575.98px) {
     .copyright-text {
         font-size: small;
     }
@@ -609,7 +628,7 @@ body {
 
 }
 
-@media only screen and (min-width: 576px) and (max-width: 768px) {
+@media only screen and (min-width: 575.98px) and (max-width: 768px) {
     .link-text-2 {
         font-size: 12px;
     }
@@ -691,25 +710,6 @@ body {
     }
 }
 
-@media (max-width:576px) {
-
-
-    #photo-col {
-        padding-left: 30px;
-        padding-right: 30px;
-        height: 350px;
-    }
-
-    #about-section-2 {
-        padding: 30px !important;
-    }
-
-    .about-content {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-}
 
 
 @media (max-width:375px) {
@@ -732,3 +732,63 @@ body {
     }
 
 }
+
+
+@media (max-width: 440px){
+
+#photo-col{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#photo-col {
+  height: 300px;
+}
+
+}
+
+@media (max-width: 400px){
+
+  #photo-col{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+
+  
+  }
+
+  @media (max-width: 325px){
+
+    #photo-col{
+      
+      height: 250px ;
+    }
+   
+  
+    
+    }
+
+
+    @media (max-width: 300px){
+
+      #photo-col{
+        
+        height: 225px ;
+      }
+     
+    
+      
+      }
+
+
+      @media (max-width: 275px){
+
+        #photo-col{
+          
+          height: 200px ;
+        }
+       
+      
+        
+        }
